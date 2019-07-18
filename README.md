@@ -165,11 +165,36 @@ math_root.json
 
 ### Todo:
 - [ ] Add option to select if speech commands are pushed to command line or processed immediately
-- [ ] Rename 'commands' folder to 'plugins'
+- [ ] Hook command results to voice synthesis
+  - [ ] Create option for voice to be heard on all output, instead of on response only (--speak-all, --speak-response-only)
+  - [ ] Create 'speak' command, which will force the following command output to be spoken completely (speak: help <topic>)
+  - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
+- [ ] Number string to integer function
+- [ ] Integer to number string function
+- [ ] Plugins:
+  - [X] Rename 'commands' folder to 'plugins'
+  - [ ] Check for plugins in an external folder
+  - [ ] Finish weather plugin
+  - [ ] Finish conversation plugin
+  - [ ] Add CLI Games plugin
+    - [ ] Highscore system implementation
+  - [ ] Add time/date plugin
+  - [ ] Add IMDB plugin
+  - [ ] Add Wolfram Alpha plugin
+  - [ ] Add Dictionary plugin
+  - [ ] Add Wikipedia plugin
+  - [ ] Add Network Utilities plugin
+  - [ ] Add CLI chart plugin
+  - [ ] Add 9292OV plugin (Dutch public transport)
+  - [ ] Add Kodi Remote plugin
+  - [ ] Add Image based Object Detection
+  - [ ] Add Image based Face Recognition
+    - [ ] Add events for Face Recognition
+  - [ ] Add Cloud Storage plugin (connect with dropbox etc.)
 - [ ] Change eval() functions, find better approach for plugin loading
-- [ ] Correct all paths to resolve properly
-- [ ] Check for plugins in an external folder
-- [ ] Fix / finish plugins, add extra functions
+- [ ] Correct hardcoded file locations to cleaned up path
+- [ ] ...
+- [ ] Think of a way to incorporate a mood-function
 - [ ] ...
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
 
