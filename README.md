@@ -6,7 +6,24 @@ How is the weather in (where are we)?
 (weatherdetails)
 ```
 
-### What is Sara?
+
+ToC:
+1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
+2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
+3. [NPM modules](https://github.com/ZTiKnl/sara#npm-modules)
+4. [How to use](https://github.com/ZTiKnl/sara#how-to-use)
+5. [Internal Commands](https://github.com/ZTiKnl/sara#internal-commands)
+6. [Plugins](https://github.com/ZTiKnl/sara#plugins)
+7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
+8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
+9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)
+10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
+11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
+12. [Todo](https://github.com/ZTiKnl/sara#todo)
+13. [Credits](https://github.com/ZTiKnl/sara#credits)
+14. [Apologies](https://github.com/ZTiKnl/sara#apologies)
+
+### What is Sara:
 Sara is a command prompt, that listens for keyboard input or speech recognition.  
 Sara has a voice, and is able to respond to commands through text as well as audio.
 
@@ -64,7 +81,7 @@ festival (only default voice tested)
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword) for more information on how to use your own custom hotword
 
-### Sara internal commands:
+### Internal commands:
 ```
 help
 help <topic>
@@ -119,7 +136,7 @@ subcmd: root of 9 = 3
 subcmd: 7 + 3 = 10
 finalcmd: 11 + 10 = 21
 ```
-### Sara has some basic plugins provided:
+### Provided plugins:
 Math functions  
 ```
 'what is 7 + 9'
@@ -198,6 +215,14 @@ and play that recording using:
 aplay test.wav
 ```
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
+
+### Other issues:
+none so far...
+Just a reminder:
+* the voice module works, but responses are NOT connected to it (yet)
+  this is because it is very annoying when testing to constantly hear things
+* the speech recognition module works, but only displays onscreen, and does not process it (yet)
+  this is because it is very annoying when testing to be interrupted because voice picks up something unintended
 
 ### Plugins:
 These are created using (at least) 2 files:  
