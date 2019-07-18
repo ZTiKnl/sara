@@ -70,47 +70,50 @@ More coming...
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered.  
 My raspi:  
-    ztik@sara:~/nodejs/sara $ arecord -l
-    **** List of CAPTURE Hardware Devices ****
-    >>> card 0: haobosou [haobosou], device 0: USB Audio [USB Audio] <<<
-      Subdevices: 1/1
-      Subdevice #0: subdevice #0
-    card 1: HD4110 [HP Webcam HD-4110], device 0: USB Audio [USB Audio]
-      Subdevices: 1/1
-      Subdevice #0: subdevice #0
-
+```
+ztik@sara:~/nodejs/sara $ arecord -l
+**** List of CAPTURE Hardware Devices ****
+>>> card 0: haobosou [haobosou], device 0: USB Audio [USB Audio] <<<
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: HD4110 [HP Webcam HD-4110], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
 I use card 0, device 0 for my audio in (haobosou microphone, cheap and great quality audio)
-
-    ztik@sara:~/nodejs/sara $ aplay -l
-    **** List of PLAYBACK Hardware Devices ****
-    card 2: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
-      Subdevices: 7/7
-      Subdevice #0: subdevice #0
-      Subdevice #1: subdevice #1
-      Subdevice #2: subdevice #2
-      Subdevice #3: subdevice #3
-      Subdevice #4: subdevice #4
-      Subdevice #5: subdevice #5
-      Subdevice #6: subdevice #6
-    >>> card 2: ALSA [bcm2835 ALSA], device 1: bcm2835 IEC958/HDMI [bcm2835 IEC958/HDMI] <<<
-      Subdevices: 1/1
-      Subdevice #0: subdevice #0
+```
+ztik@sara:~/nodejs/sara $ aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 2: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
+  Subdevices: 7/7
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+  Subdevice #2: subdevice #2
+  Subdevice #3: subdevice #3
+  Subdevice #4: subdevice #4
+  Subdevice #5: subdevice #5
+  Subdevice #6: subdevice #6
+>>> card 2: ALSA [bcm2835 ALSA], device 1: bcm2835 IEC958/HDMI [bcm2835 IEC958/HDMI] <<<
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
 I use the HDMI output on my raspi for audio out, so I am using card 2, device 1 here
 
 My config file:
-    ztik@sara:~/ $ cat ~/.asoundrc
-    pcm.!default {
-      type asym
-       playback.pcm {
-         type plug
-         slave.pcm "hw:2,1"
-       }
-       capture.pcm {
-         type plug
-         slave.pcm "hw:0,0"
-       }
-    }
-
+```
+ztik@sara:~/ $ cat ~/.asoundrc
+pcm.!default {
+  type asym
+  playback.pcm {
+    type plug
+    slave.pcm "hw:2,1"
+  }
+  capture.pcm {
+    type plug
+    slave.pcm "hw:0,0"
+  }
+}
+```
 This solved every issue I had with festival and with arecord  
 Using these settings I am able to record from the proper input device with the following command:  
     'arecord -d 10 test.wav && aplay test.wav'  
@@ -123,20 +126,22 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 
 ### Plugins:
 These are created using (at least) 2 files:  
+```
     pluginname_function.json  
     pluginname.js
-
+```
 The .js file contains all the javascript to deal with request X and push back a result.  
 The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
 
 One .js file can contain multiple module.exports functions.  
 Each function requires its own .json file.  
 example:  
+```
     math.js  
     math_add.json  
     math_subtract.json  
     math_root.json
-
+```
 
 
 ### Todo:
