@@ -1,8 +1,10 @@
-    Hi Sara, how are you?
-    (prompt / response) All systems operational!
-    How is the weather in (where are we)?
-    The current weather in Amsterdam, Netherlands is:
-    (weatherdetails)
+```
+Hi Sara, how are you?
+(prompt / response) All systems operational!
+How is the weather in (where are we)?
+The current weather in Amsterdam, Netherlands is:
+(weatherdetails)
+```
 
 ### What is Sara?
 Sara is a command prompt, that listens for keyboard input or speech recognition.  
@@ -34,9 +36,9 @@ Sara listens to the keyword 'Sara'
 
 ### Requirements:
 arecord (config mic as default audio input device first)  
-    sudo apt-get install alsa-utils
+`sudo apt-get install alsa-utils`  
 festival (only default voice tested)  
-    sudo apt-get install festival festvox-kallpc16k
+`sudo apt-get install festival festvox-kallpc16k`
 
 ### NPM modules:
     "chalk": "^2.4.2",
