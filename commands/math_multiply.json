@@ -1,0 +1,6 @@
+{
+  "name": "multiply",
+  "module": "math",
+  "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\*|multiplied\\sby|multiplied\\swith|times|x)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
+  "description": "Multiply x by y"
+}

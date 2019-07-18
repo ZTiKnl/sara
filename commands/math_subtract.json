@@ -1,0 +1,6 @@
+{
+  "name": "subtract",
+  "module": "math",
+  "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:-|minus)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
+  "description": "Subtract x to y"
+}

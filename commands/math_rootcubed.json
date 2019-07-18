@@ -1,0 +1,6 @@
+{
+  "name": "rootcubed",
+  "module": "math",
+  "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(?:the)?\\s?(?:cube\\sroot\\sof|cube\\s√)\\s?([0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
+  "description": "Cube root of x"
+}

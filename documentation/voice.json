@@ -1,0 +1,10 @@
+{
+  "name": "voice",
+  "aliases": [
+    [
+      "speech synthesis"
+    ]
+  ],
+  "description": "Description of voice synthesis functionality",
+  "explanation": "This will be the explanation on how voice works, and how to stop it and stuff"
+}

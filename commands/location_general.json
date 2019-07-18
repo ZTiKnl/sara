@@ -1,0 +1,6 @@
+{
+  "name": "general",
+  "module": "location",
+  "regex": "/^(?:where)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|i\\sam|)$/i",
+  "description": "Get current location based on GeoIP database"
+}

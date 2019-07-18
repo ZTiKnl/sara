@@ -1,0 +1,6 @@
+{
+  "name": "add",
+  "module": "math",
+  "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
+  "description": "Add x to y"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "latlong",
+  "module": "location",
+  "regex": "/^(?:what|which)?\\s?(?:is|are)?\\s?(?:my|our|your)?\\s?(?:current|actual)?\\s?(?:coordinates)\\s?(?:am\\si|are\\swe|are\\syou)?\\s?(?:at)?$/i",
+  "description": "Get current latitude/longitude based on GeoIP database"
+}

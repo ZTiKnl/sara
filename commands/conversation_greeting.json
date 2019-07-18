@@ -1,0 +1,6 @@
+{
+  "name": "greeting",
+  "module": "conversation",
+  "regex": "/^(?:hey|hello|hi|yo|heya|hiya|good\\smorning|good\\safternoon|good\\sevening)$/i",
+  "description": "respond to greetings"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "status",
+  "module": "conversation",
+  "regex": "/^(?:how\\sare\\syou)\\s?(?:doing|feeling)?\\s?(?:today|now|at\\sthe\\smoment)?$/i",
+  "description": "give status of self"
+}

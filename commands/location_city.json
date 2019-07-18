@@ -1,0 +1,6 @@
+{
+  "name": "city",
+  "module": "location",
+  "regex": "/^(?:in)?\\s?(?:what|which)\\s?\\s?(?:place|city)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|i\\sam)\\s?(?:in)?$/i",
+  "description": "Get current city based on GeoIP database"
+}
