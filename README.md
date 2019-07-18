@@ -75,10 +75,35 @@ start/stop verbose
 start/stop listening
 start/stop voice
 ```
+### Regular Expression matches:
+Sara needs to 'understand' commands, and does this by comparing input to a regular expression.
+Example: 
+```
+/^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
+```
+This regular expression matches the following sentences:
+```
+what is (-)10 plus/and/+/& (-)10
+what (-)10 plus/and/+/& (-)10 is
+how much is (-)10 plus/and/+/& (-)10
+how much (-)10 plus/and/+/& (-)10 is
+```
+Because Sara strips starting input, this allows to recognize sentences such as:
+```
+Sara can you please tell me what 10 + -9 is?
+```
+In the above example. most regex groups are not captured (?:xxx)
+The capture fields (-?[0-9]+\.?(?:[0-9]+)?) grabs these values and push them back to math.js which includes the function for processing these values
+In the above example, math.js will receive an array object containing 3(!) items:
+[0] the complete input string, in case the plugin still requires this string.
+[1] the first captured group
+[2] the second captured group
+```
+Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2], and x[0] isnt used in this case.
 ### Sara has some basic plugins provided:
 Math functions  
 ```
-'what is 7 + 9' matches with regex /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
+'what is 7 + 9'
 'how much is 12 squared'
 '10 * 8.4'
 ```
