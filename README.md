@@ -135,7 +135,7 @@ pcm.!default {
 ```
 This solved every issue I had with festival and with arecord  
 Using these settings I am able to record from the proper input device with the following command:  
-    'arecord -d 10 test.wav && aplay test.wav'  
+    'arecord -d 10 test.wav  
 and play that recording using:  
     'aplay test.wav'  
 
@@ -173,3 +173,7 @@ math_root.json
 ### Credits:
 I would like to point out that I simply put these programs and modules together, but without the people who created those, I would have had nothing at all.  
 Thank you to the creators of linux programs alsa-utils & festival, npm modules sonus, say, chalk, decimal.js and weather-js2!
+
+### Apologies:
+I am a complete moron when it comes to asynchronous programming, and I am positive that many functions could have been written better/cleaner/more efficient.  
+I made this project to enhance my understanding of Node.js/Javascript, so please remain calm if/when I don't understand your comment/code/bugfix/pull request/advice/issue at first glance.
