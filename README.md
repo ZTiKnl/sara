@@ -53,6 +53,12 @@ festival (only default voice tested)
 "sonus": "^1.0.3",
 "weather-js2": "^2.0.2"
 ```
+### How to use:
+1. clone or download repo.
+2. inside folder containing package.json, run command: `npm install`
+- start program with command: `node bin.js`
+- to see the (optional) command line arguments, start program with command: `node bin.js --help`
+
 ### Sara internal commands:
 ```
 help
