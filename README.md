@@ -135,10 +135,13 @@ pcm.!default {
 ```
 This solved every issue I had with festival and with arecord  
 Using these settings I am able to record from the proper input device with the following command:  
-    arecord -d 10 test.wav  
+```
+arecord -d 10 test.wav
+```
 and play that recording using:  
-    aplay test.wav
-
+```
+aplay test.wav
+```
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
 
 ### Plugins:
