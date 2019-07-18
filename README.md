@@ -7,7 +7,7 @@ How is the weather in (where are we)?
 ```
 
 
-ToC:
+### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
 2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
 3. [NPM modules](https://github.com/ZTiKnl/sara#npm-modules)
@@ -51,7 +51,6 @@ Sara also ignores the word `please` and the questionmark character at the end of
 After stripping these words, the command is compared to builtin commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file.
 
 Sara listens to the keyword 'Sara'
-Checkout 
 
 ### Requirements:
 arecord (config mic as default audio input device first)  
