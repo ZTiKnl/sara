@@ -61,9 +61,11 @@ festival (only default voice tested)
 
 ### Sara has some basic plugins provided:
 Math functions  
-'what is 7 + 9' matches with regex `/^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i`  
-'how much is 12 squared'  
-'10 * 8.4'  
+```
+'what is 7 + 9' matches with regex /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
+'how much is 12 squared'
+'10 * 8.4'
+```
 Greeting functions
 ```
 hi, hello, hey, yo, good morning/afternoon/evening/night, etc
