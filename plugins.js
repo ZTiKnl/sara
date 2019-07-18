@@ -19,13 +19,13 @@ function plugincheck (line) {
     (async function () {
       var commandfound = false;
       var argumentarray = [];
-      const files = await readdir('commands');
+      const files = await readdir('plugins');
       const commands = files
         .filter(file => file.endsWith('.json'))
-        .map(file => load(`commands/${file}`));
+        .map(file => load(`plugins/${file}`));
 
       commands.forEach(command => {
-        const plugin = load(`commands/${command.module}.js`);
+        const plugin = load(`plugins/${command.module}.js`);
         const fn = plugin[command.name];
           var result = eval(command.regex).exec(line)
           if (result) {
