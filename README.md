@@ -100,7 +100,7 @@ In the above example, math.js will receive an array object containing 3(!) items
 [0] the complete input string, in case the plugin still requires this string.  
 [1] the first captured group  
 [2] the second captured group
-```
+
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2], and x[0] isnt used in this case.
 ### Layered commands:
 (I am not a native English speaker, and I am not certain this is the correct term)  
