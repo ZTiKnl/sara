@@ -140,10 +140,10 @@ example:
 
 
 ### Todo:
-- [] Add option to select if speech commands are pushed to command line or processed immediately
-- [] Change eval() functions, find better approach for plugin loading
-- [] Correct all paths to resolve properly
-- [] Check for plugins in an external folder
-- [] Fix / finish plugins, add extra functions
-- [] ...
-- [] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
+- [ ] Add option to select if speech commands are pushed to command line or processed immediately
+- [ ] Change eval() functions, find better approach for plugin loading
+- [ ] Correct all paths to resolve properly
+- [ ] Check for plugins in an external folder
+- [ ] Fix / finish plugins, add extra functions
+- [ ] ...
+- [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
