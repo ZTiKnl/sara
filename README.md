@@ -71,7 +71,7 @@ More coming...
 The only advise I can give is to make sure that alsa has the correct in/output device registered.  
 My raspi:  
 ```
-ztik@sara:~/nodejs/sara $ arecord -l
+ztik@sara:~/ $ arecord -l
 **** List of CAPTURE Hardware Devices ****
 >>> card 0: haobosou [haobosou], device 0: USB Audio [USB Audio] <<<
   Subdevices: 1/1
@@ -82,7 +82,7 @@ card 1: HD4110 [HP Webcam HD-4110], device 0: USB Audio [USB Audio]
 ```
 I use card 0, device 0 for my audio in (haobosou microphone, cheap and great quality audio)
 ```
-ztik@sara:~/nodejs/sara $ aplay -l
+ztik@sara:~/ $ aplay -l
 **** List of PLAYBACK Hardware Devices ****
 card 2: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
   Subdevices: 7/7
