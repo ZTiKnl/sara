@@ -61,8 +61,8 @@ festival (only default voice tested)
 - start program with command: `node bin.js`
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
 
-See https://www.npmjs.com/package/sonus#usage & https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api for more information on the Google Cloud Speech API  
-See https://www.npmjs.com/package/sonus#usage & https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword for more information on how to use your own custom hotword
+See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
+See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword) for more information on how to use your own custom hotword
 
 ### Sara internal commands:
 ```
