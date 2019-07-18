@@ -100,12 +100,12 @@ Example:
 ```
 This regular expression matches the following sentences:
 ```
-what is (-)10 plus/and/+/& (-)10
-what (-)10 plus/and/+/& (-)10 is
-how much is (-)10 plus/and/+/& (-)10
-how much (-)10 plus/and/+/& (-)10 is
-(-)10 plus/and/+/& (-)10 is
-(-)10 plus/and/+/& (-)10
+what is (-)10(.12) plus/and/+/& (-)10(.12)
+what (-)10(.12) plus/and/+/& (-)10(.12) is
+how much is (-)10(.12) plus/and/+/& (-)10(.12)
+how much (-)10(.12) plus/and/+/& (-)10(.12) is
+(-)10(.12) plus/and/+/& (-)10(.12) is
+(-)10(.12) plus/and/+/& (-)10(.12)
 ```
 Because Sara strips starting input, this allows to recognize sentences such as:
 ```
@@ -119,7 +119,9 @@ In the above example, math.js will receive an array object containing 3(!) items
 [2] the second captured group
 
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2]  
-x[0] isnt used in this case.
+x[0] is always the entire matching regex string
+x[0] in the above case results in a string such as: `how much is 9 + 7`
+
 ### Layered commands:
 (I am not a native English speaker, and I am not certain this is the correct term)  
 Sara is able to process subcommands through the use of parenthesis encapsulation.  
