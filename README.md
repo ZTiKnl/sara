@@ -141,17 +141,37 @@ finalcmd: 11 + 10 = 21
 ### Provided plugins:
 Math functions  
 ```
-'what is 7 + 9'
-'how much is 12 squared'
-'10 * 8.4'
+what is 7 + 9
+10 - 3.3
+9 * 4
+4 divided by 3
+how much is 12 squared
+root of 10
+what 10³ is
 ```
-Greeting functions
+Conversation functions
 ```
-hi, hello, hey, yo, good morning/afternoon/evening/night, etc
+hi
+hello
+hey
+yo
+good morning/afternoon/evening/night
+
+how are you
+how are you doing
+how are you feeling
+how are you doing today
+how are you feeling at the moment
 ```
 Location functions  
 ```
-where am I, where are you, what city are we in, etc
+where am I
+where are you
+what city are we in
+what time zone are we in
+in which province are we
+what are your actual coordinates
+Which country is this
 ```
 Weather function  
 ```
