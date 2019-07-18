@@ -87,19 +87,37 @@ what is (-)10 plus/and/+/& (-)10
 what (-)10 plus/and/+/& (-)10 is
 how much is (-)10 plus/and/+/& (-)10
 how much (-)10 plus/and/+/& (-)10 is
+(-)10 plus/and/+/& (-)10 is
+(-)10 plus/and/+/& (-)10
 ```
 Because Sara strips starting input, this allows to recognize sentences such as:
 ```
 Sara can you please tell me what 10 + -9 is?
 ```
-In the above example. most regex groups are not captured (?:xxx)
-The capture fields (-?[0-9]+\.?(?:[0-9]+)?) grabs these values and push them back to math.js which includes the function for processing these values
-In the above example, math.js will receive an array object containing 3(!) items:
-[0] the complete input string, in case the plugin still requires this string.
-[1] the first captured group
+In the above example. most regex groups are not captured (?:xxx)  
+The capture fields (-?[0-9]+\.?(?:[0-9]+)?) grabs these values and push them back to math.js which includes the function for processing these values  
+In the above example, math.js will receive an array object containing 3(!) items:  
+[0] the complete input string, in case the plugin still requires this string.  
+[1] the first captured group  
 [2] the second captured group
 ```
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2], and x[0] isnt used in this case.
+### Layered commands:
+(I am not a native English speaker, and I am not certain this is the correct term)  
+Sara is able to process subcommands through the use of parenthesis encapsulation.  
+Example:  
+```
+Sara can you tell me how much is 9 + (10 + 16)?
+```
+In this example, Sara will calculate 10 + 16 first, then calculate 9 + 26 afterwards  
+You can layer as many commands as you need, they will be processed starting with the most outer subcommand first:
+```
+11 + (7 + (root of 9))
+
+subcmd: root of 9 = 3
+subcmd: 7 + 3 = 10
+finalcmd: 11 + 10 = 21
+```
 ### Sara has some basic plugins provided:
 Math functions  
 ```
