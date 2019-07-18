@@ -278,8 +278,8 @@ math_root.json
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
 
 ### Credits:
-I would like to point out that I simply put these programs and modules together, but without the people who created those, I would have had nothing at all.  
-Thank you to the creators of linux programs alsa-utils & festival, npm modules sonus, say, chalk, decimal.js and weather-js2!
+I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all.  
+Thank you to the creators of the *Raspberry Pi*, the *Rasbian OS* (*Debian*), linux programs *alsa-utils* & *festival*, npm modules [sonus](https://www.npmjs.com/package/sonus), [say](https://www.npmjs.com/package/say), [chalk](https://www.npmjs.com/package/chalk), [decimal.js](https://www.npmjs.com/package/decimal.js) and [weather-js2](https://www.npmjs.com/package/weather-js2)!
 
 ### Apologies:
 I am a complete moron when it comes to asynchronous programming, and I am positive that many functions could have been written better/cleaner/more efficient.  
