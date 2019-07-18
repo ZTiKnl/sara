@@ -2,7 +2,7 @@
 Hi Sara, how are you?
 (prompt / response) All systems operational!
 How is the weather in (where are we)?
-The current weather in Amsterdam, Netherlands is:
+(prompt / response) The current weather in Amsterdam, Netherlands is:
 (weatherdetails)
 ```
 
@@ -12,7 +12,7 @@ Sara has a voice, and is able to respond to commands through text as well as aud
 
 Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System.  
 It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distros.  
-It has builtin commands, but can be extended through a self-made plugin system.
+It has internal commands, but can be extended through a self-made plugin system.
 
 Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way.  
 Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string.  
@@ -30,6 +30,7 @@ tell me
 let me know
 please
 ```
+Sara also ignores the word `please` and the questionmark character at the end of commands.  
 After stripping these words, the command is compared to builtin commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file.
 
 Sara listens to the keyword 'Sara'
@@ -41,26 +42,28 @@ festival (only default voice tested)
 `sudo apt-get install festival festvox-kallpc16k`
 
 ### NPM modules:
-    "chalk": "^2.4.2",
-    "country-list": "^2.1.1",
-    "decimal.js": "^10.2.0",
-    "geoip-lite": "^1.3.7",
-    "os": "^0.1.1",
-    "public-ip": "^3.1.0",
-    "say": "^0.16.0",
-    "sonus": "^1.0.3",
-    "weather-js2": "^2.0.2"
-
-### Sara has basic functionality such as:
-    help
-    help <topic>
-    add help
-    edit help <topic>
-    start/stop colors
-    start/stop verbose
-    start/stop listening
-    start/stop voice
-
+```
+"chalk": "^2.4.2",
+"country-list": "^2.1.1",
+"decimal.js": "^10.2.0",
+"geoip-lite": "^1.3.7",
+"os": "^0.1.1",
+"public-ip": "^3.1.0",
+"say": "^0.16.0",
+"sonus": "^1.0.3",
+"weather-js2": "^2.0.2"
+```
+### Sara internal commands:
+```
+help
+help <topic>
+add help
+edit help <topic>
+start/stop colors
+start/stop verbose
+start/stop listening
+start/stop voice
+```
 ### Sara has some basic plugins provided:
 Math functions  
 ```
@@ -78,7 +81,7 @@ where am I, where are you, what city are we in, etc
 ```
 Weather function  
 ```
-(how is the weather in <place>)  
+how is the weather in <place>  
 ```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
@@ -141,8 +144,8 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 ### Plugins:
 These are created using (at least) 2 files:  
 ```
-    pluginname_function.json  
-    pluginname.js
+pluginname_function.json  
+pluginname.js
 ```
 The .js file contains all the javascript to deal with request X and push back a result.  
 The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
@@ -150,10 +153,10 @@ The .json file contains the name of the plugin, the name of the module (the .js 
 One .js file can contain multiple module.exports functions, each function requires its own .json file.  
 Example:  
 ```
-    math.js  
-    math_add.json  
-    math_subtract.json  
-    math_root.json
+math.js  
+math_add.json  
+math_subtract.json  
+math_root.json
 ```
 
 
