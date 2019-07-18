@@ -266,7 +266,7 @@ math_root.json
 
 
 ### Todo:
-- [ ] Geberak
+- [ ] General
   - [ ] Number string to integer function
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
