@@ -266,14 +266,20 @@ math_root.json
 
 
 ### Todo:
-- [ ] Add option to select if speech commands are pushed to command line or processed immediately
+- [ ] Geberak
+  - [ ] Number string to integer function
+  - [ ] Integer to number string function
+  - [ ] Change eval() functions, find better approach for plugin loading
+  - [ ] Correct hardcoded file locations to cleaned up path
+  - [ ] Support for the Pi camera and USB Webcams
+- [ ] Speech recognition
+  - [ ] Add option to select if speech commands are pushed to command line or processed immediately
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
-- [ ] Hook command results to voice synthesis
+- [ ] Voice synthesis
+  - [ ] Hook command results to voice synthesis
   - [ ] Create option for voice to be heard on all output, instead of on response only (--speak-all, --speak-response-only)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely (speak: help <topic>)
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
-- [ ] Number string to integer function
-- [ ] Integer to number string function
 - [ ] Plugins:
   - [X] Rename 'commands' folder to 'plugins'
   - [ ] Check for plugins in an external folder
@@ -294,9 +300,6 @@ math_root.json
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
   - [ ] Add Cloud Storage plugin (connect with dropbox etc.)
-- [ ] Change eval() functions, find better approach for plugin loading
-- [ ] Correct hardcoded file locations to cleaned up path
-- [ ] Support for the Pi camera and USB Webcams
 - [ ] ...
 
 ### Long term goals:
