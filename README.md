@@ -112,10 +112,10 @@ My config file:
     }
 
 This solved every issue I had with festival and with arecord  
-Using these settings I am able to record from the proper input device with the following command:
-    'arecord -d 10 test.wav && aplay test.wav'
-and play that recording using:
-    'aplay test.wav'
+Using these settings I am able to record from the proper input device with the following command:  
+    'arecord -d 10 test.wav && aplay test.wav'  
+and play that recording using:  
+    'aplay test.wav'  
 
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
 
@@ -123,7 +123,7 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 
 ### Plugins:
 These are created using (at least) 2 files:  
-    pluginname_function.json
+    pluginname_function.json  
     pluginname.js
 
 The .js file contains all the javascript to deal with request X and push back a result.  
@@ -131,10 +131,10 @@ The .json file contains the name of the plugin, the name of the module (the .js 
 
 One .js file can contain multiple module.exports functions.  
 Each function requires its own .json file.  
-example:
-    math.js
-    math_add.json
-    math_subtract.json
+example:  
+    math.js  
+    math_add.json  
+    math_subtract.json  
     math_root.json
 
 
