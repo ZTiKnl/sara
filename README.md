@@ -295,11 +295,13 @@ math_root.json
   - [ ] Add Cloud Storage plugin (connect with dropbox etc.)
 - [ ] Change eval() functions, find better approach for plugin loading
 - [ ] Correct hardcoded file locations to cleaned up path
+- [ ] Support for the Pi camera and USB Webcams
 - [ ] ...
 
 ### Long term goals:
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
 - [ ] Devise a way to incorporate a mood-function, simulate emotions
+- [ ] Connect a LCD/TFT screen, give Sara a face with expressions
 - [ ] Neural Net / Machine learning capabilities for influencing stock market
 - [ ] Build datacenter deep underground, preferably a remote island close to a Submarine communications cable
 - [ ] Self awareness
