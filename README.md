@@ -20,8 +20,9 @@ How is the weather in (where are we)?
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
-13. [Credits](https://github.com/ZTiKnl/sara#credits)
-14. [Apologies](https://github.com/ZTiKnl/sara#apologies)
+13. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
+14. [Credits](https://github.com/ZTiKnl/sara#credits)
+15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
 
 ### What is Sara:
 Sara is a command prompt, that listens for keyboard input or speech recognition.  
@@ -273,9 +274,13 @@ math_root.json
 - [ ] Change eval() functions, find better approach for plugin loading
 - [ ] Correct hardcoded file locations to cleaned up path
 - [ ] ...
-- [ ] Think of a way to incorporate a mood-function
-- [ ] ...
+
+### Long term goals:
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
+- [ ] Devise a way to incorporate a mood-function, simulate emotions
+- [ ] Neural Net / Machine learning capabilities for influencing stock market
+- [ ] Build datacenter deep underground, preferably a remote island close to a Submarine communications cable
+- [ ] Self awareness
 
 ### Credits:
 I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all.  
