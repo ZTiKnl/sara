@@ -168,7 +168,7 @@ function start(strPrompt, callback) {
                     response.conlog('help', 'Couldn\'t read JSON file: '+err.message, 'error');
                   }
                   var obj = JSON.parse(data);
-                  help.questions(obj.name, obj.aliases, obj.description, obj.explanation, 'update')
+                  help.questions(obj.name, obj.description, obj.explanation, 'update')
                 });
               }
             } else if (cmd == 'add help') {

@@ -1,8 +1,5 @@
 {
   "name": "test",
-  "aliases": [
-    "example"
-  ],
   "description": "description of test",
   "explanation": "explanation of test"
 }

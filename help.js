@@ -43,10 +43,9 @@ module.exports = {
 const prompt = require('./prompt.js');
 
 
-function add(varname, varaliases, vardescription, varexplanation, helpupdated) {
+function add(varname, vardescription, varexplanation, helpupdated) {
   const data = {
     name: varname,
-    aliases: [varaliases],
     description: vardescription,
     explanation: varexplanation
   }
@@ -78,14 +77,12 @@ function help(topic, field) {
     response.conlog('help', 'Help on topic: '+ topic, 'response');
     try {
       const helptopic = JSON.parse(jsonString);
-      if (field == 'aliases') {
-        response.conlog('help', helptopic.aliases, 'help');
-      } else if (field == 'description') {
+      if (field == 'description') {
         response.conlog('help', helptopic.description, 'help');
       } else if (field == 'explanation') {
         response.conlog('help', helptopic.explanation, 'help');
       } else {
-        response.conlog('help', helptopic.explanation, 'help');
+        response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
       }
       return;
     } catch(err) {
@@ -95,19 +92,14 @@ function help(topic, field) {
 }
 
 
-function questions(var_name, var_aliases, var_description, var_explanation, var_update) {
+function questions(var_name, var_description, var_explanation, var_update) {
   var helpname;
-  var helpaliases;
   var helpdescription;
   var helpexplanation;
 
   var questionname = 'Enter a name>';
   if (response.getcolors()) {
     questionname = chalk.bold.magentaBright(questionname);
-  }
-  var questionaliases = 'Enter known aliases>';
-  if (response.getcolors()) {
-    questionaliases = chalk.bold.magentaBright(questionaliases);
   }
   var questiondescription = 'Enter description>';
   if (response.getcolors()) {
@@ -132,17 +124,6 @@ function questions(var_name, var_aliases, var_description, var_explanation, var_
   prompt.question(questionname)
   .then((name) => {
     helpname = name;
-    if (var_aliases !== null) {
-      setTimeout(writevaraliases, 50, var_aliases);
-      function writevaraliases(var_aliases) {
-        prompt.write(var_aliases);
-      }
-    }
-    return prompt.question(questionaliases);
-  })
-  .then((aliases) => {
-    helpaliases = aliases;
-
     if (var_description !== null) {
       setTimeout(writevardescription, 50, var_description);
       function writevardescription(var_description) {
@@ -163,17 +144,17 @@ function questions(var_name, var_aliases, var_description, var_explanation, var_
   })
   .then((explanation) => {
     helpexplanation = explanation;
-    response.conlog('help', 'name: '+helpname+'\naliases: '+helpaliases+'\ndescription: '+helpdescription+'\nexplanation: '+helpexplanation, 'info');
+    response.conlog('help', 'name: '+helpname+'\ndescription: '+helpdescription+'\nexplanation: '+helpexplanation, 'info');
 
     confirmation()
     function confirmation() {
       prompt.question(questionconfirmation)
       .then((confirmation) => {
         if (confirmation.toLowerCase() == 'y' || confirmation.toLowerCase() == 'yes') {
-          add(helpname, helpaliases, helpdescription, helpexplanation, var_update)
+          add(helpname, helpdescription, helpexplanation, var_update)
           return;
         } else if (confirmation.toLowerCase() == 'n' || confirmation.toLowerCase() == 'no') {
-          questions(helpname, helpaliases, helpdescription, helpexplanation, var_update)
+          questions(helpname, helpdescription, helpexplanation, var_update)
           return;
         } else if (confirmation.toLowerCase() == 'a' || confirmation.toLowerCase() == 'abort') {
           response.conlog('help', 'aborted '+var_update+' help', 'info');
