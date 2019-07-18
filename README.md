@@ -239,12 +239,13 @@ aplay test.wav
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
 
 ### Other issues:
-none so far...
-Just a reminder:
+none so far...  
+Just a reminder:  
 * the voice module works, but responses are NOT connected to it (yet)
   this is because it is very annoying when testing to constantly hear things
 * the speech recognition module works, but only displays onscreen, and does not process it (yet)
   this is because it is very annoying when testing to be interrupted because voice picks up something unintended
+There will be an option for both these functions very soon!
 
 ### Plugins:
 These are created using (at least) 2 files:  
