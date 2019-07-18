@@ -4,7 +4,7 @@
     The current weather in Amsterdam, Netherlands is:
     (weatherdetails)
 
-###What does Sara?
+### What does Sara?
 Sara is a command prompt, that listens for keyboard input or speech recognition.
 Sara has a voice, and is able to respond to commands through text as well as audio.
 
@@ -34,13 +34,13 @@ After stripping these words, the command is compared to builtin commands, and if
 Sara listens to the keyword 'Sara'
 
 
-###Requirements:
+### Requirements:
 arecord (config mic as default audio input device first)
     sudo apt-get install alsa-utils
 festival (only default voice tested)
     sudo apt-get install festival festvox-kallpc16k
 
-###NPM modules:
+### NPM modules:
     "chalk": "^2.4.2",
     "country-list": "^2.1.1",
     "decimal.js": "^10.2.0",
@@ -53,7 +53,7 @@ festival (only default voice tested)
     "weather-js2": "^2.0.2"
 
 
-###Sara has basic functionality such as:
+### Sara has basic functionality such as:
     help
     help <topic>
     add help
@@ -63,7 +63,7 @@ festival (only default voice tested)
     start/stop listening
     start/stop voice
 
-###Sara has some basic plugins provided:
+### Sara has some basic plugins provided:
   Math functions (what is 7 + 9) matches with regex /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
   Greeting functions (saying hi/hello, asking how you are)
   Location functions (where am I, where are you, what city are we in, etc)
@@ -73,7 +73,7 @@ festival (only default voice tested)
 
 
 
-###Audio in/out issues:
+### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered.
 My raspi:
 ztik@sara:~/nodejs/sara $ arecord -l
@@ -128,7 +128,7 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 
 
 
-###Plugins:
+### Plugins:
 These are created using (at least) 2 files:
 pluginname_function.json
 pluginname.js
@@ -147,7 +147,7 @@ math_root.json
 
 
 
-###Todo:
+### Todo:
 Add option to select if speech commands are pushed to command line or processed immediately
 Change eval() functions, find better approach for plugin loading
 Correct all paths to resolve properly
