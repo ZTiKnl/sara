@@ -44,7 +44,6 @@ festival (only default voice tested)
     "geoip-lite": "^1.3.7",
     "os": "^0.1.1",
     "public-ip": "^3.1.0",
-    "readline-utils": "^2.2.3",
     "say": "^0.16.0",
     "sonus": "^1.0.3",
     "weather-js2": "^2.0.2"
@@ -164,3 +163,7 @@ Example:
 - [ ] Fix / finish plugins, add extra functions
 - [ ] ...
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
+
+### Credits:
+I would like to point out that I simply put these programs and modules together, but without the people who created those, I would have had nothing at all.  
+Thank you to the creators of linux programs alsa-utils & festival, npm modules sonus, say, chalk, decimal.js and weather-js2!
