@@ -18,15 +18,16 @@ The functionality is there and ready, just not joined together yet.
 In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are.
 
 Sara ignores the following words at sentence start:
-    sara  
-    can you  
-    will you  
-    would you  
-    could you  
-    tell me  
-    let me know  
-    please
-
+```
+sara
+can you
+will you
+would you
+could you
+tell me
+let me know
+please
+```
 After stripping these words, the command is compared to builtin commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file.
 
 Sara listens to the keyword 'Sara'
