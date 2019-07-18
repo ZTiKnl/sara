@@ -60,10 +60,22 @@ festival (only default voice tested)
     start/stop voice
 
 ### Sara has some basic plugins provided:
-Math functions (what is 7 + 9) matches with regex /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i  
-Greeting functions (saying hi/hello, asking how you are)  
-Location functions (where am I, where are you, what city are we in, etc)  
-Weather function (how is the weather in <place>)  
+Math functions  
+'what is 7 + 9' matches with regex `/^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i`  
+'how much is 12 squared'  
+'10 * 8.4'  
+Greeting functions
+```
+hi, hello, hey, yo, good morning/afternoon/evening/night, etc
+```
+Location functions  
+```
+where am I, where are you, what city are we in, etc
+```
+Weather function  
+```
+(how is the weather in <place>)  
+```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
 
@@ -122,8 +134,6 @@ and play that recording using:
 
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
 
-
-
 ### Plugins:
 These are created using (at least) 2 files:  
 ```
@@ -133,9 +143,8 @@ These are created using (at least) 2 files:
 The .js file contains all the javascript to deal with request X and push back a result.  
 The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
 
-One .js file can contain multiple module.exports functions.  
-Each function requires its own .json file.  
-example:  
+One .js file can contain multiple module.exports functions, each function requires its own .json file.  
+Example:  
 ```
     math.js  
     math_add.json  
@@ -146,6 +155,7 @@ example:
 
 ### Todo:
 - [ ] Add option to select if speech commands are pushed to command line or processed immediately
+- [ ] Rename 'commands' folder to 'plugins'
 - [ ] Change eval() functions, find better approach for plugin loading
 - [ ] Correct all paths to resolve properly
 - [ ] Check for plugins in an external folder
