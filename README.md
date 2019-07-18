@@ -267,6 +267,7 @@ math_root.json
 
 ### Todo:
 - [ ] Add option to select if speech commands are pushed to command line or processed immediately
+  - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
 - [ ] Hook command results to voice synthesis
   - [ ] Create option for voice to be heard on all output, instead of on response only (--speak-all, --speak-response-only)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely (speak: help <topic>)
