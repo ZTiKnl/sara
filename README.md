@@ -83,7 +83,7 @@ Sara listens to the keyword '*Sara*'
 1. clone or download repo
 2. inside folder containing package.json, run command: `npm install`
 3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
-- start program with command: `node bin.js
+- start program with command: `node bin.js`
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
 
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
