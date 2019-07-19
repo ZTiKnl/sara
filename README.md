@@ -120,7 +120,7 @@ In the above example, math.js will receive an array object containing 3(!) items
 
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2]  
 x[0] is always the entire matching regex string  
-If the input is the sentence 'sara, can you tell me how much 5 * 9 is?', then:
+If the input is the sentence `sara, can you tell me how much 5 * 9 is?`, then:
 ```
 x[0] in the above case results in a string such as: `how much 5 * 9 is`   (the complete matching string)
 x[1] === 5
