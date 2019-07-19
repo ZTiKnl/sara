@@ -308,7 +308,7 @@ math_root.json
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
   - [ ] Add Cloud Storage plugin (connect with dropbox etc.)
-- [ ] ...
+- [ ] ... suggestions?
 
 ### Long term goals:
 - [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
