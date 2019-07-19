@@ -158,7 +158,6 @@ function questions(var_name, var_description, var_explanation, var_update) {
           return;
         } else if (confirmation.toLowerCase() == 'a' || confirmation.toLowerCase() == 'abort') {
           response.conlog('help', 'aborted '+var_update+' help', 'info');
-          //do nothing
           return;
         } else {
           return confirmation();
