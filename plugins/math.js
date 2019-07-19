@@ -1,3 +1,4 @@
+// include decimal.js module
 const Decimal = require('decimal.js');
 
 module.exports = {

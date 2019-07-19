@@ -1,8 +1,5 @@
 // include fs module
-//const { promisify } = require('util');
-//const { resolve } = require('path');
 const fs = require('fs');
-//const readdir = promisify(fs.readdir);
 
 // include colors module
 const chalk = require('chalk');

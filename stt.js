@@ -4,9 +4,6 @@ var sttactive = false;
 // include colored responses module
 const response = require('./response.js');
 
-// include readline module
-const readline = require('readline');
-
 // include sonus module
 const Sonus = require('sonus')
 
@@ -17,9 +14,11 @@ const client = new speech.SpeechClient({
   keyFilename: 'resources/apikeys/googlespeech.json'
 })
 
+// include sonus settings
 const hotwords = [{ file: 'resources/sonus/Sarah.pmdl', hotword: 'sarah', sensitivity: '0.7' }]
 const language = 'en-US';
 
+// start sonus interface
 const sonus = Sonus.init({ hotwords, language: language, recordProgram: 'arecord' }, client)
 
 module.exports = {
@@ -60,6 +59,9 @@ module.exports = {
     } else {
       response.conlog('stt', 'voice recognition was already deactivated', 'status');
     }
+  },
+  speechparse: function(sentence) {
+    // todo: replace vocal input with known strings (stick -> ZTiK, nine hundred fifteen -> 915)
   },
   status: function () {
     return sttactive;

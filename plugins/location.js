@@ -1,7 +1,13 @@
+// include GeoIP Lite module
 const geoip = require('geoip-lite');
+
+// include public-ip module
 const publicIp = require('public-ip');
+
+// include country-list module
 const countrylist = require('country-list');
 
+// starting vars
 var myip;
 
 module.exports = {
