@@ -49,7 +49,7 @@ let me know
 please
 ```
 Sara also ignores the word `please` and the `?` character at the end of commands  
-After stripping these words, the command is compared to internal commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file
+After stripping these words, the command is compared to internal commands, and if it doesnt match, it will be compared to a regex string contained in every plugin .json file
 
 Sara listens to the keyword '*Sara*'
 
