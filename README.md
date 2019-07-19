@@ -59,7 +59,7 @@ Sara listens to the keyword '*Sara*'
   - Microphone for voice commands
   - Audio output device *(tv/hdmi or speakers on line-out)*  
   - SD Card containing Raspbian *(latest version is always advisable)*  
-   - Self-powered USBhub is advisable when using USB microphone as well as future USB webcam support
+    - Self-powered USBhub is advisable when using USB microphone as well as future USB webcam support
 - Node.js LTS or newest *(I am currently running 12.5.0)*
 - NPM *(I am currently running 6.9.0)*
 - arecord *(config mic as default audio input device first)*  
