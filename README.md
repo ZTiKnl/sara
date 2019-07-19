@@ -54,10 +54,17 @@ After stripping these words, the command is compared to builtin commands, and if
 Sara listens to the keyword '*Sara*'
 
 ### Requirements:
-arecord *(config mic as default audio input device first)*  
-`sudo apt-get install alsa-utils`  
-festival *(only default voice tested)*  
-`sudo apt-get install festival festvox-kallpc16k`
+- A Raspberry Pi *(3B tested, older models should work)*
+  - Keyboard or ssh connection
+  - Microphone for voice commands
+  - Audio output device *(tv/hdmi or speakers on line-out)*  
+  - SD Card containing Raspbian *(latest version is always advisable)*  
+- Node.js LTS or newest *(I am currently running 12.5.0)*
+- NPM *(I am currently running 6.9.0)*
+- arecord *(config mic as default audio input device first)*  
+  `sudo apt-get install alsa-utils`  
+- festival *(only default voice tested)*  
+  `sudo apt-get install festival festvox-kallpc16k`
 
 ### NPM modules:
 ```
