@@ -33,7 +33,7 @@ function plugincheck (line) {
             result.forEach(async function(element) {
               var matches = element.match(eval(plugindata.regex));
               if (matches !== null) {
-                commandfound = true;
+                pluginfound = true;
                 response.conlog('plugincheck', 'found match: '+plugindata.module+'.'+plugindata.name, 'data');
                 matches.forEach(function(argument) {
                   argumentarray.push(argument);
