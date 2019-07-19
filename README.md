@@ -320,7 +320,7 @@ math_root.json
 
 ### Credits:
 I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all  
-Thank you to the creators of:
+Thank you to those involved making:
 - the *Raspberry Pi*
 - the *Rasbian OS* (*Debian*)
 - linux program *alsa-utils*
