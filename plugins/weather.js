@@ -1,3 +1,4 @@
+// include weather-js2 module
 const weather = require('weather-js2');
 
 module.exports = {

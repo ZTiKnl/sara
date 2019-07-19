@@ -29,7 +29,7 @@ module.exports = {
     }
   },
   vocalize: function(sentence) {
-    //replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
+    // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
   },
   silence: function() {
     say.stop();

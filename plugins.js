@@ -4,6 +4,7 @@ const { resolve } = require('path');
 const fs = require('fs');
 const readdir = promisify(fs.readdir);
 
+// include colored responses module
 const response = require('./response.js');
 
 module.exports = {
@@ -38,11 +39,9 @@ function plugincheck (line) {
                   argumentarray.push(argument);
                 })
 
-                //speak result
-  //              console.log('result: '+fn(argumentarray));
-  //              return;
+                //speak result here, or add function to responses.conlog (type == 'response') ?
+                //console.log(fn(argumentarray));
                 let rslt = fn(argumentarray);
-  //              console.log(fn(argumentarray));
                 resolve(rslt);
               }
             });

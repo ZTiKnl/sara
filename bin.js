@@ -53,7 +53,7 @@ if (speechsynthesisstart) {
   response.conlog('voice', 'speech synthesis not activated: --no-voice flag', 'status');
 }
 
-// start speech recognition, keyword: sarah
+// start speech recognition, keyword: sara
 if (speechrecognitionstart) {
   stt.listen();
 } else {
@@ -96,6 +96,7 @@ function argumental() {
       console.log('');
       console.log('arguments:');
       console.log('\t-h, --help\tDisplay this help and exits');
+      console.log('\t-nc, --no-colors\tDo not activate colored responses on start');
       console.log('\t-nsr, --no-speech-recognition\tDo not activate speech recognition on start');
       console.log('\t-nv, --no-voice\tDo not activate speech synthesis on start');
       console.log('\t-v, --verbose\tDisplay additional information, noisy (debug data)');
