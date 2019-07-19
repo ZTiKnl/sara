@@ -25,17 +25,17 @@ How is the weather in (where are we)?
 15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
 
 ### What is Sara:
-Sara is a command prompt, that listens for keyboard input or speech recognition.  
-Sara has a voice, and is able to respond to commands through text as well as audio.
+Sara is a command prompt, that listens for keyboard input or voice commands  
+Sara has a voice, and is able to respond to commands through text as well as audio
 
-Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System.  
-It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distros.  
-It has internal commands, but can be extended through a self-made plugin system.
+Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System  
+It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
+It has internal commands, but can be extended through a self-made plugin system
 
-Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way.  
-Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string.  
-The functionality is there and ready, just not joined together yet.  
-In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are.
+Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way  
+Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string  
+The functionality is there and ready, just not joined together yet  
+In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are
 
 Sara ignores the following words at sentence start:
 ```
@@ -48,15 +48,15 @@ tell me
 let me know
 please
 ```
-Sara also ignores the word `please` and the questionmark character at the end of commands.  
-After stripping these words, the command is compared to builtin commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file.
+Sara also ignores the word `please` and the questionmark character at the end of commands  
+After stripping these words, the command is compared to builtin commands, and if it doesnt match, it will be compared to a regex value contained in every plugin json file
 
-Sara listens to the keyword 'Sara'
+Sara listens to the keyword '*Sara*'
 
 ### Requirements:
-arecord (config mic as default audio input device first)  
+arecord *(config mic as default audio input device first)*  
 `sudo apt-get install alsa-utils`  
-festival (only default voice tested)  
+festival *(only default voice tested)*  
 `sudo apt-get install festival festvox-kallpc16k`
 
 ### NPM modules:
@@ -72,10 +72,10 @@ festival (only default voice tested)
 "weather-js2": "^2.0.2"
 ```
 ### How to use:
-1. clone or download repo.
+1. clone or download repo
 2. inside folder containing package.json, run command: `npm install`
-3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key.
-- start program with command: `node bin.js`
+3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
+- start program with command: `node bin.js
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
 
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
@@ -93,7 +93,7 @@ start/stop listening
 start/stop voice
 ```
 ### Regular Expression matches:
-Sara needs to 'understand' commands, and does this by comparing input to a regular expression.
+Sara needs to 'understand' commands, and does this by comparing input to a regular expression  
 Example: 
 ```
 /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
@@ -111,7 +111,7 @@ Because Sara strips starting input, this allows to recognize sentences such as:
 ```
 Sara can you please tell me what 10 + -9 is?
 ```
-In the above example. most regex groups are not captured (?:xxx)  
+In the above regex line. most groups are not captured (?:xxx)  
 The capture fields (-?[0-9]+\.?(?:[0-9]+)?) grabs these values and push them back to math.js which includes the function for processing these values  
 In the above example, math.js will receive an array object containing 3(!) items:  
 [0] the complete input string, in case the plugin still requires this string.  
@@ -120,11 +120,17 @@ In the above example, math.js will receive an array object containing 3(!) items
 
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2]  
 x[0] is always the entire matching regex string  
-x[0] in the above case results in a string such as: `how much is 9 + 7`
+If the input is the sentence 'sara, can you tell me how much 5 * 9 is?', then:
+```
+x[0] in the above case results in a string such as: `how much 5 * 9 is`   (the complete matching string)
+x[1] === 5
+x[2] === 9
+```
+
 
 ### Layered commands:
 (I am not a native English speaker, and I am not certain this is the correct term)  
-Sara is able to process subcommands through the use of parenthesis encapsulation.  
+Sara is able to process subcommands through the use of parenthesis encapsulation  
 Example:  
 ```
 Sara can you tell me how much is 9 + (10 + 16)?
@@ -181,7 +187,7 @@ More coming...
 (all these plugins are incomplete, and will be finished soon)  
 
 ### Audio in/out issues:
-The only advise I can give is to make sure that alsa has the correct in/output device registered.  
+The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My raspi:  
 ```
 ztik@sara:~/ $ arecord -l
@@ -236,10 +242,11 @@ and play that recording using:
 ```
 aplay test.wav
 ```
-Anything on support beyond this should be requested at alsa/festival/linux forums I guess.
+Anything on support beyond this should be requested at alsa/festival/linux forums I guess...
 
 ### Other issues:
-none so far...  
+None so far...  
+
 Just a reminder:  
 * the voice module works, but responses are NOT connected to it (yet)
   this is because it is very annoying when testing to constantly hear things
@@ -253,10 +260,10 @@ These are created using (at least) 2 files:
 pluginname_function.json  
 pluginname.js
 ```
-The .js file contains all the javascript to deal with request X and push back a result.  
+The .js file contains all the javascript to deal with request X and push back a result  
 The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
 
-One .js file can contain multiple module.exports functions, each function requires its own .json file.  
+One .js file can contain multiple module.exports functions, each function requires its own .json file  
 Example:  
 ```
 math.js  
@@ -308,12 +315,21 @@ math_root.json
 - [ ] Devise a way to incorporate a mood-function, simulate emotions
 - [ ] Connect a LCD/TFT screen, give Sara a face with expressions
 - [ ] Neural Net / Machine learning capabilities for influencing stock market
-- [ ] Build datacenter deep underground, preferably a remote island close to a Submarine communications cable
+- [ ] Build datacenter deep underground, preferably a remote island close to a submarine communications cable
 - [ ] Self awareness
 
 ### Credits:
-I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all.  
-Thank you to the creators of the *Raspberry Pi*, the *Rasbian OS* (*Debian*), linux programs *alsa-utils* & *festival*, npm modules [sonus](https://www.npmjs.com/package/sonus), [say](https://www.npmjs.com/package/say), [chalk](https://www.npmjs.com/package/chalk), [decimal.js](https://www.npmjs.com/package/decimal.js) and [weather-js2](https://www.npmjs.com/package/weather-js2)!
+I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all  
+Thank you to the creators of:
+- the *Raspberry Pi*
+- the *Rasbian OS* (*Debian*)
+- linux program *alsa-utils*
+- linux program *festival*
+- npm module [sonus](https://www.npmjs.com/package/sonus)
+- npm module [say](https://www.npmjs.com/package/say)
+- npm module [chalk](https://www.npmjs.com/package/chalk)
+- npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
+- npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
 
 ### Apologies:
 I am a complete moron when it comes to asynchronous programming, and I am positive that many functions could have been written better/cleaner/more efficient.  
