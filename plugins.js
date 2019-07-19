@@ -17,23 +17,23 @@ function load (path) {
 function plugincheck (line) {
   return new Promise(resolve => {
     (async function () {
-      var commandfound = false;
+      var pluginfound = false;
       var argumentarray = [];
       const files = await readdir('plugins');
-      const commands = files
+      const plugins = files
         .filter(file => file.endsWith('.json'))
         .map(file => load(`plugins/${file}`));
 
-      commands.forEach(command => {
-        const plugin = load(`plugins/${command.module}.js`);
-        const fn = plugin[command.name];
-          var result = eval(command.regex).exec(line)
+      plugins.forEach(plugindata => {
+        const plugin = load(`plugins/${plugindata.module}.js`);
+        const fn = plugin[plugindata.name];
+          var result = eval(plugindata.regex).exec(line)
           if (result) {
             result.forEach(async function(element) {
-              var matches = element.match(eval(command.regex));
+              var matches = element.match(eval(plugindata.regex));
               if (matches !== null) {
                 commandfound = true;
-                response.conlog('plugincheck', 'found match: '+command.module+'.'+command.name, 'data');
+                response.conlog('plugincheck', 'found match: '+plugindata.module+'.'+plugindata.name, 'data');
                 matches.forEach(function(argument) {
                   argumentarray.push(argument);
                 })
@@ -48,7 +48,7 @@ function plugincheck (line) {
             });
           }
       });
-      if (commandfound == false) {
+      if (pluginfound == false) {
         response.conlog('pluginloader', 'Couldn\'t find matching plugin for command: '+line, 'error');
       }
     })().catch(err => {
