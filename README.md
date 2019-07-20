@@ -203,6 +203,9 @@ how is the weather in <place>
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
 stop this video/movie/film/playback/episode
+pause/pause video/movie/film/playback/episode
+resume the video/movie/film/playback/episode
+continue this video/movie/film/playback/episode
 menu select
 menu back
 menu move up/down/left/right
@@ -211,11 +214,6 @@ menu move up/down/left/right 5*
 menu move up/down/left/right 5 times
 menu move up/down/left/right 5 entries
 menu move up/down/left/right 1 entry
-
-
-
-"regex": "/^(?:menu)\\s?(?:move)\\s?(up|down|left|right)\\s?([0-9]+)?\\s?(?:x|\\*|time|times|entries|entry)?$/i",
-
 ```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
