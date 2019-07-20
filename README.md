@@ -335,11 +335,14 @@ Thank you to those involved making:
 - the *Rasbian OS* (*Debian*)
 - linux program *alsa-utils*
 - linux program *festival*
+- prompt/cli module code [A-312](https://stackoverflow.com/a/24519813/9820439)
 - npm module [sonus](https://www.npmjs.com/package/sonus)
 - npm module [say](https://www.npmjs.com/package/say)
 - npm module [chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
+- Kodi plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)
+Hope I didn't miss anyone here, if so, please let me know and I will update!
 
 ### Apologies:
 I am a complete moron when it comes to asynchronous programming, and I am positive that many functions could have been written better/cleaner/more efficient.  
