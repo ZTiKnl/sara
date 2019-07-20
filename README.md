@@ -313,7 +313,9 @@ math_root.json
   - [ ] Add Network Utilities plugin
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
-  - [ ] Add Kodi Remote plugin
+  - [x] Add xmbc plugin
+    - [x] Add functions (select, back, stop, up, down, left right, home, info, contextmenu)
+    - [ ] Add more functions to remote control ('playpause', next, previous, rewind, forward, sendtext)
   - [ ] Add Image based Object Detection
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
@@ -341,7 +343,7 @@ Thank you to those involved making:
 - npm module [chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
-- Kodi plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)
+- xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
 Hope I didn't miss anyone here, if so, please let me know and I will update!
 
 ### Apologies:
