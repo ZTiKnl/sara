@@ -199,6 +199,7 @@ Which country is this
 how is the weather in <place>  
 ```
 #### XMBC remote
+(set username)
 ```
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
