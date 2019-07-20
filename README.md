@@ -360,7 +360,7 @@ Thank you to those involved making:
 - npm module [chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
-- xmbc plugin code @msloth [kodi.js](https://github.com/msloth/kodi.js)  
+- xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
 
 Hope I didn't miss anyone here, if so, please let me know and I will update!
 
