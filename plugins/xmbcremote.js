@@ -11,10 +11,13 @@ const response = require('../response.js');
 var request = require('request');
 
 // starting vars
-var xbmc_host = '192.168.0.201';
-var xbmc_port = '54323';
-var xbmc_username = '';
-var xbmc_password = '';
+var xmbc_config = require('./xmbc/connection.json');
+
+var xbmc_host = xmbc_config.host;
+var xbmc_port = xmbc_config.port;
+var xbmc_username = xmbc_config.username;
+var xbmc_password = xmbc_config.password;
+
 if (xbmc_username != '' && xbmc_password != '') {
   var xbmc_json_rpc_url = "http://" + xbmc_username + ":" + xbmc_password + "@" + xbmc_host + ":" + xbmc_port + "/jsonrpc";
 } else {
