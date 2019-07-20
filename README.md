@@ -17,7 +17,7 @@
 6. [Plugins](https://github.com/ZTiKnl/sara#plugins)
 7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
-9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)
+9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)  
   1. Math plugin
   2. Math plugin
   3. Math plugin
