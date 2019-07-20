@@ -1,0 +1,6 @@
+{
+  "name": "contextmenu",
+  "module": "xmbcremote",
+  "regex": "/^(?:menu)\\s?(?:context)$/i",
+  "description": "menu context"
+}
