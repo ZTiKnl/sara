@@ -11,7 +11,7 @@ const response = require('../response.js');
 var request = require('request');
 
 // starting vars
-var xmbc_config = require('./xmbc/connection.json');
+var xmbc_config = require('./xmbc-remote/connection.json');
 
 var xbmc_host = xmbc_config.host;
 var xbmc_port = xmbc_config.port;
