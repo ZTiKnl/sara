@@ -18,10 +18,10 @@
 7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
 9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)
-  9.1 Math plugin
-  9.2 Math plugin
-  9.3 Math plugin
-  9.4 Math plugin
+  9.1. Math plugin
+  9.2. Math plugin
+  9.3. Math plugin
+  9.4. Math plugin
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
