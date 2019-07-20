@@ -67,7 +67,7 @@ module.exports = {
   back: back,
   select: select,
   stop: stop,
-  pause: playpause,
+  pause: pause,
   send_input: send_input,
   send_input_action: send_input_action,
   get_player: get_player,
@@ -205,12 +205,12 @@ function stop(fn) {
 };
 
 // ----------------
-function playpause(fn) {
-  send_input(remote_inputs["PlayPause"], function(err, resp) {
+function pause(fn) {
+  send_input_action("pause", function(err, resp) {
     if (!err) {
-      console.log("PlayPause was ok");
+      console.log("pause was ok");
     } else {
-      console.log("PlayPause NOT ok");
+      console.log("pause NOT ok");
     }
     console.log(resp);
 
