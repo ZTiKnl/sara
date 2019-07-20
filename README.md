@@ -214,6 +214,10 @@ menu move up/down/left/right 5*
 menu move up/down/left/right 5 times
 menu move up/down/left/right 5 entries
 menu move up/down/left/right 1 entry
+menu home
+menu info/information
+menu context
+menu submenu
 ```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
@@ -339,8 +343,8 @@ math_root.json
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
   - [x] Add xmbc plugin
-    - [x] Add functions (select, back, stop, up, down, left right, home, info, contextmenu)
-    - [ ] Add more functions to remote control ('playpause', next, previous, rewind, forward, sendtext)
+    - [x] Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)
+    - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
   - [ ] Add Image based Object Detection
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
