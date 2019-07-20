@@ -22,7 +22,7 @@
   .2 [Conversation](https://github.com/ZTiKnl/sara#conversation)
   .3 [Location](https://github.com/ZTiKnl/sara#location)
   .4 [Weather](https://github.com/ZTiKnl/sara#weather)
-  .5 [xmbc remote](https://github.com/ZTiKnl/sara#xmbc-remote)
+  .5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
