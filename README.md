@@ -205,6 +205,16 @@ stop the video/movie/film/playback/episode
 stop this video/movie/film/playback/episode
 menu select
 menu back
+menu move up/down/left/right
+menu move up/down/left/right 5x
+menu move up/down/left/right 5*
+menu move up/down/left/right 5 times
+menu move up/down/left/right 5 entries
+menu move up/down/left/right 1 entry
+
+
+
+"regex": "/^(?:menu)\\s?(?:move)\\s?(up|down|left|right)\\s?([0-9]+)?\\s?(?:x|\\*|time|times|entries|entry)?$/i",
 
 ```
 More coming...  
