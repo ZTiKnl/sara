@@ -19,9 +19,10 @@
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
 9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)  
   - Math plugin
-  - Math plugin
-  - Math plugin
-  - Math plugin
+  - Conversation  plugin
+  - Location plugin
+  - Weather plugin
+  - xmbc plugin
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
