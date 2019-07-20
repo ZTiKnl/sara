@@ -346,6 +346,7 @@ math_root.json
   - [x] Add xmbc plugin
     - [x] Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)
     - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
+    - [ ] rewrite console.log() to response.conlog()
   - [ ] Add Image based Object Detection
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
