@@ -288,6 +288,7 @@ math_root.json
   - [ ] Change eval() functions, find better approach for plugin loading
   - [ ] Correct hardcoded file locations to cleaned up path
   - [ ] Support for the Pi camera and USB Webcams
+  - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Speech recognition
   - [ ] Add option to select if speech commands are pushed to command line or processed immediately
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
