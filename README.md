@@ -1,9 +1,10 @@
 ```
-Hi Sara, how are you?
+<input> Hi Sara, how are you?
 (prompt / response) All systems operational!
-How is the weather in (where are we)?
+<input> How is the weather in (where are we)?
 (prompt / response) The current weather in Amsterdam, Netherlands is:
 (weatherdetails)
+<input> _
 ```
 
 
@@ -17,6 +18,10 @@ How is the weather in (where are we)?
 7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
 9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)
+  9.1 Math plugin
+  9.2 Math plugin
+  9.3 Math plugin
+  9.4 Math plugin
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
@@ -128,11 +133,11 @@ In the above example, math.js will receive an array object containing 3(!) items
 
 Therefore, the function math.add will receive these 3 array items, and return the calculation of add x[1] + x[2]  
 x[0] is always the entire matching regex string  
-If the input is the sentence `sara, can you tell me how much 5 * 9 is?`, then:
+Using the input sentence above, then:
 ```
-x[0] in the above case results in a string such as: `how much 5 * 9 is`   (the complete matching string)
-x[1] === 5
-x[2] === 9
+x[0] == "what 10 + -9"
+x[1] == 10
+x[2] == -9
 ```
 
 
@@ -144,6 +149,7 @@ Example:
 Sara can you tell me how much is 9 + (10 + 16)?
 ```
 In this example, Sara will calculate 10 + 16 first, then calculate 9 + 26 afterwards  
+
 You can layer as many commands as you need, they will be processed starting with the most outer subcommand first:
 ```
 11 + (7 + (root of 9))
@@ -153,7 +159,7 @@ subcmd: 7 + 3 = 10
 finalcmd: 11 + 10 = 21
 ```
 ### Provided plugins:
-Math functions  
+#### Math functions  
 ```
 what is 7 + 9
 10 - 3.3
@@ -163,7 +169,7 @@ how much is 12 squared
 root of 10
 what 10³ is
 ```
-Conversation functions
+#### Conversation functions
 ```
 hi
 hello
@@ -177,7 +183,7 @@ how are you feeling
 how are you doing today
 how are you feeling at the moment
 ```
-Location functions  
+#### Location functions  
 ```
 where am I
 where are you
@@ -187,9 +193,18 @@ in which province are we
 what are your actual coordinates
 Which country is this
 ```
-Weather function  
+#### Weather function  
 ```
 how is the weather in <place>  
+```
+#### XMBC remote function  
+```
+stop video/movie/film/playback/episode
+stop the video/movie/film/playback/episode
+stop this video/movie/film/playback/episode
+menu select
+menu back
+
 ```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
@@ -260,6 +275,7 @@ Just a reminder:
   this is because it is very annoying when testing to constantly hear things
 * the speech recognition module works, but only displays onscreen, and does not process it (yet)
   this is because it is very annoying when testing to be interrupted because voice picks up something unintended
+
 There will be an option for both these functions very soon!
 
 ### Plugins:
@@ -344,6 +360,7 @@ Thank you to those involved making:
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
 - xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
+
 Hope I didn't miss anyone here, if so, please let me know and I will update!
 
 ### Apologies:
