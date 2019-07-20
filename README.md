@@ -18,11 +18,11 @@
 7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
 9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)  
-  .1 Math plugin  
-  .2 Conversation  plugin  
-  .3 Location plugin  
-  .4 Weather plugin  
-  .5 xmbc plugin  
+  .1 [Math](https://github.com/ZTiKnl/sara#math)
+  .2 [Conversation](https://github.com/ZTiKnl/sara#conversation)
+  .3 [Location](https://github.com/ZTiKnl/sara#location)
+  .4 [Weather](https://github.com/ZTiKnl/sara#weather)
+  .5 [xmbc remote](https://github.com/ZTiKnl/sara#xmbc-remote)
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
@@ -160,7 +160,7 @@ subcmd: 7 + 3 = 10
 finalcmd: 11 + 10 = 21
 ```
 ### Provided plugins:
-#### Math functions  
+#### Math:
 ```
 what is 7 + 9
 10 - 3.3
@@ -170,7 +170,7 @@ how much is 12 squared
 root of 10
 what 10³ is
 ```
-#### Conversation functions
+#### Conversation:
 ```
 hi
 hello
@@ -184,7 +184,7 @@ how are you feeling
 how are you doing today
 how are you feeling at the moment
 ```
-#### Location functions  
+#### Location:
 ```
 where am I
 where are you
@@ -194,11 +194,11 @@ in which province are we
 what are your actual coordinates
 Which country is this
 ```
-#### Weather function  
+#### Weather:
 ```
 how is the weather in <place>  
 ```
-#### XMBC remote function  
+#### XMBC remote
 ```
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
