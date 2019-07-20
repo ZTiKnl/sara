@@ -1,0 +1,6 @@
+{
+  "name": "pause",
+  "module": "xmbcremote",
+  "regex": "/^(?:play|pause|pauze|resume|continue)\\s?(?:this|the)?\\s?(?:video|movie|playback|episode|playback)$/i",
+  "description": "play/pause/resume media"
+}

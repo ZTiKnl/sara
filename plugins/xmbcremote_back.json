@@ -1,0 +1,6 @@
+{
+  "name": "back",
+  "module": "xmbcremote",
+  "regex": "/^(?:menu)\\s?(?:back)$/i",
+  "description": "menu select"
+}
