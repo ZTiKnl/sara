@@ -35,31 +35,28 @@ var xbmc_options = {
 
 // enum of basic remote control button actions. Use Input.ExecuteAction for the full set as below
 var remote_inputs = {};
-    
     remote_inputs["Up"] = "Input.Up";
     remote_inputs["Down"] = "Input.Down";
     remote_inputs["Left"] = "Input.Left";
     remote_inputs["Right"] = "Input.Right";
-
     remote_inputs["Back"] = "Input.Back";
     remote_inputs["Select"] = "Input.Select";
-    
     remote_inputs["Home"] = "Input.Home";
-    
     remote_inputs["Info"] = "Input.Info";
     remote_inputs["ContextMenu"] = "Input.ContextMenu";
     
 //    remote_inputs["ShowCodec"] = "Input.ShowCodec";
 //    remote_inputs["ShowOSD"] = "Input.ShowOSD";
-    remote_inputs["SendText"] = "Input.SendText";
-    remote_inputs["ExecuteAction"] = "Input.ExecuteAction";
-    remote_inputs["PlayPause"] = "Player.PlayPause";
+//    remote_inputs["SendText"] = "Input.SendText";
+//    remote_inputs["ExecuteAction"] = "Input.ExecuteAction";
+//    remote_inputs["PlayPause"] = "Player.PlayPause";
 
 
 // -----------------------------------------------------------------------------
 // export functions for module use
 module.exports = {
-  menumove: menumove,
+  move: move,
+  multimove: multimove,
   up: up,
   down: down,
   left: left,
@@ -68,6 +65,9 @@ module.exports = {
   select: select,
   stop: stop,
   pause: pause,
+  home: home,
+  info: info,
+  contextmenu: contextmenu,
   send_input: send_input,
   send_input_action: send_input_action,
   get_player: get_player,
@@ -75,149 +75,240 @@ module.exports = {
 }
 // -----------------------------------------------------------------------------
 
-function menumove(x) {
-  if (x[2] == undefined || x[2] === 1) {
-    if (x[1] == 'up') { up(); }
-    if (x[1] == 'down') { down(); }
-    if (x[1] == 'left') { left(); }
-    if (x[1] == 'right') { right(); }
-  } else {
-      let i = 0;
-      while (i < x[2]) {
-        if (x[1] == 'up') { up(); }
-        if (x[1] == 'down') { down(); }
-        if (x[1] == 'left') { left(); }
-        if (x[1] == 'right') { right(); }
-        i++;
-      }
-  }
-return;
+function move(x) {
+  return new Promise(resolve => {
+    if (x[1] == 'up') {
+      up();
+    }
+    if (x[1] == 'down') {
+      down();
+    }
+    if (x[1] == 'left') {
+      left();
+    }
+    if (x[1] == 'right') {
+      right();
+    }
+
+    let result = 'Move '+x[1];
+    resolve(result);
+  })
 }
 
-// ----------------
-function up(fn) {
-  send_input(remote_inputs["Up"], function(err, resp) {
-    if (!err) {
-      console.log("up was ok");
+function multimove(x) {
+  return new Promise(resolve => {
+    let i = 0;
+    let j;
+    if (x[2] == undefined) {
+      j = 1;
     } else {
-      console.log("up was NOT ok");
+      j = x[2];
     }
-    console.log(resp);
+    while (i < j) {
+      if (x[1] == 'up') {
+        up();
+      }
+      if (x[1] == 'down') {
+        down();
+      }
+      if (x[1] == 'left') {
+        left();
+      }
+      if (x[1] == 'right') {
+        right();
+      }
+      i++;
+    }
+    let result = j+'x move '+x[1];
+    resolve(result);
+  })
+}
 
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function up() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Up"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Up';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function down(fn) {
-  send_input(remote_inputs["Down"], function(err, resp) {
-    if (!err) {
-      console.log("down was ok");
-    } else {
-      console.log("down was NOT ok");
-    }
-    console.log(resp);
-
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function down() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Down"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Down';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function left(fn) {
-  send_input(remote_inputs["Left"], function(err, resp) {
-    if (!err) {
-      console.log("left was ok");
-    } else {
-      console.log("left was NOT ok");
-    }
-    console.log(resp);
-
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function left() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Left"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Left';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function right(fn) {
-  send_input(remote_inputs["Right"], function(err, resp) {
-    if (!err) {
-      console.log("right was ok");
-    } else {
-      console.log("right was NOT ok");
-    }
-    console.log(resp);
-
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function right() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Right"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Right';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function back(fn) {
-  send_input(remote_inputs["Back"], function(err, resp) {
-    if (!err) {
-      console.log("back was ok");
-    } else {
-      console.log("back was NOT ok");
-    }
-    console.log(resp);
-
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function back() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Back"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Back';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function select(fn) {
-  send_input(remote_inputs["Select"], function(err, resp) {
-    if (!err) {
-      console.log("select was ok");
-    } else {
-      console.log("select NOT ok");
-    }
-    console.log(resp);
-
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function select() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Select"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'OK/select';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function stop(fn) {
-  send_input_action("stop", function(err, resp) {
-    if (!err) {
-      console.log("stop was ok");
-    } else {
-      console.log("stop was NOT ok");
-    }
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function stop() {
+  return new Promise(resolve => {
+    send_input_action("stop", function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Stop';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
-// ----------------
-function pause(fn) {
-  send_input_action("pause", function(err, resp) {
-    if (!err) {
-      console.log("pause was ok");
-    } else {
-      console.log("pause NOT ok");
-    }
-    console.log(resp);
+function pause() {
+  return new Promise(resolve => {
+    send_input_action("pause", function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Pause/resume';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
+};
 
-    if (typeof fn === 'function') {
-      fn(err, resp);
-    }
-  });
+function home() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Home"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Home';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
+};
+
+function info() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["Info"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'Info';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
+};
+
+function contextmenu() {
+  return new Promise(resolve => {
+    send_input(remote_inputs["ContextMenu"], function(err, resp) {
+      if (err) {
+        console.log("error: "+err.message);
+      }
+      console.log(resp)
+      if (resp.result == 'OK') {
+        result = 'ContextMenu';
+      } else {
+        result = 'error: '+resp.result;
+      }
+      resolve(result);
+    });
+  })
 };
 
 // ----------------------------------------
