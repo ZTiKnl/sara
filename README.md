@@ -320,6 +320,8 @@ math_root.json
 
 ### Todo:
 - [ ] General
+  - [ ] Scan for .config file, load settings from there
+    - [ ] Overwrite settings with arguments
   - [ ] Number string to integer function
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
