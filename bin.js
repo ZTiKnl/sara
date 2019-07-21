@@ -3,6 +3,10 @@ var speechsynthesisstart = true;
 var speechrecognitionstart = true;
 var colorstart = true;
 var verbose = false;
+var configfilefound = false;
+
+// process config.json file
+loadconfig();
 
 // process command line arguments
 argumental();
@@ -34,8 +38,14 @@ const stt = require('./stt.js');
 // start prompt
 prompt.start();
 prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'voice', 'silence', 'verbose', 'colors']);
+if (configfilefound) {
+  response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
+} else {
+  response.conlog('prompt', 'No configuration file found (./config.json)', 'status');
+}
+
 if (verbose) { 
-    response.conlog('prompt', 'verbose mode activated', 'status');
+  response.conlog('prompt', 'verbose mode activated', 'status');
 }
 if (colorstart) { 
   response.conlog('response', 'colored responses activated', 'status');
@@ -66,6 +76,42 @@ function myFunc() {
 }
 setTimeout(myFunc, 5000); 
 */
+
+
+function loadconfig() {
+  const fs = require('fs')
+  const path = './config.json'
+
+  try {
+    if (fs.existsSync(path)) {
+      configfilefound = true;
+      var configfile = require('./config.json');
+      if (configfile['speech synthesis'] == true) {
+        speechsynthesisstart = true;
+      } else {
+        speechsynthesisstart = false;
+      }
+      if (configfile['speech recognition'] == true) {
+        speechrecognitionstart = true;
+      } else {
+        speechrecognitionstart = false;
+      }
+      if (configfile['colors'] == true) {
+        colorstart = true;
+      } else {
+        colorstart = false;
+      }
+      if (configfile['verbose'] == true) {
+        verbose = true;
+      } else {
+        verbose = false;
+      }
+    }
+  } catch(err) {
+    configfilefound = false;
+  }
+
+}
 
 function argumental() {
   process.argv.forEach(function (val, index, array) {
