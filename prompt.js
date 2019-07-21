@@ -16,6 +16,9 @@ const voice = require('./voice.js');
 // include speech recognition module
 const stt = require('./stt.js');
 
+// include vision module
+const vision = require('./vision.js');
+
 // include plugins module
 const plugins = require('./plugins.js');
 
@@ -178,6 +181,10 @@ function start(strPrompt, callback) {
               voice.start()
             } else if (cmd == 'stop voice') {
               voice.stop()
+            } else if (cmd == 'start vision') {
+              vision.start()
+            } else if (cmd == 'stop vision') {
+              vision.stop()
             } else if (cmd == 'silence') {
               voice.silence()
             } else if (cmd == 'start colors') {

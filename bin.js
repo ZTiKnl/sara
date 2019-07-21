@@ -1,6 +1,7 @@
 // set start vars
 var speechsynthesisstart = true;
 var speechrecognitionstart = true;
+var visionstart = true;
 var colorstart = true;
 var verbose = false;
 var configfilefound = false;
@@ -35,9 +36,12 @@ const voice = require('./voice.js');
 // include speech recognition module
 const stt = require('./stt.js');
 
+// include vision module
+const vision = require('./vision.js');
+
 // start prompt
 prompt.start();
-prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'voice', 'silence', 'verbose', 'colors']);
+prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'voice', 'vision', 'silence', 'verbose', 'colors']);
 if (configfilefound) {
   response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
 } else {
@@ -70,6 +74,12 @@ if (speechrecognitionstart) {
   response.conlog('stt', 'speech recognition not activated: --no-speech-recognition flag', 'status');
 }
 
+// start vision
+if (visionstart) {
+  vision.start();
+} else {
+  response.conlog('vision', 'vision not activated: --no-vision flag', 'status');
+}
 /*
 function myFunc() {
   prompt.write('This is a test');
@@ -96,6 +106,11 @@ function loadconfig() {
       } else {
         speechrecognitionstart = false;
       }
+      if (configfile['vision'] == true) {
+        visionstart = true;
+      } else {
+        visionstart = false;
+      }
       if (configfile['colors'] == true) {
         colorstart = true;
       } else {
@@ -119,18 +134,14 @@ function argumental() {
     if (val.toLowerCase() == '--verbose' || val == '-v') {
       verbose = true;
     }
-    if (val.toLowerCase() == '--version' || val == '-V') {
-      const { version } = require('./package.json');
-      console.log('(--version)');
-      console.log('');
-      console.log(version);
-      process.exit();
-    }
     if (val.toLowerCase() == '--no-colors' || val == '-nc') {
       colorstart = false;
     }
     if (val.toLowerCase() == '--no-voice' || val == '-nv') {
       speechsynthesisstart = false;
+    }
+    if (val.toLowerCase() == '--no-vision' || val == '-nV') {
+      visionstart = false;
     }
     if (val.toLowerCase() == '--no-speech-recognition' || val == '-nsr') {
       speechrecognitionstart = false;
@@ -145,10 +156,18 @@ function argumental() {
       console.log('\t-nc, --no-colors\tDo not activate colored responses on start');
       console.log('\t-nsr, --no-speech-recognition\tDo not activate speech recognition on start');
       console.log('\t-nv, --no-voice\tDo not activate speech synthesis on start');
+      console.log('\t-nV, --no-vision\tDo not activate webcam on start');
       console.log('\t-v, --verbose\tDisplay additional information, noisy (debug data)');
       console.log('\t-V, --version\tDisplay version number and exits');
       console.log('');
       console.log('Internal help function is available by typing \'help\' in SARAs prompt.');
+      process.exit();
+    }
+    if (val.toLowerCase() == '--version' || val == '-V') {
+      const { version } = require('./package.json');
+      console.log('(--version)');
+      console.log('');
+      console.log(version);
       process.exit();
     }
   });
