@@ -336,10 +336,10 @@ math_root.json
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
 - [ ] Plugins
-  - [x] Rename 'commands' folder to 'plugins'
+  - [x] ~~Rename 'commands' folder to 'plugins'~~
   - [ ] Extend help function to cover plugins
   - [ ] Check for plugins in an external folder
-  - [x] Finish weather plugin
+  - [x] ~~Finish weather plugin~~
   - [ ] Finish conversation plugin
   - [ ] Add CLI Games plugin
     - [ ] Highscore system implementation
@@ -351,8 +351,8 @@ math_root.json
   - [ ] Add Network Utilities plugin
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
-  - [x] Add xmbc plugin
-    - [x] Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)
+  - [x] ~~Add xmbc plugin~~
+    - [x] ~~Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)~~
     - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
     - [ ] Rewrite console.log() to response.conlog()
   - [ ] Add Image based Object Detection
