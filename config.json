@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "colors": true,
+  "speech recognition": false,
+  "speech synthesis": false
+}
