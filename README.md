@@ -326,6 +326,8 @@ math_root.json
   - [ ] Correct hardcoded file locations to cleaned up path
   - [ ] Support for the Pi camera and USB Webcams
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
+- [ ] Help function
+  - [ ] Add .json file import to help function, so plugins can add topics to the function
 - [ ] Speech recognition
   - [ ] Add option to select if speech commands are pushed to command line or processed immediately
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
@@ -335,6 +337,7 @@ math_root.json
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
+    - [ ] Add .json file import to vocalise() function, so plugins or end-users can add words to the list
 - [ ] Plugins
   - [x] ~~Rename 'commands' folder to 'plugins'~~
   - [ ] Extend help function to cover plugins
