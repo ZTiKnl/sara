@@ -336,10 +336,10 @@ math_root.json
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
 - [ ] Plugins
-  - [X] Rename 'commands' folder to 'plugins'
+  - [x] Rename 'commands' folder to 'plugins'
   - [ ] extend help function to cover plugins
   - [ ] Check for plugins in an external folder
-  - [ ] Finish weather plugin
+  - [x] Finish weather plugin
   - [ ] Finish conversation plugin
   - [ ] Add CLI Games plugin
     - [ ] Highscore system implementation
