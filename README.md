@@ -330,6 +330,7 @@ math_root.json
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
 - [ ] Plugins
   - [X] Rename 'commands' folder to 'plugins'
+  - [ ] extend help function to cover plugins
   - [ ] Check for plugins in an external folder
   - [ ] Finish weather plugin
   - [ ] Finish conversation plugin
