@@ -1,6 +1,0 @@
-{
-  "name": "atlocation",
-  "module": "weather",
-  "regex": "/^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?\\s?(?:in|at|near|around)?\\s([a-z,\\s\\-]+)$/i",
-  "description": "Get weather info based on city, or country"
-}
