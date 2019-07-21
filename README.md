@@ -328,6 +328,7 @@ math_root.json
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
   - [ ] Add .json file import to help function, so plugins can add topics to the function
+  - [ ] add `help list` command, and/or display all topics using `help`  
 - [ ] Speech recognition
   - [ ] Add option to select if speech commands are pushed to command line or processed immediately
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
@@ -339,8 +340,7 @@ math_root.json
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
     - [ ] Add .json file import to vocalise() function, so plugins or end-users can add words to the list
 - [ ] Plugins
-  - [x] ~~Rename 'commands' folder to 'plugins'~~
-  - [ ] Extend help function to cover plugins
+  - [x] ~~Rename 'commands' folder to 'plugins'~~  
   - [ ] Check for plugins in an external folder
   - [x] ~~Finish weather plugin~~
   - [ ] Finish conversation plugin
