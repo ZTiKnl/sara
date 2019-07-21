@@ -196,7 +196,14 @@ Which country is this
 ```
 #### Weather:
 ```
-how is the weather in <place>  
+weather  
+how is the weather  
+how is the weather in/around/near <place>  
+what is the weather like in/around/near <place>  
+weather forecast  
+what is the weather forecast  
+what is the weather forecast for <place>  
+
 ```
 #### XMBC remote
 (set username)
