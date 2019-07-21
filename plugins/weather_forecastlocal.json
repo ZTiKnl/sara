@@ -1,0 +1,6 @@
+{
+  "name": "forecastlocal",
+  "module": "weather",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather\\sforecast)$/i",
+  "description": "Get local weather forecast based"
+}

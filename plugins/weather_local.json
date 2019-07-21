@@ -1,0 +1,6 @@
+{
+  "name": "local",
+  "module": "weather",
+  "regex": "/^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?$/i",
+  "description": "Get weather info based on current city"
+}
