@@ -91,6 +91,7 @@ Sara listens to the keyword '*Sara*'
 3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
 - start program with command: `node bin.js`
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
+- it is also possible to use a config.json file to force default behaviour  
 
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword) for more information on how to use your own custom hotword
