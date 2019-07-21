@@ -337,7 +337,7 @@ math_root.json
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
 - [ ] Plugins
   - [x] Rename 'commands' folder to 'plugins'
-  - [ ] extend help function to cover plugins
+  - [ ] Extend help function to cover plugins
   - [ ] Check for plugins in an external folder
   - [x] Finish weather plugin
   - [ ] Finish conversation plugin
@@ -354,7 +354,7 @@ math_root.json
   - [x] Add xmbc plugin
     - [x] Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)
     - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
-    - [ ] rewrite console.log() to response.conlog()
+    - [ ] Rewrite console.log() to response.conlog()
   - [ ] Add Image based Object Detection
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
