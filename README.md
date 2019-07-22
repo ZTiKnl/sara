@@ -41,7 +41,7 @@ Sara is a command prompt, that listens for keyboard input or voice commands
 Sara has a voice, and is able to respond to commands through text as well as audio
 
 Sara is my (poor) attempt at making my own *Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System*  
-It runs usin Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
+It runs in Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has some internal commands, but can be extended through a self-made plugin system
 
 **Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way**  
