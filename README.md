@@ -46,11 +46,8 @@ Sara is my (poor) attempt at making my own *Jarvis/Alexa/Hey Google/Hi Bixby/Voi
 It runs in Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has some internal commands, but can be extended through a self-made plugin system
 
-~~Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way~~  
-~~Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string~~  
-~~The functionality is there and ready, just not joined together yet~~  
-~~In the future~~ **there** ~~will be~~ **is** an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are  
-This option is currently hidden away in hearing.js, but will be in the commandline arguments and config.json soon.
+Voice commands can be sent to the command line for editing, or immediately be processed without user intervention  
+This option selection is currently hidden away in hearing.js, but will be in the commandline arguments and config.json soon
 
 **Voice output is functional, but not connected to responses**  
 All output is currently sent to the prompt, NOT to the voice module  
@@ -97,7 +94,7 @@ Software:
   `apt-get install fswebcam`
 Other:
 - Google Cloud Speech API key
-  This is free for a certain amount of requests, see []() for more details
+  This is free for a certain amount of requests, see [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details
   
 ### NPM modules:
 ```
