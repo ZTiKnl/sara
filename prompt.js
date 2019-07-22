@@ -14,7 +14,7 @@ const help = require('./help.js');
 const voice = require('./voice.js');
 
 // include speech recognition module
-const stt = require('./stt.js');
+const hearing = require('./hearing.js');
 
 // include vision module
 const vision = require('./vision.js');
@@ -174,9 +174,9 @@ function start(strPrompt, callback) {
             } else if (cmd == 'add help') {
               help.questions(null, null, null, null, 'add');
             } else if (cmd == 'start listening') {
-              stt.listen()
+              hearing.listen()
             } else if (cmd == 'stop listening') {
-              stt.stop()
+              hearing.stop()
             } else if (cmd == 'start voice') {
               voice.start()
             } else if (cmd == 'stop voice') {

@@ -1,5 +1,5 @@
 // set start vars
-var sttactive = false;
+var hearingactive = false;
 
 // include colored responses module
 const response = require('./response.js');
@@ -24,46 +24,46 @@ const sonus = Sonus.init({ hotwords, language: language, recordProgram: 'arecord
 module.exports = {
   recognize: function() {
     sonus.on('hotword', (index, keyword) => {
-      response.conlog('stt', 'audio detected without keyword ('+keyword+')', 'data');
+      response.conlog('hearing', 'audio detected without keyword ('+keyword+')', 'data');
     })
 
     sonus.on('partial-result', result => {
-      response.conlog('stt', 'Partial ('+result+')', 'data');
+      response.conlog('hearing', 'Partial ('+result+')', 'data');
     })
 
     sonus.on('error', error => {
-      response.conlog('stt', error, 'error');
+      response.conlog('hearing', error, 'error');
     })
 
     sonus.on('final-result', result => {
       if (result) {
-        response.conlog('stt', 'recognized: '+result, 'info');
+        response.conlog('hearing', 'recognized: '+result, 'info');
       }
     })
   },
   listen: function() {
-    if (sttactive == false) {
-      response.conlog('stt', 'voice recognition activated', 'status');
-      sttactive = true;
+    if (hearingactive == false) {
+      response.conlog('hearing', 'voice recognition activated', 'status');
+      hearingactive = true;
       Sonus.start(sonus)
       module.exports.recognize();
     } else {
-      response.conlog('stt', 'voice recognition was already activated', 'status');
+      response.conlog('hearing', 'voice recognition was already activated', 'status');
     }
   },
   stop: function () {
-    if (sttactive == true) {
-      sttactive = false;
-      response.conlog('stt', 'voice recognition deactivated', 'status');
+    if (hearingactive == true) {
+      hearingactive = false;
+      response.conlog('hearing', 'voice recognition deactivated', 'status');
       Sonus.stop();
     } else {
-      response.conlog('stt', 'voice recognition was already deactivated', 'status');
+      response.conlog('hearing', 'voice recognition was already deactivated', 'status');
     }
   },
   speechparse: function(sentence) {
     // todo: replace vocal input with known strings (stick -> ZTiK, nine hundred fifteen -> 915)
   },
   status: function () {
-    return sttactive;
+    return hearingactive;
   }
 }

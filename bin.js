@@ -34,7 +34,7 @@ const prompt = require('./prompt.js');
 const voice = require('./voice.js');
 
 // include speech recognition module
-const stt = require('./stt.js');
+const hearing = require('./hearing.js');
 
 // include vision module
 const vision = require('./vision.js');
@@ -69,9 +69,9 @@ if (speechsynthesisstart) {
 
 // start speech recognition, keyword: sara
 if (speechrecognitionstart) {
-  stt.listen();
+  hearing.listen();
 } else {
-  response.conlog('stt', 'speech recognition not activated: --no-speech-recognition flag', 'status');
+  response.conlog('hearing', 'speech recognition not activated: --no-speech-recognition flag', 'status');
 }
 
 // start vision

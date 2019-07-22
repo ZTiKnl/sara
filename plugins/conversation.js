@@ -14,7 +14,7 @@ const response = require('../response.js');
 const voice = require('../voice.js');
 
 // include speech recognition module
-const stt = require('../stt.js');
+const hearing = require('../hearing.js');
 
 module.exports = {
   greeting: function (input) {
@@ -50,7 +50,7 @@ module.exports = {
         down += ' & voice synthesis';
       }
     }
-    if (!stt.status()) {
+    if (!hearing.status()) {
       systemsup = false;
       if (down == null) {
         down = 'speech recognition';
