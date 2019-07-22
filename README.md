@@ -66,12 +66,14 @@ After stripping these words, the command is compared to internal commands, and i
 Sara listens to the keyword '*Sara*'
 
 ### Requirements:
+Hardware:
 - A Raspberry Pi *(3B tested, older models should work)*
   - Keyboard or ssh connection
   - Microphone for voice commands
   - Audio output device *(tv/hdmi or speakers on line-out)*  
   - SD Card containing Raspbian *(latest version is always advisable)*  
     - Self-powered USBhub is advisable when using USB microphone/webcam
+Software:
 - Node.js LTS or newest *(I am currently running 12.5.0)*
 - NPM *(I am currently running 6.9.0)*
 - arecord *(config mic as default audio input device first)*  
@@ -80,7 +82,10 @@ Sara listens to the keyword '*Sara*'
   `sudo apt-get install festival festvox-kallpc16k`
 - fswebcam (i installed it, didnt touch a single config file)
   `apt-get install fswebcam`
-
+Other:
+- Google Cloud Speech API key
+  This is free for a certain amount of requests, see []() for more details
+  
 ### NPM modules:
 ```
 "chalk": "^2.4.2",
@@ -112,7 +117,7 @@ The vision command will be extended with object/face recognition, if I can get t
 `start/stop colors` turns on/off colored responses/prompt  
 #### Verbose:
 `start/stop verbose` turns on/off verbose mode  
-Verbose mode will turn on display of output with a 'data' or 'warn' type  
+  Verbose mode will turn on display of output with a 'data' or 'warn' type  
 #### Help:
 `help` displays the main 'help' section  
 `help <topic>` displays help on the topic requested (still needs to be populated)  
@@ -121,13 +126,17 @@ Verbose mode will turn on display of output with a 'data' or 'warn' type
 #### Hearing:
 `start/stop listening` turns on/off speech recognition  
 `start/stop hearing` same as above  
+  **The speech recognition module works, but is not connected to input yet until some other things are worked out**  
+  recognized input is simply displayed then discarded.
 #### Voice:
 `start/stop voice` turns on/off text-to-speech  
 `start/stop talking` same as above  
 `silence` stop speaking the current sentence/item  
+  **The voice module works, but is not connected to output yet until some other things are worked out**  
 #### Vision:
 `start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png  
 `start/stop watching` same as above  
+  Nothing is done with this image at this time, but there are plans (in my head) for object/face recognition...
 ### Regular Expression matches:
 Sara needs to 'understand' commands, and does this by comparing input to a regular expression found inside each plugin function's .json file  
 Example: 
@@ -311,14 +320,29 @@ aplay test.wav
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess...
 
 ### Other issues:
-None so far...  
+#### sonus/Google Cloud Speech API
+I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
+```
+Setting up Speech Recognition
+Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition. To set that up, you'll need to create a new project in the Cloud Platform Console:
 
-Just a reminder:  
+In the Cloud Platform Console, go to the Projects page and select or create a new project.
+GO TO THE PROJECTS PAGE
+
+Enable billing for your project.
+ENABLE BILLING
+
+Enable the Cloud Speech API.
+ENABLE THE API - For more info see Cloud Speech API Pricing (for simple use it should be free)
+
+Create a new JSON service account key, edit it with a text editor and copy the contents to ./resources/apikeys/googlespeech.json
+```
+As I understand, 90% of problems with sonus are related to billing issues in Google Cloud  
+#### Known:
 * the voice module works, but responses are NOT connected to it (yet)
   this is because it is very annoying when testing to constantly hear things
 * the speech recognition module works, but only displays onscreen, and does not process it (yet)
   this is because it is very annoying when testing to be interrupted because voice picks up something unintended
-
 There will be an option for both these functions very soon!
 
 ### Plugins:
