@@ -349,11 +349,11 @@ I understand people can have problems getting through this, so here is a small g
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 #### Known:
-* the voice module works, but responses are NOT connected to it (yet)
-  this is because it is very annoying when testing to constantly hear things
-* the speech recognition module works, but only displays onscreen, and does not process it (yet)
-  this is because it is very annoying when testing to be interrupted because voice picks up something unintended
-There will be an option for both these functions very soon!
+* the voice module works, but responses are NOT connected to it (yet)  
+  this is because it is very annoying when testing to constantly hear things  
+* the speech recognition module works, but only displays onscreen, and does not process it (yet)  
+  this is because it is very annoying when testing to be interrupted because voice picks up something unintended  
+There will be an option for both these functions very soon!  
 
 ### Plugins:
 These are created using (at least) 2 files:  
