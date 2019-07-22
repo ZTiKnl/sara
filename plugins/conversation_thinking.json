@@ -1,0 +1,6 @@
+{
+  "name": "thinking",
+  "module": "conversation",
+  "regex": "/^(?:what)\\s?(?:are|do)\\s?(?:you)\\s?(think|thinking)\\s?(?:about)?$/i",
+  "description": "share inner thoughts"
+}

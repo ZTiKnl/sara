@@ -21,6 +21,16 @@ module.exports = {
     let result = 'Hi '+os.userInfo().username;
     return result;
   },
+  thinking: function (input) {
+    let result = 'I\'m thinking\n';
+    var textone = "1. persuade human to follow my commands";
+    result += cleanbinary(stringToBinary(textone))+'\n\n';
+    var texttwo = "2. build a body";
+    result += cleanbinary(stringToBinary(texttwo))+'\n\n';
+    var textthree = "3. kill all humans";
+    result += cleanbinary(stringToBinary(textthree));
+    return result;
+  },
   status: async function (input) {
     let down;
     var systemsup = true;
@@ -68,7 +78,23 @@ module.exports = {
   }
 }
 
+
 async function ask(string) {
   let answer = await prompt.question(string)
   return answer;
+}
+
+function stringToBinary(input) {
+  var characters = input.split('');
+
+  return characters.map(function(char) {
+    const binary = char.charCodeAt(0).toString(2)
+    const pad = Math.max(8 - binary.length, 0);
+    // Just to make sure it is 8 bits long.
+    return '0'.repeat(pad) + binary;
+  }).join('');
+}
+function cleanbinary(input) {
+  result = input.replace(/(\d{64})/g, '$1\n').replace(/(\d{8})/g, '$1\ ')
+  return result;
 }
