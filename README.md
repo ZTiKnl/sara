@@ -264,7 +264,7 @@ what is the weather forecast for <place>
 
 ```
 #### XMBC remote
-(set username)
+I am still thinking about a good keyword for menu move functions, media(?)
 ```
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
