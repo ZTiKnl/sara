@@ -350,7 +350,8 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 #### Sonus/Google Cloud Speech API
 I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
 - Setting up Speech Recognition  
-  Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition. To set that up, you'll need to create a new project in the Cloud Platform Console:  
+  Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition.  
+  To set that up, you'll need to create a new project in the Cloud Platform Console:  
 
 - In the Cloud Platform Console, go to the Projects page and select or create a new project  
   [GO TO THE PROJECTS PAGE](https://console.cloud.google.com/project)  
