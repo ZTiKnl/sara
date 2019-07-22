@@ -44,7 +44,7 @@ Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voic
 It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has internal commands, but can be extended through a self-made plugin system
 
-**Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way*  *
+**Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way**  
 Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string  
 The functionality is there and ready, just not joined together yet  
 In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are
@@ -320,7 +320,7 @@ aplay test.wav
 Anything on support beyond this should be requested at alsa/festival/linux forums I guess...
 
 ### Other issues:
-#### sonus/Google Cloud Speech API
+#### Sonus/Google Cloud Speech API
 I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
 - Setting up Speech Recognition  
   Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition. To set that up, you'll need to create a new project in the Cloud Platform Console:  
@@ -337,7 +337,7 @@ I understand people can have problems getting through this, so here is a small g
 - Create a new *JSON service account key*, edit it with a text editor and copy the contents to *./resources/apikeys/googlespeech.json*  
   When prompted to create a new service account select 'Owner' or 'Project Owner'  
 
-As I understand, 90% of problems with sonus are related to billing issues in Google Cloud  
+As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 #### Known:
 * the voice module works, but responses are NOT connected to it (yet)
   this is because it is very annoying when testing to constantly hear things
@@ -431,11 +431,11 @@ Thank you to those involved making:
 - linux program *alsa-utils*
 - linux program *festival*
 - prompt/cli module code [A-312](https://stackoverflow.com/a/24519813/9820439)
-- npm module [sonus](https://www.npmjs.com/package/sonus)
+- npm module [Sonus](https://www.npmjs.com/package/sonus)
 - npm module [say](https://www.npmjs.com/package/say)
-- npm module [chalk](https://www.npmjs.com/package/chalk)
+- npm module [Chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
-- npm module [weather-js2](https://www.npmjs.com/package/weather-js2)
+- npm module [Weather](https://www.npmjs.com/package/weather-js2)
 - xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
 
 Hope I didn't miss anyone here, if so, please let me know and I will update!
