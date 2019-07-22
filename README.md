@@ -177,7 +177,7 @@ Therefore, the function math.add will receive these 3 array items, and return th
 x[0] is always the entire matching regex string  
 Using the input sentence above, then:
 ```
-x[0] == "what 10 + -9"
+x[0] == "what 10 + -9 is"
 x[1] == 10
 x[2] == -9
 ```
