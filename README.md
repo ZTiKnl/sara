@@ -322,21 +322,21 @@ Anything on support beyond this should be requested at alsa/festival/linux forum
 ### Other issues:
 #### sonus/Google Cloud Speech API
 I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
-```
-Setting up Speech Recognition
-Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition. To set that up, you'll need to create a new project in the Cloud Platform Console:
+- Setting up Speech Recognition  
+  Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition. To set that up, you'll need to create a new project in the Cloud Platform Console:  
 
-In the Cloud Platform Console, go to the Projects page and select or create a new project.
-GO TO THE PROJECTS PAGE
+- In the Cloud Platform Console, go to the Projects page and select or create a new project  
+  [GO TO THE PROJECTS PAGE](https://console.cloud.google.com/project)  
 
-Enable billing for your project.
-ENABLE BILLING
+- Enable billing for your project.  
+  [ENABLE BILLING](https://support.google.com/cloud/answer/6293499#enable-billing)
 
-Enable the Cloud Speech API.
-ENABLE THE API - For more info see Cloud Speech API Pricing (for simple use it should be free)
+- Enable the Cloud Speech API.  
+  [ENABLE THE API](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) - For more info see [Cloud Speech API Pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing) (for simple use it should be free)  
 
-Create a new JSON service account key, edit it with a text editor and copy the contents to ./resources/apikeys/googlespeech.json
-```
+- Create a new *JSON service account key*, edit it with a text editor and copy the contents to *./resources/apikeys/googlespeech.json*  
+  When prompted to create a new service account select 'Owner' or 'Project Owner'  
+
 As I understand, 90% of problems with sonus are related to billing issues in Google Cloud  
 #### Known:
 * the voice module works, but responses are NOT connected to it (yet)
