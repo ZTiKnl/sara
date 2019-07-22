@@ -42,26 +42,24 @@ if (response.getcolors()) {
   var myPrompt = '<input> ';
 }
 
-module.exports = (function() {
-    return {
-        question: question,
-        write: write,
-        start: start,
-        getPrompt: function() {
-            return myPrompt;
-        },
-        setCompletion: function(obj) {
-            completions = (typeof obj == 'object') ? obj : completions;
-        },
-        setPrompt: function(str) {
-            myPrompt = str;
-            rl.setPrompt(myPrompt);
-        },
-        on: function(line) {
-            myEmitter.on.apply(myEmitter, arguments);
-        }
-    };
-})();
+module.exports = {
+  question: question,
+  write: write,
+  start: start,
+  getPrompt: function() {
+      return myPrompt;
+  },
+  setCompletion: function(obj) {
+      completions = (typeof obj == 'object') ? obj : completions;
+  },
+  setPrompt: function(str) {
+      myPrompt = str;
+      rl.setPrompt(myPrompt);
+  },
+  on: function(line) {
+      myEmitter.on.apply(myEmitter, arguments);
+  }
+}
 
 function question(string) {
   return new Promise(resolve => {
@@ -181,6 +179,10 @@ function start(strPrompt, callback) {
               voice.start()
             } else if (cmd == 'stop voice' || cmd == 'stop talking') {
               voice.stop()
+            } else if (cmd == 'stop command execution' || cmd == 'start command parsing') {
+              voice.cmdtoprompt()
+            } else if (cmd == 'start command execution' || cmd == 'stop command parsing') {
+              voice.cmdexecute()
             } else if (cmd == 'start vision' || cmd == 'start watching') {
               vision.start()
             } else if (cmd == 'stop vision' || cmd == 'stop watching') {

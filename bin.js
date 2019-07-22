@@ -41,7 +41,7 @@ const vision = require('./vision.js');
 
 // start prompt
 prompt.start();
-prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors']);
+prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing']);
 if (configfilefound) {
   response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
 } else {
@@ -80,6 +80,7 @@ if (visionstart) {
 } else {
   response.conlog('vision', 'vision not activated: --no-vision flag', 'status');
 }
+
 /*
 function myFunc() {
   prompt.write('This is a test');

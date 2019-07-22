@@ -46,10 +46,11 @@ Sara is my (poor) attempt at making my own *Jarvis/Alexa/Hey Google/Hi Bixby/Voi
 It runs in Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has some internal commands, but can be extended through a self-made plugin system
 
-**Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way**  
-Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string  
-The functionality is there and ready, just not joined together yet  
-In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are  
+~~Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way~~  
+~~Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string~~  
+~~The functionality is there and ready, just not joined together yet~~  
+~~In the future~~ **there** ~~will be~~ **is** an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are  
+This option is currently hidden away in hearing.js, but will be in the commandline arguments and config.json soon.
 
 **Voice output is functional, but not connected to responses**  
 All output is currently sent to the prompt, NOT to the voice module  
@@ -138,8 +139,9 @@ The vision command will be extended with object/face recognition, if I can get t
 #### Hearing:
 `start/stop listening` turns on/off speech recognition  
 `start/stop hearing` same as above  
-  **The speech recognition module works, but is not connected to input yet until some other things are worked out**  
-  recognized input is simply displayed then discarded.
+  ~~The speech recognition module works, but is not connected to input yet until some other things are worked out~~  
+  ~~recognized input is simply displayed then discarded~~  
+  Speech is recognized and sent to prompt for user confirmation  
 #### Voice:
 `start/stop voice` turns on/off text-to-speech  
 `start/stop talking` same as above  
@@ -367,9 +369,8 @@ I understand people can have problems getting through this, so here is a small g
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 #### Known:
-* The voice module works, but responses are NOT connected to it (yet)  
-* The speech recognition module works, but only displays onscreen, and does not process it (yet)  
-
+The voice module works, but responses are NOT connected to it (yet)  
+~~The speech recognition module works, but only displays onscreen, and does not process it (yet)~~
 There will be an option for both these functions very soon!  
 
 ### Todo:
@@ -389,7 +390,7 @@ There will be an option for both these functions very soon!
   - [ ] Add .json file import to help function, so plugins can add topics to the function
   - [ ] add `help list` command, and/or display all topics using `help`  
 - [ ] Speech recognition
-  - [ ] Add option to select if speech commands are pushed to command line or processed immediately
+  - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
 - [ ] Voice synthesis
   - [ ] Hook command results to voice synthesis

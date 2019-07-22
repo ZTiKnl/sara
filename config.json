@@ -1,7 +1,7 @@
 {
   "verbose": true,
   "colors": true,
-  "speech recognition": false,
+  "speech recognition": true,
   "speech synthesis": false,
   "vision": true
 }

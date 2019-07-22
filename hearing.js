@@ -1,5 +1,6 @@
 // set start vars
 var hearingactive = false;
+var hearingprocess = true;
 
 // include colored responses module
 const response = require('./response.js');
@@ -38,8 +39,30 @@ module.exports = {
     sonus.on('final-result', result => {
       if (result) {
         response.conlog('hearing', 'recognized: '+result, 'info');
+        const prompt = require('./prompt.js');
+        if (hearingprocess) {
+          prompt.write(result+'\n');
+        } else {
+          prompt.write(result);
+        }
       }
     })
+  },
+  cmdexecute: function() {
+    if (hearingprocess == false) {
+      response.conlog('hearing', 'voice command execution activated', 'status');
+      hearingprocess = true;
+    } else {
+      response.conlog('hearing', 'voice command execution was already activated', 'status');
+    }
+  },
+  cmdtoprompt: function() {
+    if (hearingprocess == true) {
+      response.conlog('hearing', 'voice command execution deactivated', 'status');
+      hearingprocess = false;
+    } else {
+      response.conlog('hearing', 'voice command execution was already deactivated', 'status');
+    }
   },
   listen: function() {
     if (hearingactive == false) {
@@ -67,3 +90,10 @@ module.exports = {
     return hearingactive;
   }
 }
+
+/*
+function myFunc() {
+  prompt.write('This is a test');
+}
+setTimeout(myFunc, 5000); 
+*/
