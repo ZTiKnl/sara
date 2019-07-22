@@ -49,12 +49,12 @@ Soon, spoken commands will be pushed to the command line, so that you have the o
 The functionality is there and ready, just not joined together yet  
 In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are  
 
-**Voice output is functional, but not connected to responses**
+**Voice output is functional, but not connected to responses**  
 All output is currently sent to the prompt, NOT to the voice module  
 I like to watch TV in the background while coding, and a voice speaking through that isn't nice  
 I have since created arguments and config.json which can auto disable modules, so in the coming days I will connect voice as well as speech recognition  
 
-**Vision works**
+**Vision works**  
 There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam (HP Webcam HD-4110)
 
 
@@ -78,7 +78,7 @@ Sara listens to the keyword '*Sara*'
 Hardware:
 - A Raspberry Pi *(3B tested, older models should work)*
   - Keyboard or ssh connection
-  - Microphone for voice commands (I use a [G11 Touch Induction/Haobosou](https://www.gearbest.com/microphone/pp_009493107682.html?wid=1433363) 20 euro microphone which works *excellent*)
+  - Microphone for voice commands (I use a [G11 Touch Induction/Haobosou](https://www.gearbest.com/microphone/pp_009493107682.html?wid=1433363) ~20 euro, *excellent* results)
   - Audio output device *(tv/hdmi or speakers on line-out)*  
   - Webcam for future object/face recognition modules (I use a HP Webcam HD-4110)
   - SD Card containing Raspbian *(latest version is always advisable)*  
