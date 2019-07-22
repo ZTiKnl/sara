@@ -31,6 +31,8 @@
   9.5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)
+  11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
+  11.2 [Known](https://github.com/ZTiKnl/sara#known)  
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
 13. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
 14. [Credits](https://github.com/ZTiKnl/sara#credits)
