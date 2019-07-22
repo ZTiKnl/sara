@@ -40,14 +40,23 @@
 Sara is a command prompt, that listens for keyboard input or voice commands  
 Sara has a voice, and is able to respond to commands through text as well as audio
 
-Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System  
-It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
-It has internal commands, but can be extended through a self-made plugin system
+Sara is my (poor) attempt at making my own *Jarvis/Alexa/Hey Google/Hi Bixby/Voice Response System*  
+It runs usin Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
+It has some internal commands, but can be extended through a self-made plugin system
 
 **Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way**  
 Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string  
 The functionality is there and ready, just not joined together yet  
-In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are
+In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are  
+
+**Voice output is functional, but not connected to responses**
+All output is currently sent to the prompt, NOT to the voice module  
+I like to watch TV in the background while coding, and a voice speaking through that isn't nice  
+I have since created arguments and config.json which can auto disable modules, so in the coming days I will connect voice as well as speech recognition  
+
+**Vision works**
+There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam (HP Webcam HD-4110)
+
 
 Sara ignores the following words at sentence start:
 ```
@@ -69,8 +78,9 @@ Sara listens to the keyword '*Sara*'
 Hardware:
 - A Raspberry Pi *(3B tested, older models should work)*
   - Keyboard or ssh connection
-  - Microphone for voice commands
+  - Microphone for voice commands (I use a [G11 Touch Induction/Haobosou](https://www.gearbest.com/microphone/pp_009493107682.html?wid=1433363) 20 euro microphone which works *excellent*)
   - Audio output device *(tv/hdmi or speakers on line-out)*  
+  - Webcam for future object/face recognition modules (I use a HP Webcam HD-4110)
   - SD Card containing Raspbian *(latest version is always advisable)*  
     - Self-powered USBhub is advisable when using USB microphone/webcam
 Software:
