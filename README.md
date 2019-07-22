@@ -13,7 +13,7 @@
 2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
 3. [NPM modules](https://github.com/ZTiKnl/sara#npm-modules)
 4. [How to use](https://github.com/ZTiKnl/sara#how-to-use)
-5. [Internal Commands](https://github.com/ZTiKnl/sara#internal-commands)
+5. [Internal Commands](https://github.com/ZTiKnl/sara#internal-commands)  
   5.1 [colors](https://github.com/ZTiKnl/sara#colors)
   5.2 [verbose](https://github.com/ZTiKnl/sara#verbose)
   5.3 [help](https://github.com/ZTiKnl/sara#help)
