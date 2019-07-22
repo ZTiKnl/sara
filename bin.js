@@ -41,7 +41,7 @@ const vision = require('./vision.js');
 
 // start prompt
 prompt.start();
-prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'voice', 'vision', 'silence', 'verbose', 'colors']);
+prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors']);
 if (configfilefound) {
   response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
 } else {
@@ -160,7 +160,12 @@ function argumental() {
       console.log('\t-v, --verbose\tDisplay additional information, noisy (debug data)');
       console.log('\t-V, --version\tDisplay version number and exits');
       console.log('');
-      console.log('Internal help function is available by typing \'help\' in SARAs prompt.');
+      console.log('config file:');
+      console.log('\tThe file config.json allow you to set the above arguments as default');
+      console.log('\t\Arguments override config.json settings');
+      console.log('\t\'verbose: false\' in config.json AND --verbose will turn ON verbose');
+      console.log('');
+      console.log('Internal help function is available by typing \'help\' in SARAs prompt');
       process.exit();
     }
     if (val.toLowerCase() == '--version' || val == '-V') {
