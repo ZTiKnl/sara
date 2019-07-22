@@ -20,9 +20,9 @@
   5.4 [Hearing](https://github.com/ZTiKnl/sara#hearing)  
   5.5 [Voice](https://github.com/ZTiKnl/sara#voice)  
   5.6 [Vision](https://github.com/ZTiKnl/sara#vision)  
-6. [Plugins](https://github.com/ZTiKnl/sara#plugins)
-7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
-8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
+6. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
+7. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
+8. [Plugins](https://github.com/ZTiKnl/sara#plugins)
 9. [Provided plugins](https://github.com/ZTiKnl/sara#provided-plugins)  
   9.1 [Math](https://github.com/ZTiKnl/sara#math)  
   9.2 [Conversation](https://github.com/ZTiKnl/sara#conversation)  
@@ -183,8 +183,6 @@ x[0] == "what 10 + -9 is"
 x[1] == 10
 x[2] == -9
 ```
-
-
 ### Layered commands:
 (I am not a native English speaker, and I am not certain this is the correct term)  
 Sara is able to process subcommands through the use of parenthesis encapsulation  
@@ -201,6 +199,23 @@ You can layer as many commands as you need, they will be processed starting with
 subcmd: root of 9 = 3
 subcmd: 7 + 3 = 10
 finalcmd: 11 + 10 = 21
+```
+### Plugins:
+These are created using (at least) 2 files:  
+```
+pluginname_function.json  
+pluginname.js
+```
+The .js file contains all the javascript to deal with request X and push back a result  
+The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
+
+One .js file can contain multiple module.exports functions, each function requires its own .json file  
+Example:  
+```
+math.js  
+math_add.json  
+math_subtract.json  
+math_root.json
 ```
 ### Provided plugins:
 #### Math:
@@ -356,25 +371,6 @@ As I understand, 90% of problems with Sonus are related to billing issues in Goo
 
 There will be an option for both these functions very soon!  
 
-### Plugins:
-These are created using (at least) 2 files:  
-```
-pluginname_function.json  
-pluginname.js
-```
-The .js file contains all the javascript to deal with request X and push back a result  
-The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
-
-One .js file can contain multiple module.exports functions, each function requires its own .json file  
-Example:  
-```
-math.js  
-math_add.json  
-math_subtract.json  
-math_root.json
-```
-
-
 ### Todo:
 - [ ] General
   - [x] ~~Scan for .config file, load settings from there~~  
@@ -383,7 +379,7 @@ math_root.json
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
   - [ ] Correct hardcoded file locations to cleaned up path
-  - [x] Support for USB Webcams
+  - [x] ~~Support for USB Webcams~~  
       - [ ] Support for the Pi camera
     - [ ] Image manipulation through imagemagick
     - [ ] Object/face detection
