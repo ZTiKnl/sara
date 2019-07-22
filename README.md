@@ -55,7 +55,7 @@ I like to watch TV in the background while coding, and a voice speaking through 
 I have since created arguments and config.json which can auto disable modules, so in the coming days I will connect voice as well as speech recognition  
 
 **Vision works**  
-There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam (HP Webcam HD-4110)
+There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam
 
 
 Sara ignores the following words at sentence start:
