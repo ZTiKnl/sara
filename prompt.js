@@ -173,17 +173,17 @@ function start(strPrompt, callback) {
               }
             } else if (cmd == 'add help') {
               help.questions(null, null, null, null, 'add');
-            } else if (cmd == 'start listening') {
+            } else if (cmd == 'start hearing' || cmd == 'start listening') {
               hearing.listen()
-            } else if (cmd == 'stop listening') {
+            } else if (cmd == 'stop hearing' || cmd == 'stop listening') {
               hearing.stop()
-            } else if (cmd == 'start voice') {
+            } else if (cmd == 'start voice' || cmd == 'start talking') {
               voice.start()
-            } else if (cmd == 'stop voice') {
+            } else if (cmd == 'stop voice' || cmd == 'stop talking') {
               voice.stop()
-            } else if (cmd == 'start vision') {
+            } else if (cmd == 'start vision' || cmd == 'start watching') {
               vision.start()
-            } else if (cmd == 'stop vision') {
+            } else if (cmd == 'stop vision' || cmd == 'stop watching') {
               vision.stop()
             } else if (cmd == 'silence') {
               voice.silence()
