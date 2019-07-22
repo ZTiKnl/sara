@@ -14,6 +14,12 @@
 3. [NPM modules](https://github.com/ZTiKnl/sara#npm-modules)
 4. [How to use](https://github.com/ZTiKnl/sara#how-to-use)
 5. [Internal Commands](https://github.com/ZTiKnl/sara#internal-commands)
+  5.1 [colors](https://github.com/ZTiKnl/sara#colors)
+  5.2 [verbose](https://github.com/ZTiKnl/sara#verbose)
+  5.3 [help](https://github.com/ZTiKnl/sara#help)
+  5.4 [hearing](https://github.com/ZTiKnl/sara#hearing)
+  5.5 [voice](https://github.com/ZTiKnl/sara#voice)
+  5.6 [vision](https://github.com/ZTiKnl/sara#vision)
 6. [Plugins](https://github.com/ZTiKnl/sara#plugins)
 7. [Regular Expression matches](https://github.com/ZTiKnl/sara#regular-expression-matches)
 8. [Layered commands](https://github.com/ZTiKnl/sara#layered-commands)
@@ -65,13 +71,15 @@ Sara listens to the keyword '*Sara*'
   - Microphone for voice commands
   - Audio output device *(tv/hdmi or speakers on line-out)*  
   - SD Card containing Raspbian *(latest version is always advisable)*  
-    - Self-powered USBhub is advisable when using USB microphone as well as future USB webcam support
+    - Self-powered USBhub is advisable when using USB microphone/webcam
 - Node.js LTS or newest *(I am currently running 12.5.0)*
 - NPM *(I am currently running 6.9.0)*
 - arecord *(config mic as default audio input device first)*  
   `sudo apt-get install alsa-utils`  
 - festival *(only default voice tested)*  
   `sudo apt-get install festival festvox-kallpc16k`
+- fswebcam (i installed it, didnt touch a single config file)
+  `apt-get install fswebcam`
 
 ### NPM modules:
 ```
@@ -98,19 +106,30 @@ See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.
 See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword) for more information on how to use your own custom hotword
 
 ### Internal commands:
-```
-help
-help <topic>
-add help
-edit help <topic>
-start/stop colors
-start/stop verbose
-start/stop listening
-start/stop voice
-start/stop vision
-```
+I have tried to keep everything modular, so if something doesn't work on your system, you can disable that function through commandline arguments, config.json options file, or in the app itself  
+The vision command will be extended with object/face recognition, if I can get that to work.
+#### Colors:
+`start/stop colors` turns on/off colored responses/prompt  
+#### Verbose:
+`start/stop verbose` turns on/off verbose mode  
+Verbose mode will turn on display of output with a 'data' & 'warn' type  
+#### Help:
+`help` displays the main 'help' section  
+`help <topic>` displays help on the topic requested (still needs to be populated)  
+`add help` fill in the form and a new help topic is born!  
+`edit help <topic>` find an error in a certain help topic, you can fix it.  
+#### Hearing:
+`start/stop listening` turns on/off speech recognition  
+`start/stop hearing` same as above  
+#### Voice:
+`start/stop voice` turns on/off text-to-speech
+`start/stop talking` same as above
+`silence` stop speaking the current sentence/item  
+#### Vision:
+`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png
+`start/stop watching` same as above
 ### Regular Expression matches:
-Sara needs to 'understand' commands, and does this by comparing input to a regular expression  
+Sara needs to 'understand' commands, and does this by comparing input to a regular expression found inside each plugin function's .json file  
 Example: 
 ```
 /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
