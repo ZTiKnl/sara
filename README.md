@@ -112,7 +112,7 @@ The vision command will be extended with object/face recognition, if I can get t
 `start/stop colors` turns on/off colored responses/prompt  
 #### Verbose:
 `start/stop verbose` turns on/off verbose mode  
-Verbose mode will turn on display of output with a 'data' & 'warn' type  
+Verbose mode will turn on display of output with a 'data' or 'warn' type  
 #### Help:
 `help` displays the main 'help' section  
 `help <topic>` displays help on the topic requested (still needs to be populated)  
@@ -122,12 +122,12 @@ Verbose mode will turn on display of output with a 'data' & 'warn' type
 `start/stop listening` turns on/off speech recognition  
 `start/stop hearing` same as above  
 #### Voice:
-`start/stop voice` turns on/off text-to-speech
-`start/stop talking` same as above
+`start/stop voice` turns on/off text-to-speech  
+`start/stop talking` same as above  
 `silence` stop speaking the current sentence/item  
 #### Vision:
-`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png
-`start/stop watching` same as above
+`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png  
+`start/stop watching` same as above  
 ### Regular Expression matches:
 Sara needs to 'understand' commands, and does this by comparing input to a regular expression found inside each plugin function's .json file  
 Example: 
