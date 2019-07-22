@@ -38,7 +38,7 @@ Sara is my (poor) attempt at making my own Jarvis/Alexa/Hey Google/Hi Bixby/Voic
 It runs on Node.js, on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has internal commands, but can be extended through a self-made plugin system
 
-Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way  
+**Right now, the recognized speech string is displayed in the terminal, but not processed or used in any way*  *
 Soon, spoken commands will be pushed to the command line, so that you have the option of 'editing' the recognition string  
 The functionality is there and ready, just not joined together yet  
 In the future there will be an option to choose wether to write speech commands to the command line for editing, or immediately process them as they are
@@ -79,6 +79,7 @@ Sara listens to the keyword '*Sara*'
 "country-list": "^2.1.1",
 "decimal.js": "^10.2.0",
 "geoip-lite": "^1.3.7",
+ "node-webcam": "^0.5.0",
 "os": "^0.1.1",
 "public-ip": "^3.1.0",
 "say": "^0.16.0",
@@ -106,6 +107,7 @@ start/stop colors
 start/stop verbose
 start/stop listening
 start/stop voice
+start/stop vision
 ```
 ### Regular Expression matches:
 Sara needs to 'understand' commands, and does this by comparing input to a regular expression  
@@ -233,7 +235,7 @@ More coming...
 
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
-My raspi:  
+My Raspberry Pi config:  
 ```
 ztik@sara:~/ $ arecord -l
 **** List of CAPTURE Hardware Devices ****
@@ -327,7 +329,10 @@ math_root.json
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
   - [ ] Correct hardcoded file locations to cleaned up path
-  - [ ] Support for the Pi camera and USB Webcams
+  - [x] Support for USB Webcams
+      - [ ] Support for the Pi camera
+    - [ ] Image manipulation through imagemagick
+    - [ ] Object/face detection
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
   - [ ] Add .json file import to help function, so plugins can add topics to the function
