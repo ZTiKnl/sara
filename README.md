@@ -351,6 +351,7 @@ As I understand, 90% of problems with Sonus are related to billing issues in Goo
 #### Known:
 * The voice module works, but responses are NOT connected to it (yet)  
 * The speech recognition module works, but only displays onscreen, and does not process it (yet)  
+
 There will be an option for both these functions very soon!  
 
 ### Plugins:
