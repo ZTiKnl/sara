@@ -14,7 +14,7 @@ const Sonus = require('sonus')
 const speech = require('@google-cloud/speech')
 const client = new speech.SpeechClient({
   projectId: 'sara-245106',
-  keyFilename: 'resources/apikeys/googlespeech.json'
+  keyFilename: 'resources/apikeys/googlecloud.json'
 })
 
 // include sonus settings
