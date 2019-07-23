@@ -32,7 +32,12 @@ module.exports = {
     // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
   },
   silence: function() {
-    say.stop();
+    say.stop(function (err) {
+      if (err) {
+        console.log('error: '+err.message)
+      }
+      console.log('stopped talking')
+    });
   },
   stop: function() {
     if (voiceactive == true) {

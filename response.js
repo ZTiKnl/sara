@@ -42,6 +42,8 @@ module.exports = {
       if (verbose) {
         if (type == 'data') {
           console.log(chalk.gray.bgBlack.bold('('+module+' / '+type+') '+text));
+        } else if (type == 'warn') {
+          console.log(chalk.black.bgYellow.bold('('+module+' / '+type+') '+text));
         }
       }
       if (type == 'command') {
@@ -51,6 +53,8 @@ module.exports = {
         console.log(chalk.yellow.bgBlack.bold('('+module+' / '+type+') '+text));
       }
       if (type == 'response') {
+        const voice = require('./voice.js');
+        voice.synthesize(text);
         console.log(chalk.cyan.bgBlack.bold('('+module+' / '+type+') '+text));
       }
       if (type == 'prompt') {
@@ -64,9 +68,6 @@ module.exports = {
       }
       if (type == 'help') {
         console.log(chalk.yellow.bgBlack.bold(text));
-      }
-      if (type == 'warn') {
-        console.log(chalk.black.bgYellow.bold('('+module+' / '+type+') '+text));
       }
       if (type == 'error') {
         console.log(chalk.yellow.bgRed.bold('('+module+' / '+type+') '+text));
