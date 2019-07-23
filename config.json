@@ -1,7 +1,34 @@
 {
   "verbose": true,
+
   "colors": true,
+
   "speech recognition": true,
-  "speech synthesis": false,
-  "vision": true
+
+  "command execution": true,
+
+  "speech synthesis": true,
+
+  "vision": true,
+
+  "webcam": {
+    "width": 1280,
+    "height": 720,
+    "quality": 100,
+    "saveShots": false,
+    "output": "png",
+    "device": false,
+    "callbackReturn": "location",
+    "verbose": false
+  },
+
+  "sfx": {
+    "hotword": "./resources/sfx/normal.wav",
+    "confirmed": "./resources/sfx/medium.wav"
+  },
+
+  "hotword": {
+    "word": "Sarah",
+    "file": "./resources/sonus/Sarah.pmdl"
+  }
 }
