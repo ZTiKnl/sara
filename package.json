@@ -1,6 +1,6 @@
 {
   "name": "sara",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "bin.js",
   "bin": "bin.js",
@@ -10,10 +10,8 @@
     "decimal.js": "^10.2.0",
     "geoip-lite": "^1.3.7",
     "node-webcam": "^0.5.0",
-    "os": "^0.1.1",
     "play-sound": "^1.1.3",
     "public-ip": "^3.1.0",
-    "readline-utils": "^2.2.3",
     "say": "^0.16.0",
     "sonus": "^1.0.3",
     "weather-js2": "^2.0.2"
