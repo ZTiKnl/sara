@@ -46,19 +46,18 @@ Sara is my (poor) attempt at making my own *Jarvis/Alexa/Hey Google/Hi Bixby/Voi
 It runs in Node.js on a Raspberry Pi 3B, but should be able to run on earlier versions as well as other linux distro  
 It has some internal commands, but can be extended through a self-made plugin system
 
+**Hearing works**  
 Voice commands can be sent to the command line for editing, or immediately be processed without user intervention  
-This option selection is currently hidden away in hearing.js, but will be in the commandline arguments and config.json soon
+This option selection is currently hidden away in hearing.js, but will be in the commandline arguments and config.json soon  
 
-**Voice output is functional, but not connected to responses**  
-All output is currently sent to the prompt, NOT to the voice module  
-I like to watch TV in the background while coding, and a voice speaking through that isn't nice  
-I have since created arguments and config.json which can auto disable modules, so in the coming days I will connect voice as well as speech recognition  
+**Voice works**  
+Voice output works, but further testing is required  
+On very long output, the speed appears to slow down, and different voices would be nice...  
 
 **Vision works**  
-There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam
+There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam  
 
-
-Sara ignores the following words at sentence start:
+Sara ignores the following words at sentence start:  
 ```
 sara
 can you
@@ -102,8 +101,9 @@ Other:
 "country-list": "^2.1.1",
 "decimal.js": "^10.2.0",
 "geoip-lite": "^1.3.7",
- "node-webcam": "^0.5.0",
+"node-webcam": "^0.5.0",
 "os": "^0.1.1",
+"play-sound": "^1.1.3",
 "public-ip": "^3.1.0",
 "say": "^0.16.0",
 "sonus": "^1.0.3",
@@ -136,14 +136,10 @@ The vision command will be extended with object/face recognition, if I can get t
 #### Hearing:
 `start/stop listening` turns on/off speech recognition  
 `start/stop hearing` same as above  
-  ~~The speech recognition module works, but is not connected to input yet until some other things are worked out~~  
-  ~~recognized input is simply displayed then discarded~~  
-  Speech is recognized and sent to prompt for user confirmation  
 #### Voice:
 `start/stop voice` turns on/off text-to-speech  
 `start/stop talking` same as above  
 `silence` stop speaking the current sentence/item  
-  **The voice module works, but is not connected to output yet until some other things are worked out**  
 #### Vision:
 `start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png  
 `start/stop watching` same as above  
@@ -366,9 +362,7 @@ I understand people can have problems getting through this, so here is a small g
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 #### Known:
-The voice module works, but responses are NOT connected to it (yet)  
-~~The speech recognition module works, but only displays onscreen, and does not process it (yet)~~
-There will be an option for both these functions very soon!  
+The vision module works, but all it does is take a picture every 15 sec, no further processing available at this moment
 
 ### Todo:
 - [ ] General
@@ -390,7 +384,7 @@ There will be an option for both these functions very soon!
   - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
 - [ ] Voice synthesis
-  - [ ] Hook command results to voice synthesis
+  - [x] ~~Hook command results to voice synthesis~~  
   - [ ] Create option for voice to be heard on all output, instead of on response only (`--speak-all`, `--speak-response-only`)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
@@ -442,6 +436,7 @@ Thank you to those involved making:
 - npm module [Chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [Weather](https://www.npmjs.com/package/weather-js2)
+- npm module [play-sound](https://www.npmjs.com/package/play-sound)
 - xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
 
 Hope I didn't miss anyone here, if so, please let me know and I will update!
