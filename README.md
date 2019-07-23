@@ -97,15 +97,14 @@ Other:
   
 ### NPM modules:
 ```
+"@google-cloud/text-to-speech": "^1.1.2",
 "chalk": "^2.4.2",
 "country-list": "^2.1.1",
 "decimal.js": "^10.2.0",
 "geoip-lite": "^1.3.7",
 "node-webcam": "^0.5.0",
-"os": "^0.1.1",
 "play-sound": "^1.1.3",
 "public-ip": "^3.1.0",
-"say": "^0.16.0",
 "sonus": "^1.0.3",
 "weather-js2": "^2.0.2"
 ```
@@ -330,7 +329,7 @@ pcm.!default {
   }
 }
 ```
-This solved every issue I had with festival and with arecord  
+This solved every issue I had with aplay and arecord  
 Using these settings I am able to record from the proper input device with the following command:  
 ```
 arecord -d 10 test.wav
@@ -339,7 +338,7 @@ and play that recording using:
 ```
 aplay test.wav
 ```
-Anything on support beyond this should be requested at alsa/festival/linux forums I guess...
+Anything on support beyond this should be requested at alsa/linux forums I guess, feel free to ask, but don't *expect* an answer...
 
 ### Other issues:
 #### Sonus/Google Cloud Speech API
@@ -416,7 +415,7 @@ The vision module works, but all it does is take a picture every 15 sec, no furt
 - [ ] ... suggestions?
 
 ### Long term goals:
-- [ ] Language support... eventually (this is depending on Google Speech language availability as well as festival language availability)
+- [ ] Language support... eventually (this is depending on Google Speech and Text-To-Speech language availability)
 - [ ] Devise a way to incorporate a mood-function, simulate emotions
 - [ ] Connect a LCD/TFT screen, give Sara a face with expressions
 - [ ] Neural Net / Machine learning capabilities for influencing stock market
@@ -429,7 +428,6 @@ Thank you to those involved making:
 - the *Raspberry Pi*
 - the *Rasbian OS* (*Debian*)
 - linux program *alsa-utils*
-- linux program *festival*
 - prompt/cli module code [A-312](https://stackoverflow.com/a/24519813/9820439)
 - npm module [Sonus](https://www.npmjs.com/package/sonus)
 - npm module [say](https://www.npmjs.com/package/say)
