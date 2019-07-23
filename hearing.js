@@ -5,6 +5,8 @@ var hearingprocess = true;
 // include colored responses module
 const response = require('./response.js');
 
+const sfx = require('play-sound')(opts = {})
+
 // include sonus module
 const Sonus = require('sonus')
 
@@ -16,16 +18,21 @@ const client = new speech.SpeechClient({
 })
 
 // include sonus settings
-const hotwords = [{ file: 'resources/sonus/Sarah.pmdl', hotword: 'sarah', sensitivity: '0.7' }]
+const hotwords = [{ file: 'resources/sonus/Sarah.pmdl', hotword: 'sarah', sensitivity: '0.6' }]
 const language = 'en-US';
 
 // start sonus interface
-const sonus = Sonus.init({ hotwords, language: language, recordProgram: 'arecord' }, client)
+const sonus = Sonus.init({ hotwords, language, recordProgram: 'arecord' }, client)
 
 module.exports = {
   recognize: function() {
     sonus.on('hotword', (index, keyword) => {
-      response.conlog('hearing', 'audio detected without keyword ('+keyword+')', 'data');
+      sfx.play('./resources/sfx/normal.wav', function(err){
+        if (err) {
+          response.conlog('hearing', 'Couldn\'t play hotword sfx: '+err.message, 'error');
+        }
+      })
+      response.conlog('hearing', '<'+keyword+'>', 'data');
     })
 
     sonus.on('partial-result', result => {
