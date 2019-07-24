@@ -7,7 +7,6 @@
 <input> _
 ```
 
-
 ### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
 2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
@@ -38,6 +37,9 @@
 14. [Credits](https://github.com/ZTiKnl/sara#credits)
 15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
 
+Attention: this package is currently a work in progress  
+Many changes are to be expected, do not expect backwards compatibility  
+
 ### What is Sara:
 Sara is a command prompt, that listens for keyboard input or voice commands  
 Sara has a voice, and is able to respond to commands through text as well as audio
@@ -52,7 +54,8 @@ This option selection is currently hidden away in hearing.js, but will be in the
 
 **Voice works**  
 Voice output works, but further testing is required  
-On very long output, the speed appears to slow down, and different voices would be nice...  
+~~On very long output, the speed appears to slow down, and different voices would be nice...~~  
+Different voices (male and femsale) are now possible, soon there will be an option to select, as well as a way to display a lit for each language!  
 
 **Vision works**  
 There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam  
@@ -389,6 +392,8 @@ The vision module works, but all it does is take a picture every 15 sec, no furt
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
 - [ ] Voice synthesis
   - [x] ~~Hook command results to voice synthesis~~  
+  - [ ] Add voices list display/selection
+  - [ ] Add voice settings to config.json
   - [ ] Create option for voice to be heard on all output, instead of on response only (`--speak-all`, `--speak-response-only`)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
@@ -420,7 +425,7 @@ The vision module works, but all it does is take a picture every 15 sec, no furt
 - [ ] ... suggestions?
 
 ### Long term goals:
-- [ ] Language support... eventually (this is depending on Google Speech and Text-To-Speech language availability)
+- [ ] Language support... eventually (this is depending on my personal skills as well as Google Speech and Text-To-Speech language availability)
 - [ ] Devise a way to incorporate a mood-function, simulate emotions
 - [ ] Connect a LCD/TFT screen, give Sara a face with expressions
 - [ ] Neural Net / Machine learning capabilities for influencing stock market
