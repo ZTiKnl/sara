@@ -46,11 +46,11 @@ module.exports = {
       await writeFile('resources/voice/output.wav', result.audioContent, 'binary');
 
       voiceoutput = sfx.play('./resources/voice/output.wav', function(err){
-        if (err.message != undefined) {
-          response.conlog('voice', 'Couldn\'t synthesize voice: '+err.message, 'error');
-          return
+        if (err && !voiceoutput.killed) {
+          response.conlog('voice', 'Couldn\'t synthesize voice: already speaking', 'error');
         }
         voiceoutput = null;
+        return
       })
     }
   },
