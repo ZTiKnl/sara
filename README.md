@@ -85,16 +85,15 @@ Hardware:
 Software:
 - Node.js LTS or newest *(I am currently running 12.5.0)*
 - NPM *(I am currently running 6.9.0)*
-- arecord *(config mic as default audio input device first)*  
+- aplay and arecord *([config audio in/out as default audio devices first](https://github.com/ZTiKnl/sara#audio-inout-issues))*  
   `sudo apt-get install alsa-utils`  
-- festival *(only default voice tested)*  
-  `sudo apt-get install festival festvox-kallpc16k`
 - fswebcam (i installed it, didnt touch a single config file)
   `apt-get install fswebcam`
 Other:
-- Google Cloud Speech API key
+- Google Cloud API key
   This is free for a certain amount of requests, see [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details
-  
+  *The same key is used for speech recognition as well as generating voices*
+
 ### NPM modules:
 ```
 "@google-cloud/text-to-speech": "^1.1.2",
