@@ -5,7 +5,7 @@ var hearingprocess = true;
 // include colored responses module
 const response = require('./response.js');
 
-const sfx = require('play-sound')(opts = {})
+const sfx = require('play-sound')(opts = {player: "aplay"})
 
 // include sonus module
 const Sonus = require('sonus')
