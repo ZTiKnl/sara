@@ -1,7 +1,8 @@
 {
-  "name": "sara",
-  "version": "0.1.0",
-  "description": "",
+  "name": "@ztiknl/sara",
+  "version": "0.1.1",
+  "description": "Sentient Artificial Responsive Agent",
+  "keywords": "prompt, cli, speech recognition, stt, text-to-speech, tts, voice-command, alexa, ok google, siri, bixby, jarvis, voice response system",
   "main": "bin.js",
   "bin": "bin.js",
   "dependencies": {
@@ -20,6 +21,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ZTiKnl/sara.git"
+  },
+  "author": "ZTiKnl",
   "license": "ISC"
 }
