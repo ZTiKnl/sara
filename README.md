@@ -120,7 +120,7 @@ For more information on the Google Cloud Speech API, see:
 The Google API key file is located at `./resources/apikeys/googlecloud.json`  
 
 For more information on how to setup your own custom hotword, see:  
-[NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword)
+[NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword)  
 The custom hotword file is located at `./resources/sonus/Sarah.pmdl`  
 
 
