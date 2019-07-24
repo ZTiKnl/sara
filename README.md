@@ -40,6 +40,9 @@
 Attention: this package is currently a work in progress  
 Many changes are to be expected, do not expect backwards compatibility  
 
+Current version: 0.1.0  
+When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
+
 ### What is Sara:
 Sara is a command prompt, that listens for keyboard input or voice commands  
 Sara has a voice, and is able to respond to commands through text as well as audio
