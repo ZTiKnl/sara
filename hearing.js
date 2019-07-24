@@ -18,7 +18,7 @@ const client = new speech.SpeechClient({
 })
 
 // include sonus settings
-const hotwords = [{ file: 'resources/sonus/Sarah.pmdl', hotword: 'sara', sensitivity: '0.5' }]
+const hotwords = [{ file: 'resources/sonus/Sarah.pmdl', hotword: 'sara', sensitivity: '0.6' }]
 const language = 'en-US';
 
 // start sonus interface
