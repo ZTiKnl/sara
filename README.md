@@ -435,7 +435,6 @@ Thank you to those involved making:
 - linux program *alsa-utils*
 - prompt/cli module code [A-312](https://stackoverflow.com/a/24519813/9820439)
 - npm module [Sonus](https://www.npmjs.com/package/sonus)
-- npm module [say](https://www.npmjs.com/package/say)
 - npm module [Chalk](https://www.npmjs.com/package/chalk)
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [Weather](https://www.npmjs.com/package/weather-js2)
