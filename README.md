@@ -115,8 +115,14 @@ Other:
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
 - it is also possible to use a config.json file to force default behaviour  
 
-See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api) for more information on the Google Cloud Speech API  
-See [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword) for more information on how to use your own custom hotword
+For more information on the Google Cloud Speech API, see:  
+[NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api)  
+The Google API key file is located at `./resources/apikeys/googlecloud.json`  
+
+For more information on how to setup your own custom hotword, see:  
+[NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword)
+The custom hotword file is located at `./resources/sonus/Sarah.pmdl`  
+
 
 ### Internal commands:
 I have tried to keep everything modular, so if something doesn't work on your system, you can disable that function through commandline arguments, config.json options file, or in the app itself  
