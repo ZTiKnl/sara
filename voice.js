@@ -46,7 +46,7 @@ module.exports = {
       await writeFile('resources/voice/output.wav', result.audioContent, 'binary');
 
       voiceoutput = sfx.play('./resources/voice/output.wav', function(err){
-        if (err) {
+        if (err.message != undefined) {
           response.conlog('voice', 'Couldn\'t synthesize voice: '+err.message, 'error');
           return
         }
@@ -56,6 +56,12 @@ module.exports = {
   },
   vocalize: function(sentence) {
     // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
+    sentence = sentence.replace(/ZTiK.nl/gi, "Stick N L");
+    sentence = sentence.replace(/ZTiKnl/gi, "Stick N L");
+    sentence = sentence.replace(/ZTiK/gi, "Stick");
+    sentence = sentence.replace(/SARA/gi, "Sarah");
+    sentence = sentence.replace(/S.A.R.A./gi, "Sarah");
+    sentence = sentence.replace(/S.A.R.A/gi, "Sarah");
     return sentence;
   },
   silence: function() {
