@@ -88,7 +88,6 @@ function myFunc() {
 setTimeout(myFunc, 5000); 
 */
 
-
 function loadconfig() {
   const fs = require('fs')
   const path = './config.json'
