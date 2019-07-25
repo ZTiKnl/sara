@@ -127,7 +127,7 @@ The Google API key file is located at `./resources/apikeys/googlecloud.json`
 
 For more information on how to setup your own custom hotword, see:  
 [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-make-my-own-hotword](https://www.npmjs.com/package/sonus#how-do-i-make-my-own-hotword)  
-The custom hotword file is located at `./resources/sonus/Sarah.pmdl`  
+The custom hotword file is located at `./resources/speechrecognition/Sarah.pmdl`  
 
 
 ### Internal commands:
@@ -151,7 +151,7 @@ The vision command will be extended with object/face recognition, if I can get t
 `start/stop talking` same as above  
 `silence` stop speaking the current sentence/item  
 #### Vision:
-`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/fswebcam/frame.png  
+`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/vision/frame.png  
 `start/stop watching` same as above  
   Nothing is done with this image at this time, but there are plans (in my head) for object/face recognition...
 ### Regular Expression matches:
