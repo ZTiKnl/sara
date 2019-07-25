@@ -43,6 +43,7 @@ module.exports = {
       if (result) {
         response.conlog('hearing', 'recognized: '+result, 'info');
         const prompt = require('./prompt.js');
+        sfx.output('command');
         if (hearingprocess) {
           prompt.write(result+'\n');
         } else {

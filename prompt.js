@@ -192,6 +192,10 @@ function start(strPrompt, callback) {
               vision.stop()
             } else if (cmd == 'silence') {
               voice.silence()
+            } else if (cmd == 'start sound effects' || cmd == 'start sfx') {
+              sfx.start()
+            } else if (cmd == 'stop sound effects' || cmd == 'stop sfx') {
+              sfx.stop()
             } else if (cmd == 'start colors') {
               if (!response.getcolors()) {
                 rl.setPrompt(chalk.bold.magentaBright('<input> '));
