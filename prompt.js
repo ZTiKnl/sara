@@ -10,6 +10,9 @@ const response = require('./response.js');
 // include help function module
 const help = require('./help.js');
 
+// include sfx module
+const sfx = require('./sfx.js');
+
 // include voice synthesis module
 const voice = require('./voice.js');
 
@@ -215,12 +218,14 @@ function start(strPrompt, callback) {
       }
     });
     rl.on('close', function() {
+        sfx.output('shutdown');
         response.conlog('sara', 'shutting down', 'info');
         myEmitter.emit('close');
         return process.exit(1);
     });
     rl.on('SIGINT', function() {
         rl.clearLine();
+        sfx.output('shutdown');
         response.conlog('sara', 'shutting down', 'info');
         if (!myEmitter.emit('SIGINT', rl))
             process.exit(1);

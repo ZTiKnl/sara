@@ -2,6 +2,7 @@
 var speechsynthesisstart = true;
 var speechrecognitionstart = true;
 var visionstart = true;
+var sfxstart = true;
 var colorstart = true;
 var verbose = false;
 var configfilefound = false;
@@ -30,6 +31,9 @@ const help = require('./help.js');
 // include prompt module
 const prompt = require('./prompt.js');
 
+// include sfx module
+const sfx = require('./sfx.js');
+
 // include voice synthesis module
 const voice = require('./voice.js');
 
@@ -41,7 +45,7 @@ const vision = require('./vision.js');
 
 // start prompt
 prompt.start();
-prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing']);
+prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing', 'sound', 'effects', 'sfx']);
 if (configfilefound) {
   response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
 } else {
@@ -58,6 +62,13 @@ if (colorstart) {
 }
 if (typeof help !== undefined) { 
     response.conlog('help', 'helper function activated', 'status');
+}
+
+// start voice
+if (sfxstart) {
+  sfx.start();
+} else {
+  response.conlog('sfx', 'sound effects not activated: --no-sound-effects flag', 'status');
 }
 
 // start voice
@@ -80,6 +91,8 @@ if (visionstart) {
 } else {
   response.conlog('vision', 'vision not activated: --no-vision flag', 'status');
 }
+
+sfx.output('startup');
 
 /*
 function myFunc() {
@@ -111,6 +124,11 @@ function loadconfig() {
       } else {
         visionstart = false;
       }
+      if (configfile['sound effects'] == true) {
+        sfxstart = true;
+      } else {
+        sfxstart = false;
+      }
       if (configfile['colors'] == true) {
         colorstart = true;
       } else {
@@ -137,6 +155,9 @@ function argumental() {
     if (val.toLowerCase() == '--no-colors' || val == '-nc') {
       colorstart = false;
     }
+    if (val.toLowerCase() == '--no-sound-effects' || val == '-nse') {
+      visionstart = false;
+    }
     if (val.toLowerCase() == '--no-voice' || val == '-nv') {
       speechsynthesisstart = false;
     }
@@ -154,6 +175,7 @@ function argumental() {
       console.log('arguments:');
       console.log('\t-h, --help\tDisplay this help and exits');
       console.log('\t-nc, --no-colors\tDo not activate colored responses on start');
+      console.log('\t-nse, --no-sound-effects\tDo not activate sound effects on start');
       console.log('\t-nsr, --no-speech-recognition\tDo not activate speech recognition on start');
       console.log('\t-nv, --no-voice\tDo not activate speech synthesis on start');
       console.log('\t-nV, --no-vision\tDo not activate webcam on start');

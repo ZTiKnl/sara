@@ -1,6 +1,5 @@
 // set start vars
 var voiceactive = false;
-var voiceoutput;
 
 // Imports the Google Cloud client library
 const textToSpeech = require('@google-cloud/text-to-speech');
@@ -8,7 +7,7 @@ const textToSpeech = require('@google-cloud/text-to-speech');
 const fs = require('fs');
 const util = require('util');
 
-const sfx = require('play-sound')(opts = {player: "aplay"})
+const sfx = require('./sfx.js')
 
 // include colored responses module
 const response = require('./response.js');
@@ -44,14 +43,8 @@ module.exports = {
       // Write the binary audio content to a local file
       const writeFile = util.promisify(fs.writeFile);
       await writeFile('resources/voice/output.wav', result.audioContent, 'binary');
-
-      voiceoutput = sfx.play('./resources/voice/output.wav', function(err){
-        if (err && !voiceoutput.killed) {
-          response.conlog('voice', 'Couldn\'t synthesize voice: already speaking', 'error');
-        }
-        voiceoutput = null;
-        return
-      })
+      sfx.output('voice');
+      return;
     }
   },
   vocalize: function(sentence) {
@@ -65,12 +58,7 @@ module.exports = {
     return sentence;
   },
   silence: function() {
-    if (voiceoutput != null) {
-      voiceoutput.kill();
-      response.conlog('voice', 'Stopped talking', 'info');
-    } else {
-      response.conlog('voice', 'I wasn\'t talking (anymore)', 'info');
-    }
+    sfx.quiet();
   },
   stop: function() {
     if (voiceactive == true) {

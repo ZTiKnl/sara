@@ -5,7 +5,7 @@ var hearingprocess = true;
 // include colored responses module
 const response = require('./response.js');
 
-const sfx = require('play-sound')(opts = {player: "aplay"})
+const sfx = require('./sfx.js')
 
 // include sonus module
 const Sonus = require('sonus')
@@ -27,12 +27,8 @@ const sonus = Sonus.init({ hotwords, language, recordProgram: 'arecord' }, clien
 module.exports = {
   recognize: function() {
     sonus.on('hotword', (index, keyword) => {
-      sfx.play('./resources/sfx/normal.wav', function(err){
-        if (err) {
-          response.conlog('hearing', 'Couldn\'t play hotword sfx: '+err.message, 'error');
-        }
-      })
-      response.conlog('hearing', '<'+keyword+'>', 'data');
+      sfx.output('hotword');
+      response.conlog('hearing', 'hotword <'+keyword+'> detected', 'data');
     })
 
     sonus.on('partial-result', result => {
