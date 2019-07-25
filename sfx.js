@@ -8,6 +8,9 @@ const sfx = require('play-sound')(opts = {player: "aplay"})
 // include colored responses module
 const response = require('./response.js');
 
+
+const hearing = require('./hearing.js')
+
 module.exports = {
   start: function() {
     if (sfxactive == false) {
@@ -18,6 +21,7 @@ module.exports = {
     }
   },
   output: async function(effect) {
+//    hearing.pause();
     if (sfxactive == true) {
       var file;
       if (effect == 'startup') {
@@ -53,6 +57,7 @@ module.exports = {
             }
           }
         }
+//        hearing.resume();
         sfxoutput = null;
         return;
       })

@@ -52,6 +52,12 @@ module.exports = {
       }
     })
   },
+//  pause: function() {
+//    Sonus.pause(sonus);
+//  },
+//  resume: function () {
+//    Sonus.resume(sonus);
+//  },
   cmdexecute: function() {
     if (hearingprocess == false) {
       response.conlog('hearing', 'voice command execution activated', 'status');
