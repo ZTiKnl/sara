@@ -101,9 +101,9 @@ Software:
 - NPM *(I am currently running 6.9.0)*
 - aplay and arecord *([config audio in/out as default audio devices first](https://github.com/ZTiKnl/sara#audio-inout-issues))*  
   `sudo apt-get install alsa-utils`  
-- fswebcam (i installed it, didnt touch a single config file)
-  `apt-get install fswebcam`
-Other:
+- fswebcam (i installed it, didnt touch a single config file)  
+  `apt-get install fswebcam`  
+Other:  
 - Google Cloud API key (one key to rule them all!)
   This is free for a certain amount of requests, see [Sonus/Google Cloud Speech//Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details
   *The same key is used for speech recognition, generating voices and face/object detection*  
@@ -141,7 +141,7 @@ The custom hotword file is located at `./resources/speechrecognition/Sarah.pmdl`
 
 ### Internal commands:
 I have tried to keep everything modular, so if something doesn't work on your system, you can disable that function through commandline arguments, config.json options file, or in the app itself  
-The vision command will be extended with object/face recognition, if I can get that to work.
+The vision command will be extended with object/face recognition, ~~if I can~~ *when I* get that to work properly  
 #### Colors:
 `start/stop colors` turns on/off colored responses/prompt  
 #### Verbose:
