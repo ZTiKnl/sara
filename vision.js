@@ -1,5 +1,17 @@
 // set start vars
 var visionactive = false;
+var api_id;
+var api_file;
+var wc_width;
+var wc_height;
+var wc_quality;
+var wc_saveshots;
+var wc_output;
+var wc_device;
+var wc_verbose;
+
+// process config.json file
+loadconfig();
 
 // include colored responses module
 const response = require('./response.js');
@@ -12,34 +24,22 @@ const cloudvision = require('@google-cloud/vision');
 
 // Creates a client
 const client = new cloudvision.ImageAnnotatorClient({
-  projectId: 'sara-245106',
-  keyFilename: 'resources/apikeys/googlecloud.json'
+  projectId: api_id, //'sara-245106',
+  keyFilename: api_file //'resources/apikeys/googlecloud.json'
 })
 
 // start vars
 var snapshot;
-var interval = 1000 * 60 * 5 // 30 minutes = 2x per hour = 48 per day
+var interval = 1000 * 60 * 30 // 30 minutes = 2x per hour = 48 per day
 var opts = {
-    //Picture related
-    width: 1280,
-    height: 720,
-    quality: 100,
-
-    //Save shots in memory
-    saveShots: false,
-
-    // [jpeg, png] support varies
-    output: "png",
-
-    //false for default device
-    device: false,
-
-    // [location, buffer, base64]
-    // Webcam.CallbackReturnTypes
+    width: wc_width,
+    height: wc_height,
+    quality: wc_quality,
+    saveShots: wc_saveshots,
+    output: wc_output,
+    device: wc_device,
     callbackReturn: "location",
-
-    //Logging
-    verbose: false
+    verbose: wc_verbose
 };
 
 // start webcam interface
@@ -96,12 +96,12 @@ function newimage() {
     });
   });
 }
-
+/*
 function myFunc() {
   tester();
 }
 setTimeout(myFunc, 15000); 
-
+*/
 async function tester(inputFile) {
   inputFile = './resources/vision/frame.png';
   var outputFile = './resources/vision/faces.png';
@@ -187,4 +187,59 @@ async function highlightfaces(inputFile, faces, outputFile, Canvas) {
       .on('error', reject)
       .on('end', resolve);
   });
+}
+
+function loadconfig() {
+  const fs = require('fs')
+  const path = './config.json'
+
+  try {
+    if (fs.existsSync(path)) {
+      var configfile = require('./config.json');
+      if (configfile['google cloud']['projectid'] != null && configfile['google cloud']['file'] != null) {
+        api_id = configfile['google cloud']['projectid'];
+        api_file = configfile['google cloud']['file'];
+      } else {
+        api_id = 'sara-245106';
+        api_file = './resources/apikeys/googlecloud.json';
+      }
+      if (configfile['webcam']['width'] != null) {
+        wc_width = configfile['webcam']['width'];
+      } else {
+        wc_width = 1280;
+      }
+      if (configfile['webcam']['height'] != null) {
+        wc_height = configfile['webcam']['height'];
+      } else {
+        wc_height = 720;
+      }
+      if (configfile['webcam']['quality'] != null) {
+        wc_quality = configfile['webcam']['quality'];
+      } else {
+        wc_quality = 100;
+      }
+      if (configfile['webcam']['output'] != null) {
+        wc_output = configfile['webcam']['output'];
+      } else {
+        wc_output = "png";
+      }
+      if (configfile['webcam']['saveshots'] != null) {
+        wc_saveshots = configfile['webcam']['saveshots'];
+      } else {
+        wc_saveshots = false;
+      }
+      if (configfile['webcam']['device'] != null) {
+        wc_device = configfile['webcam']['device'];
+      } else {
+        wc_device = false;
+      }
+      if (configfile['webcam']['verbose'] != null) {
+        wc_verbose = configfile['webcam']['verbose'];
+      } else {
+        wc_verbose = false;
+      }
+    }
+  } catch(err) {
+  }
+
 }

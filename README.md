@@ -40,7 +40,7 @@
 Attention: this package is currently a work in progress  
 Many changes are to be expected, do not expect backwards compatibility  
 
-Current version: 0.1.0  
+Current version: 0.2.0  
 When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### What is Sara:
@@ -58,7 +58,7 @@ This option selection is currently hidden away in hearing.js, but will be in the
 **Voice works**  
 Voice output works, but further testing is required  
 ~~On very long output, the speed appears to slow down, and different voices would be nice...~~  
-Different voices (male and femsale) are now possible, soon there will be an option to select, as well as a way to display a list of voices for each language!  
+Different voices (male and female) are now possible, soon there will be an option to select, as well as a way to display a list of voices for each language!  
 
 **Vision works**  
 There are no recognition functions or anything, all it does as of yet is take a picture every 15 seconds using a USB webcam  
@@ -153,7 +153,10 @@ The vision command will be extended with object/face recognition, if I can get t
 #### Vision:
 `start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/vision/frame.png  
 `start/stop watching` same as above  
-  Nothing is done with this image at this time, but there are plans (in my head) for object/face recognition...
+  Nothing is done with this image at this time, but there are plans (in my head) for object/face detection and recognition...  
+  Face/object detection works, but is not connected yet, it will be soon after some more testing  
+  Face recognition does not work yet, this will need a more complex neural net to connect the dots between different images  
+  
 ### Regular Expression matches:
 Sara needs to 'understand' commands, and does this by comparing input to a regular expression found inside each plugin function's .json file  
 Example: 
@@ -382,10 +385,6 @@ The vision module works, but all it does is take a picture every 15 sec, no furt
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
   - [ ] Correct hardcoded file locations to cleaned up path
-  - [x] ~~Support for USB Webcams~~  
-      - [ ] Support for the Pi camera
-    - [ ] Image manipulation through imagemagick
-    - [ ] Object/face detection
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
   - [ ] Add .json file import to help function, so plugins can add topics to the function
@@ -401,7 +400,13 @@ The vision module works, but all it does is take a picture every 15 sec, no furt
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
   - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
-    - [ ] Add .json file import to vocalise() function, so plugins or end-users can add words to the list
+    - [ ] Add .json file import to vocalise() function, so plugins or end-users can add words to the list  
+- [ ] Vision  
+  - [x] ~~Support for USB Webcams~~  
+      - [ ] Support for the Pi camera  
+  - [ ] Image manipulation through imagemagick  
+  - [x] ~~Object/face detection~~  
+  - [ ] Object/face recognition    
 - [ ] Plugins
   - [x] ~~Rename 'commands' folder to 'plugins'~~  
   - [ ] Check for plugins in an external folder
