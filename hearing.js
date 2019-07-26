@@ -1,11 +1,17 @@
 // set start vars
 var hearingactive = false;
 var hearingprocess = true;
+var api_id;
+var api_file;
+var sr_file;
+var sr_hotword;
+var sr_sensitivity;
+
+// process config.json file
+loadconfig();
 
 // include colored responses module
 const response = require('./response.js');
-
-const sfx = require('./sfx.js')
 
 // include sonus module
 const Sonus = require('sonus')
@@ -13,12 +19,12 @@ const Sonus = require('sonus')
 // include Google Cloud text-to-speech module
 const speech = require('@google-cloud/speech')
 const client = new speech.SpeechClient({
-  projectId: 'sara-245106',
-  keyFilename: 'resources/apikeys/googlecloud.json'
+  projectId: api_id, //'sara-245106',
+  keyFilename: api_file //'resources/apikeys/googlecloud.json'
 })
 
 // include sonus settings
-const hotwords = [{ file: 'resources/speechrecognition/Sarah.pmdl', hotword: 'sara', sensitivity: '0.6' }]
+const hotwords = [{ file: sr_file, hotword: sr_hotword, sensitivity: sr_sensitivity }]
 const language = 'en-US';
 
 // start sonus interface
@@ -26,6 +32,7 @@ const sonus = Sonus.init({ hotwords, language, recordProgram: 'arecord' }, clien
 
 module.exports = {
   recognize: function() {
+    const sfx = require('./sfx.js');
     sonus.on('hotword', (index, keyword) => {
       sfx.output('hotword');
       response.conlog('hearing', 'hotword <'+keyword+'> detected', 'data');
@@ -42,8 +49,8 @@ module.exports = {
     sonus.on('final-result', result => {
       if (result) {
         response.conlog('hearing', 'recognized: '+result, 'info');
-        const prompt = require('./prompt.js');
         sfx.output('command');
+        const prompt = require('./prompt.js');
         if (hearingprocess) {
           prompt.write(result+'\n');
         } else {
@@ -107,3 +114,31 @@ function myFunc() {
 }
 setTimeout(myFunc, 5000); 
 */
+function loadconfig() {
+  const fs = require('fs')
+  const path = './config.json'
+
+  try {
+    if (fs.existsSync(path)) {
+      var configfile = require('./config.json');
+      if (configfile['google cloud'] != null) {
+        api_id = configfile['google cloud']['projectid'];
+        api_file = configfile['google cloud']['file'];
+       } else {
+        api_id = 'sara-245106';
+        api_file = './resources/apikeys/googlecloud.json';
+       }
+      if (configfile['hotword']['word'] != null && configfile['hotword']['file'] != null && configfile['hotword']['sensitivity'] != null) {
+        sr_hotword = configfile['hotword']['word'];
+        sr_file = configfile['hotword']['file'];
+        sr_sensitivity = configfile['hotword']['sensitivity'];
+      } else {
+        sr_hotword = 'Sara';
+        sr_file = 'resources/speechrecognition/Sarah.pmdl';
+        sr_sensitivity = '0.6';
+      }
+    }
+  } catch(err) {
+  }
+
+}

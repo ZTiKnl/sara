@@ -1,5 +1,10 @@
 // set start vars
 var voiceactive = false;
+var api_id;
+var api_file;
+
+// process config.json file
+loadconfig();
 
 // Imports the Google Cloud client library
 const textToSpeech = require('@google-cloud/text-to-speech');
@@ -25,8 +30,8 @@ module.exports = {
     if (voiceactive == true) {
       sentence = module.exports.vocalize(sentence);
       const client = new textToSpeech.TextToSpeechClient({
-        projectId: 'sara-245106',
-        keyFilename: 'resources/apikeys/googlecloud.json'
+        projectId: api_id, //'sara-245106',
+        keyFilename: api_file //'resources/apikeys/googlecloud.json'
       })
      
       // Construct the request
@@ -71,4 +76,24 @@ module.exports = {
   status: function() {
     return voiceactive;
   }
+}
+
+function loadconfig() {
+  const fs = require('fs')
+  const path = './config.json'
+
+  try {
+    if (fs.existsSync(path)) {
+      var configfile = require('./config.json');
+      if (configfile['google cloud'] != null) {
+        api_id = configfile['google cloud']['projectid'];
+        api_file = configfile['google cloud']['file'];
+       } else {
+        api_id = 'sara-245106';
+        api_file = './resources/apikeys/googlecloud.json';
+       }
+    }
+  } catch(err) {
+  }
+
 }

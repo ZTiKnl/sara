@@ -1,6 +1,13 @@
 // set start vars
-var sfxactive = true;
+var sfxactive = false;
 var sfxoutput;
+var sfx_hotword
+var sfx_command;
+var sfx_startup;
+var sfx_shutdown;
+
+// process config.json file
+loadconfig();
 
 // include sfx module (default player: aplay)
 const sfx = require('play-sound')(opts = {player: "aplay"})
@@ -25,17 +32,17 @@ module.exports = {
     if (sfxactive == true) {
       var file;
       if (effect == 'startup') {
-        file = './resources/sfx/startup.wav';
+        file = sfx_startup;
       } else if (effect == 'shutdown') {
-        file = './resources/sfx/shutdown.wav';
+        file = sfx_shutdown;
       } else if (effect == 'hotword') {
-        file = './resources/sfx/hotword.wav';
-      } else if (effect == 'commandsfx') {
-        file = './resources/sfx/command.wav';
+        file = sfx_hotword;
+      } else if (effect == 'command') {
+        file = sfx_command;
       } else if (effect == 'voice') {
         file = './resources/voice/output.wav';
       }
-      
+
       sfxoutput = sfx.play(file, function(err){
         if (err) {
           if (!sfxoutput.killed) {
@@ -82,4 +89,38 @@ module.exports = {
   status: function() {
     return sfxactive;
   }
+}
+
+function loadconfig() {
+  const fs = require('fs')
+  const path = './config.json'
+
+  try {
+    if (fs.existsSync(path)) {
+      var configfile = require('./config.json');
+      if (configfile['sfx']['hotword'] != null) {
+        sfx_hotword = configfile['sfx']['hotword'];
+      } else {
+        sfx_hotword = './resources/sfx/hotword.wav';
+      }
+      if (configfile['sfx']['command'] != null) {
+        sfx_command = configfile['sfx']['command'];
+      } else {
+        sfx_command = './resources/sfx/command.wav';
+      }
+      if (configfile['sfx']['startup'] != null) {
+        sfx_startup = configfile['sfx']['startup'];
+      } else {
+        sfx_startup = './resources/sfx/startup.wav';
+      }
+      if (configfile['sfx']['shutdown'] != null) {
+        sfx_shutdown = configfile['sfx']['shutdown'];
+      } else {
+        sfx_shutdown = './resources/sfx/shutdown.wav';
+      }
+
+    }
+  } catch(err) {
+  }
+
 }

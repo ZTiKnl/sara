@@ -156,7 +156,7 @@ function argumental() {
       colorstart = false;
     }
     if (val.toLowerCase() == '--no-sound-effects' || val == '-nse') {
-      visionstart = false;
+      sfxstart = false;
     }
     if (val.toLowerCase() == '--no-voice' || val == '-nv') {
       speechsynthesisstart = false;

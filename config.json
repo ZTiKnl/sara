@@ -3,6 +3,8 @@
 
   "colors": true,
 
+  "sound effects": true,
+
   "speech recognition": true,
 
   "command execution": true,
@@ -11,6 +13,11 @@
 
   "vision": true,
 
+  "google cloud": {
+    "projectid": "sara-245106",
+    "file": "./resources/apikeys/googlecloud.json"
+  },
+
   "webcam": {
     "width": 1280,
     "height": 720,
@@ -18,17 +25,19 @@
     "saveShots": false,
     "output": "png",
     "device": false,
-    "callbackReturn": "location",
     "verbose": false
   },
 
   "sfx": {
-    "hotword": "./resources/sfx/normal.wav",
-    "confirmed": "./resources/sfx/medium.wav"
+    "hotword": "./resources/sfx/hotword.wav",
+    "command": "./resources/sfx/command.wav",
+    "startup": "./resources/sfx/startup.wav",
+    "shutdown": "./resources/sfx/shutdown.wav"
   },
 
   "hotword": {
-    "word": "Sarah",
-    "file": "./resources/sonus/Sarah.pmdl"
+    "word": "Sara",
+    "file": "./resources/speechrecognition/Sarah.pmdl",
+    "sensitivity": "0.5"
   }
 }
