@@ -162,12 +162,13 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 #### Vision:
 `start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/vision/frame.png  
 `start/stop watching` same as above  
-  Nothing is done with this image at this time, but there are plans (in my head) for object/face detection and recognition...  
-  Face/object detection works, but is not connected yet, it will be soon after some more testing  
-  Face recognition does not work yet, this will need a more complex neural net to connect the dots between different images  
+  Nothing is done with this image at this time, but there are tests being done with detection and recognition...  
+  - Face/object detection works, but is not connected yet, it will be soon after some more testing  
+  - Face recognition does not work yet, this will need a more complex neural net to connect the dots between different images  
   
 ### Regular Expression matches:
 Sara needs to 'understand' commands, and does this by comparing input to a regular expression found inside each plugin function's .json file  
+
 Example: 
 ```
 /^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
@@ -235,7 +236,7 @@ math_subtract.json
 math_root.json
 ```
 
-Regular Expressions in these .json files need special characters to be escaped twice:
+Regular Expressions in these .json files need special characters to be escaped twice:  
 `"regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",`
 
 Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
@@ -455,7 +456,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] Self awareness
 
 ### Credits:
-I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all  
+I would like to point out that I simply put this hardware and these programs and modules together, but without the people who created those, I would have had nothing at all!  
 Thank you to those involved making:
 - the *Raspberry Pi*
 - the *Rasbian OS* (*Debian*)
