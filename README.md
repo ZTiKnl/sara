@@ -38,6 +38,10 @@
 15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
 
 Attention: this package is currently a work in progress  
+**Do not install via** `npm install @ztik.nl/sara`  
+Clone or download from [Sara @ Github](https://github.com/ZTiKnl/sara.git)  
+
+Github documentation will be the Current/Latest testing build, NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
 Many changes are to be expected, do not expect backwards compatibility  
 
 Current version: 0.2.0  
