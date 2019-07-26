@@ -103,9 +103,10 @@ Software:
 - fswebcam (i installed it, didnt touch a single config file)
   `apt-get install fswebcam`
 Other:
-- Google Cloud API key
-  This is free for a certain amount of requests, see [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details
-  *The same key is used for speech recognition as well as generating voices*
+- Google Cloud API key (one key to rule them all!)
+  This is free for a certain amount of requests, see [Sonus/Google Cloud Speech//Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details
+  *The same key is used for speech recognition, generating voices and face/object detection*  
+    *face recognition will be calculated in-app, so it will not make requests to the Google Cloud Vision API*  
 
 ### NPM modules:
 ```
@@ -121,8 +122,8 @@ Other:
 "weather-js2": "^2.0.2"
 ```
 ### How to use:
-1. clone or download repo
-2. inside folder containing package.json, run command: `npm install`
+1. clone or download [this repo](https://github.com/ZTiKnl/sara.git)  
+2. inside main folder containing bin.js & package.json, run command: `npm install`
 3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
 - start program with command: `node bin.js`
 - to see the (optional) command line arguments, start program with command: `node bin.js --help`
@@ -232,6 +233,11 @@ math_add.json
 math_subtract.json  
 math_root.json
 ```
+
+Regular Expressions in these .json files need special characters to be escaped twice:
+`"regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",`
+
+Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
 ### Provided plugins:
 #### Math:
 ```
