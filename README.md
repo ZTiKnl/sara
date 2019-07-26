@@ -65,10 +65,10 @@ Voice output works, but further testing is required
 Different voices (male and female) are now possible, soon there will be an option to select, as well as a way to display a list of voices for each language!  
 
 **Vision works**  
-It does as of yet is take a picture every 15 seconds using a USB webcam  
+All it does is take a picture every 30 minutes using a USB webcam  
 Pi camera not supported yet, will be supported later  
 There are object/face detection functions, as well as some other functions (age/expression/gender labeling)  but NONE of these functions are connected to the webcam source image yet!  
-There are NO object/face recognition functions at this moment, but this will be added soon
+There are NO object/face recognition functions at this moment, but this will be added soon  
 
 Sara ignores the following words at sentence start:  
 ```
@@ -388,7 +388,7 @@ I understand people can have problems getting through this, so here is a small g
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 #### Known:
-The vision module works, but all it does is take a picture every 15 sec, no further processing available at this moment
+The vision module works, but all it does is take a picture every 30 min, no further processing connected at this moment
 
 ### Todo:
 - [ ] General
