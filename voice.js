@@ -2,6 +2,9 @@
 var voiceactive = false;
 var api_id;
 var api_file;
+var vo_language;
+var vo_voice;
+var vo_gender;
 
 // process config.json file
 loadconfig();
@@ -38,7 +41,7 @@ module.exports = {
       const request = {
         input: {text: sentence},
         // Select the language and SSML Voice Gender (optional)
-        voice: {languageCode: 'en-US', name: 'en-GB-Wavenet-C', ssmlGender: 'FEMALE'},
+        voice: {languageCode: vo_language, name: vo_voice, ssmlGender: vo_gender},
         // Select the type of audio encoding
         audioConfig: {audioEncoding: 'LINEAR16'},
       };
@@ -92,6 +95,22 @@ function loadconfig() {
         api_id = 'sara-245106';
         api_file = './resources/apikeys/googlecloud.json';
        }
+
+      if (configfile['voiceoptions']['language'] != null) {
+        vo_language = configfile['voiceoptions']['language'];
+      } else {
+        vo_language = 'en-US';
+      }
+      if (configfile['voiceoptions']['voice'] != null) {
+        vo_voice = configfile['voiceoptions']['voice'];
+      } else {
+        vo_voice = 'en-GB-Wavenet-C';
+      }
+      if (configfile['voiceoptions']['gender'] != null) {
+        vo_gender = configfile['voiceoptions']['gender'];
+      } else {
+        vo_gender = 'FEMALE';
+      }
     }
   } catch(err) {
   }
