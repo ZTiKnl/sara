@@ -149,6 +149,7 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
   Verbose mode will turn on display of output with a 'data' or 'warn' type  
 #### Help:
 `help` displays the main 'help' section  
+`list help` displays a list of all help topics  
 `help <topic>` displays help on the topic requested (still needs to be populated)  
 `add help` fill in the form and a new help topic is born!  
 `edit help <topic>` find an error in a certain help topic, you can fix it.  
@@ -403,7 +404,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
   - [ ] Add .json file import to help function, so plugins can add topics to the function
-  - [ ] add `help list` command, and/or display all topics using `help`  
+  - [x] ~~Add `list help` command, and/or display all topics using `help`~~  
 - [ ] Speech recognition
   - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
   - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'

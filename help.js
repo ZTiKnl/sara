@@ -102,11 +102,7 @@ function list() {
     files.forEach(function (topic) {
       fs.readFile('./documentation/'+topic, 'utf8', (err, jsonString) => {
         if (err) {
-//          if (err.code == 'ENOENT') {
-//            return response.conlog('help', 'There is no documentation for topic: '+topic, 'response');
-//          } else {
-            return response.conlog('help', 'Failed to fetch help topic contents: '+err.message, 'error');
-//          }
+          return response.conlog('help', 'Failed to fetch help topic contents: '+err.message, 'error');
         }
         try {
           const helptopic = JSON.parse(jsonString);
