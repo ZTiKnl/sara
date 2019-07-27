@@ -45,7 +45,7 @@ Github documentation will be the Current/Latest testing build
 NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
 Many changes are to be expected, do not expect backwards compatibility  
 
-Current version: `0.2.1`  
+Current version: `0.2.2`  
 When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### What is Sara:
