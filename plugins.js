@@ -38,9 +38,6 @@ function plugincheck (line) {
                 matches.forEach(function(argument) {
                   argumentarray.push(argument);
                 })
-
-                //speak result here, or add function to responses.conlog (type == 'response') ?
-                //console.log(fn(argumentarray));
                 let rslt = fn(argumentarray);
                 resolve(rslt);
               }
