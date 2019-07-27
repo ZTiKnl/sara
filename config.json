@@ -18,6 +18,12 @@
     "file": "./resources/apikeys/googlecloud.json"
   },
 
+  "voiceoptions": {
+    "language": "en-US",
+    "voice": "en-GB-Wavenet-C",
+    "gender": "FEMALE"
+  },
+
   "webcam": {
     "width": 1280,
     "height": 720,
