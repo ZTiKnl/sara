@@ -174,6 +174,8 @@ function start(strPrompt, callback) {
               }
             } else if (cmd == 'add help') {
               help.questions(null, null, null, null, 'add');
+            } else if (cmd == 'list help') {
+              help.list();
             } else if (cmd == 'start hearing' || cmd == 'start listening') {
               hearing.listen()
             } else if (cmd == 'stop hearing' || cmd == 'stop listening') {

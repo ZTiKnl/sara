@@ -45,7 +45,7 @@ const vision = require('./vision.js');
 
 // start prompt
 prompt.start();
-prompt.setCompletion(['help', 'add', 'edit', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing', 'sound', 'effects', 'sfx']);
+prompt.setCompletion(['help', 'add', 'edit', 'list', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing', 'sound', 'effects', 'sfx']);
 if (configfilefound) {
   response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
 } else {

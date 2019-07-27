@@ -11,6 +11,7 @@ module.exports = {
   questions: questions,
   add: add,
   help: help,
+  list: list,
   get: function(line) {
     line = line.trim();
     if (line.length == 4 && line == 'help') {
@@ -91,6 +92,32 @@ function help(topic, field) {
   })
 }
 
+function list() {
+  fs.readdir('./documentation', function (err, files) {
+    if (err) {
+      return response.conlog('help', 'Failed to scan folder contents: '+err.message, 'error');
+    } 
+    response.conlog('help', 'Topic:\t\tDescription:', 'help');
+    response.conlog('help', '--------------------------------------------------------------------------------', 'help');
+    files.forEach(function (topic) {
+      fs.readFile('./documentation/'+topic, 'utf8', (err, jsonString) => {
+        if (err) {
+//          if (err.code == 'ENOENT') {
+//            return response.conlog('help', 'There is no documentation for topic: '+topic, 'response');
+//          } else {
+            return response.conlog('help', 'Failed to fetch help topic contents: '+err.message, 'error');
+//          }
+        }
+        try {
+          const helptopic = JSON.parse(jsonString);
+          response.conlog('help', helptopic.name+':\t\t'+helptopic.description, 'help');
+        } catch(err) {
+          response.conlog('help', 'Error parsing JSON string: '+err.message, 'error');
+        }
+      })
+    })
+  })
+}
 
 function questions(var_name, var_description, var_explanation, var_update) {
   var helpname;
