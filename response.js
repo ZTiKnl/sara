@@ -53,8 +53,8 @@ module.exports = {
         console.log(chalk.yellow.bgBlack.bold('('+module+' / '+type+') '+text));
       }
       if (type == 'response') {
-        const voice = require('./voice.js');
-        voice.synthesize(text);
+//        const voice = require('./voice.js');
+//        voice.synthesize(text);
         console.log(chalk.cyan.bgBlack.bold('('+module+' / '+type+') '+text));
       }
       if (type == 'prompt') {
