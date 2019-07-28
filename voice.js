@@ -31,7 +31,8 @@ module.exports = {
   },
   synthesize: async function(sentence, type) {
     if (voiceactive == true) {
-//      sentence = module.exports.vocalize(sentence);
+      sentence = '<speak><break time=\'250ms\'/>'+sentence+'</speak>'
+      sentence = module.exports.vocalize(sentence);
       const client = new textToSpeech.TextToSpeechClient({
         projectId: api_id, //'sara-245106',
         keyFilename: api_file //'resources/apikeys/googlecloud.json'
@@ -57,6 +58,7 @@ module.exports = {
   },
   vocalize: function(sentence) {
     // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
+    sentence = sentence.replace(/\n/gi, "<break time=\'750ms\'/>\n");
     sentence = sentence.replace(/ZTiK.nl/gi, "Stick N L");
     sentence = sentence.replace(/ZTiKnl/gi, "Stick N L");
     sentence = sentence.replace(/ZTiK/gi, "Stick");

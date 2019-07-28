@@ -415,7 +415,9 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Create option for voice to be heard on all output, instead of on response only (`--speak-all`, `--speak-response-only`)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
   (normal behaviour is to use voice only on 'response' type items, all other types (such as data, info, status) are skipped)
-  - [ ] Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')
+  - [x] ~~Write 'vocalise()' function, to replace strings with proper sounding words ('ZTiK' becomes 'Stick')~~  
+    - [x] ~~Add SSML language markup support~~
+      - [ ] Add SSML markup to plugin outputs where needed (math functions)
     - [ ] Add .json file import to vocalise() function, so plugins or end-users can add words to the list  
 - [ ] Vision  
   - [x] ~~Support for USB Webcams~~  

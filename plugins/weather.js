@@ -8,7 +8,7 @@ module.exports = {
   place: async function (lctn) {
     let weatherstring = await weatherlocation(lctn[1]).then((result) => {
       let wthrline = ['Weather for '+result[0]['current']['observationpoint']+'\n\tSky: '+result[0]['current']['skytext']+'\n\tTemperature: '+result[0]['current']['temperature']+'° celcius\n\tFeels like: '+result[0]['current']['feelslike']+'° celcius\n\tHumidity: '+result[0]['current']['humidity']+'%\n\tWind: '+result[0]['current']['winddisplay']];
-      wthrline[1] = "<speak>"+wthrline[0].replace("\n", "\n<break time=\"3s\"/>")+"</speak>";
+      wthrline[1] = wthrline[0].replace(/°/gi, " degrees");
       return wthrline;
     })
     result = [weatherstring[0]];
@@ -19,11 +19,11 @@ module.exports = {
     let loc = await getlocation.city();
     let weatherstring = await weatherlocation(loc).then((result) => {
       let wthrline = ['Weather for '+result[0]['current']['observationpoint']+'\n\tSky: '+result[0]['current']['skytext']+'\n\tTemperature: '+result[0]['current']['temperature']+'° celcius\n\tFeels like: '+result[0]['current']['feelslike']+'° celcius\n\tHumidity: '+result[0]['current']['humidity']+'%\n\tWind: '+result[0]['current']['winddisplay']];
-      wthrline[1] = wthrline[0].replace("\n", "<break time=\"3s\"/>");
+      wthrline[1] = wthrline[0].replace(/°/gi, " degrees");
       return wthrline;
     })
     result = [weatherstring[0]];
-    result[1] - weatherstring[1];
+    result[1] = weatherstring[1];
     return result;
   },
   forecast: async function (lctn) {
@@ -39,11 +39,11 @@ module.exports = {
       wthrline[0] += '\tSky: '+result[0]['forecast'][3]['skytextday']+'\n\tTemperature min: '+result[0]['forecast'][3]['low']+'° celcius\n\tTemperature max: '+result[0]['forecast'][3]['high']+'° celcius\n\tRain: '+result[0]['forecast'][3]['precip']+'\n\n';
       wthrline[0] += result[0]['forecast'][4]['day']+', '+result[0]['forecast'][4]['date']+':\n';
       wthrline[0] += '\tSky: '+result[0]['forecast'][4]['skytextday']+'\n\tTemperature min: '+result[0]['forecast'][4]['low']+'° celcius\n\tTemperature max: '+result[0]['forecast'][4]['high']+'° celcius\n\tRain: '+result[0]['forecast'][4]['precip']+'\n\n';
-      wthrline[1] = wthrline[0].replace("\n", "<break time=\"3s\"/>");
+      wthrline[1] = wthrline[0].replace(/°/gi, " degrees");
       return wthrline;
     })
-    result = [weatherstring];
-    result[1] - result[0];
+    result = [weatherstring[0]];
+    result[1] = weatherstring[1];
     return result;
   },
   forecastlocal: async function () {
@@ -60,11 +60,11 @@ module.exports = {
       wthrline[0] += '\tSky: '+result[0]['forecast'][3]['skytextday']+'\n\tTemperature min: '+result[0]['forecast'][3]['low']+'° celcius\n\tTemperature max: '+result[0]['forecast'][3]['high']+'° celcius\n\tRain: '+result[0]['forecast'][3]['precip']+'\n\n';
       wthrline[0] += result[0]['forecast'][4]['day']+', '+result[0]['forecast'][4]['date']+':\n';
       wthrline[0] += '\tSky: '+result[0]['forecast'][4]['skytextday']+'\n\tTemperature min: '+result[0]['forecast'][4]['low']+'° celcius\n\tTemperature max: '+result[0]['forecast'][4]['high']+'° celcius\n\tRain: '+result[0]['forecast'][4]['precip']+'\n\n';
-      wthrline[1] = wthrline[0].replace("\n", "<break time=\"3s\"/>");
+      wthrline[1] = wthrline[0].replace(/°/gi, " degrees");
       return wthrline;
     })
-    result = [weatherstring];
-    result[1] - result[0];
+    result = [weatherstring[0]];
+    result[1] = weatherstring[1];
     return result;
   }
 }
