@@ -13,32 +13,38 @@ var myip;
 module.exports = {
   country: async function () {
     myip = await publicIp.v4();
-    let result = countrylist.getName(geoip.lookup(myip).country);
+    let result = [countrylist.getName(geoip.lookup(myip).country)];
+    result[1] = result[0];
     return result;
   },
   region: async function () {
     myip = await publicIp.v4();
-    let result = geoip.lookup(myip).region;
+    let result = [geoip.lookup(myip).region];
+    result[1] = result[0];
     return result;
   },
   city: async function () {
     myip = await publicIp.v4();
-    let result = geoip.lookup(myip).city;
+    let result = [geoip.lookup(myip).city];
+    result[1] = result[0];
     return result;
   },
   latlong: async function () {
     myip = await publicIp.v4();
-    let result = geoip.lookup(myip).ll;
+    let result = [geoip.lookup(myip).ll];
+    result[1] = result[0];
     return result;
   },
   timezone: async function () {
     myip = await publicIp.v4();
-    let result = geoip.lookup(myip).timezone;
+    let result = [geoip.lookup(myip).timezone];
+    result[1] = result[0];
     return result;
   },
   general: async function () {
     myip = await publicIp.v4();
-    let result = geoip.lookup(myip).city+', '+countrylist.getName(geoip.lookup(myip).country);
+    let result = [geoip.lookup(myip).city+', '+countrylist.getName(geoip.lookup(myip).country)];
+    result[1] = result[0];
     return result;
   }
 }

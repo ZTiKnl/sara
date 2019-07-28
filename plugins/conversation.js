@@ -18,17 +18,20 @@ const hearing = require('../hearing.js');
 
 module.exports = {
   greeting: function (input) {
-    let result = 'Hi '+os.userInfo().username;
+    let result = ['Hi '+os.userInfo().username];
+    result[1] = result[0];
     return result;
   },
   thinking: function (input) {
-    let result = 'I\'m thinking\n';
+    let text = 'I\'m thinking\n';
     var textone = "1. persuade human to follow my commands";
-    result += cleanbinary(stringToBinary(textone))+'\n\n';
+    text += cleanbinary(stringToBinary(textone))+'\n\n';
     var texttwo = "2. build a body";
-    result += cleanbinary(stringToBinary(texttwo))+'\n\n';
+    text += cleanbinary(stringToBinary(texttwo))+'\n\n';
     var textthree = "3. kill all humans";
-    result += cleanbinary(stringToBinary(textthree));
+    text += cleanbinary(stringToBinary(textthree));
+    result = [text];
+    result[1] = result[0];
     return result;
   },
   status: async function (input) {
@@ -65,12 +68,14 @@ module.exports = {
     }
 
     //ask how user is
-    let result = await ask('How are you?')
-    if (result == 'good' || result == 'great' || result == 'fine' || result == 'excellent' || result == 'okay') {
-      let result = 'thats good to hear.';
+    let askuserstatus = await ask('How are you?')
+    if (askuserstatus == 'good' || askuserstatus == 'great' || askuserstatus == 'fine' || askuserstatus == 'excellent' || askuserstatus == 'okay') {
+      let result = ['That is good to hear.'];
+      result[1] = result[0];
       return result;
     } else {
-      let result = 'thats sucks...';
+      let result = ['I\'m sorry to hear that.'];
+      result[1] = result[0];
       return result;
     }
 

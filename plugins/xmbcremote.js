@@ -24,7 +24,7 @@ if (xbmc_username != '' && xbmc_password != '') {
   var xbmc_json_rpc_url = "http://" + xbmc_host + ":" + xbmc_port + "/jsonrpc";
 }
 var headers = {
-    'User-Agent': 'kodi-controller.js'
+    'User-Agent': 'xmbcremote.js'
 };
 
 var xbmc_options = {
@@ -93,7 +93,8 @@ function move(x) {
       right();
     }
 
-    let result = 'Move '+x[1];
+    let result = ['Move '+x[1] ];
+    result[1] = result[0];
     resolve(result);
   })
 }
@@ -122,7 +123,8 @@ function multimove(x) {
       }
       i++;
     }
-    let result = j+'x move '+x[1];
+    let result = [j+'x move '+x[1] ];
+    result[1] = result[0];
     resolve(result);
   })
 }
@@ -135,10 +137,11 @@ function up() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Up';
+        result = ['Up'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -152,10 +155,11 @@ function down() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Down';
+        result = ['Down'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -169,10 +173,11 @@ function left() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Left';
+        result = ['Left'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -186,10 +191,11 @@ function right() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Right';
+        result = ['Right'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -203,10 +209,11 @@ function back() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Back';
+        result = ['Back'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -220,10 +227,11 @@ function select() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'OK/select';
+        result = ['OK/Select'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -237,10 +245,11 @@ function stop() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Stop';
+        result = ['Stop'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -254,10 +263,11 @@ function pause() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Pause/resume';
+        result = ['Pause/resume'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -271,10 +281,11 @@ function home() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Home';
+        result = ['Home'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -288,10 +299,11 @@ function info() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'Info';
+        result = ['Info'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })
@@ -305,10 +317,11 @@ function contextmenu() {
       }
       response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
-        result = 'ContextMenu';
+        result = ['ContextMenu'];
       } else {
-        result = 'error: '+resp.result;
+        result = ['error: '+resp.result];
       }
+      result[1] = result[0];
       resolve(result);
     });
   })

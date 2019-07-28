@@ -131,8 +131,15 @@ function start(strPrompt, callback) {
       
         if (start == -1 || end == -1) {
           processcmd(cmd).then((result) => {
-
-            response.conlog('prompt', result, 'response');
+            if (Array.isArray(result)) {
+              response.conlog('prompt', result[0], 'response');
+              response.conlog('prompt', result[1], 'data');
+              voice.synthesize(result[1]);
+              
+            } else {
+              response.conlog('prompt', result, 'response');
+              voice.synthesize(result);
+            }
 
           });
         } else {
