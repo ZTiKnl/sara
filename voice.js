@@ -29,9 +29,9 @@ module.exports = {
       response.conlog('voice', 'speech synthesis was already activated', 'status');
     }
   },
-  synthesize: async function(sentence) {
+  synthesize: async function(sentence, type) {
     if (voiceactive == true) {
-      sentence = module.exports.vocalize(sentence);
+//      sentence = module.exports.vocalize(sentence);
       const client = new textToSpeech.TextToSpeechClient({
         projectId: api_id, //'sara-245106',
         keyFilename: api_file //'resources/apikeys/googlecloud.json'
@@ -39,7 +39,7 @@ module.exports = {
      
       // Construct the request
       const request = {
-        input: {text: sentence},
+        input: {ssml: sentence},
         // Select the language and SSML Voice Gender (optional)
         voice: {languageCode: vo_language, name: vo_voice, ssmlGender: vo_gender},
         // Select the type of audio encoding
