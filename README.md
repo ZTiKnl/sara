@@ -309,9 +309,7 @@ menu info/information
 menu context
 menu submenu
 ```
-More coming...  
-(all these plugins are incomplete, and will be finished soon)  
-#### Timedate
+#### Timedate  
 ```
 what time is it
 what is the date
@@ -320,6 +318,8 @@ what month is it
 what day it is
 what is the week number
 ```
+More coming...  
+(all these plugins are incomplete, and will be finished soon)  
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
@@ -376,7 +376,8 @@ and play that recording using:
 ```
 aplay test.wav
 ```
-Anything on support beyond this should be requested at alsa/linux forums I guess, feel free to ask, but don't *expect* an answer...
+Anything on support beyond this should be requested at alsa/linux forums I guess  
+Feel free to ask, but don't *expect* an answer...
 
 ### Other issues:
 #### Sonus/Google Cloud Speech API
