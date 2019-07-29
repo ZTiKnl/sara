@@ -28,27 +28,28 @@ function plugincheck (line) {
       plugins.forEach(plugindata => {
         const plugin = load(`plugins/${plugindata.module}.js`);
         const fn = plugin[plugindata.name];
-          var result = eval(plugindata.regex).exec(line)
-          if (result) {
-            result.forEach(async function(element) {
-              var matches = element.match(eval(plugindata.regex));
-              if (matches !== null) {
-                pluginfound = true;
-                response.conlog('plugincheck', 'found match: '+plugindata.module+'.'+plugindata.name, 'data');
-                matches.forEach(function(argument) {
-                  argumentarray.push(argument);
-                })
-                let rslt = fn(argumentarray);
-                resolve(rslt);
-              }
-            });
-          }
+        var result = eval(plugindata.regex).exec(line)
+        if (result) {
+          result.forEach(async function(element) {
+            var matches = element.match(eval(plugindata.regex));
+            if (matches !== null) {
+              pluginfound = true;
+              response.conlog('plugincheck', 'found match: '+plugindata.module+'.'+plugindata.name, 'data');
+              matches.forEach(function(argument) {
+                argumentarray.push(argument);
+              })
+              let rslt = fn(argumentarray);
+              resolve(rslt);
+              return;
+            }
+          });
+        }
       });
       if (pluginfound == false) {
         response.conlog('pluginloader', 'Couldn\'t find matching plugin for command: '+line, 'error');
       }
     })().catch(err => {
-      response.conlog('pluginloader', 'Couldn\'t scan plugins: '+err.message, 'error');
+      response.conlog('pluginloader', 'Couldn\'t scan plugins: '+err, 'error');
     });
   })
 }
