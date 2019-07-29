@@ -1,0 +1,6 @@
+{
+  "name": "year",
+  "module": "timedate",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:year)\\s?(?:is|is\\sit|it\\sis)?$/i",
+  "description": "respond with current year"
+}

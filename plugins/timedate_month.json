@@ -1,0 +1,6 @@
+{
+  "name": "month",
+  "module": "timedate",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:month)\\s?(?:is|is\\sit|it\\sis)?$/i",
+  "description": "respond with current month"
+}

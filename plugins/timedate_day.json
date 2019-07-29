@@ -1,0 +1,6 @@
+{
+  "name": "day",
+  "module": "timedate",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:day)\\s?(?:is|is\\sit|it\\sis)?\\s?(?:today)?$/i",
+  "description": "respond with current day"
+}

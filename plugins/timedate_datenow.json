@@ -1,0 +1,6 @@
+{
+  "name": "datenow",
+  "module": "timedate",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:date)\\s?(?:is|is\\sit|it\\sis)?$/i",
+  "description": "respond with current date"
+}

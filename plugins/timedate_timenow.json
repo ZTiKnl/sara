@@ -1,0 +1,6 @@
+{
+  "name": "timenow",
+  "module": "timedate",
+  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:time)\\s?(?:is|is\\sit|it\\sis)?$/i",
+  "description": "respond with current time"
+}
