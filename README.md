@@ -28,6 +28,7 @@
   9.3 [Location](https://github.com/ZTiKnl/sara#location)  
   9.4 [Weather](https://github.com/ZTiKnl/sara#weather)  
   9.5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)  
+  9.6 [Timedate](https://github.com/ZTiKnl/sara#timedate)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
@@ -105,7 +106,7 @@ Software:
   `apt-get install fswebcam`  
 Other:  
 - Google Cloud API key *(one key to rule them all!)*  
-  This is free for a certain amount of requests, see [Sonus/Google Cloud Speech//Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details  
+  This is free for a certain amount of requests, see [Sonus/Google Cloud Speech/Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details  
   *The same key is used for speech recognition, generating voices and face/object detection*  
     *Face recognition will be calculated in-app, so it will not make requests to the Google Cloud Vision API*  
 
@@ -285,7 +286,6 @@ what is the weather like in/around/near <place>
 weather forecast  
 what is the weather forecast  
 what is the weather forecast for <place>  
-
 ```
 #### XMBC remote
 I am still thinking about a good keyword for menu move functions, media(?)
@@ -311,7 +311,15 @@ menu submenu
 ```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
-
+#### Timedate
+```
+what time is it
+what is the date
+what year is it
+what month is it
+what day it is
+what is the week number
+```
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
@@ -431,8 +439,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [x] ~~Finish weather plugin~~
   - [ ] Finish conversation plugin
   - [ ] Add CLI Games plugin
-    - [ ] Highscore system implementation
-  - [ ] Add time/date plugin
+    - [ ] Highscore system implementation  
+  - [x] ~~Add time/date plugin~~  
   - [ ] Add IMDB plugin
   - [ ] Add Wolfram Alpha plugin
   - [ ] Add Dictionary plugin
