@@ -63,7 +63,6 @@ This option selection is currently hidden away in hearing.js, but will be in the
 
 **Voice works**  
 Voice output works, but further testing is required  
-~~On very long output, the speed appears to slow down, and different voices would be nice...~~  
 Different voices (male and female) are now possible, soon there will be an option to select, as well as a way to display a list of voices for each language!  
 
 **Vision works**  
