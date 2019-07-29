@@ -133,7 +133,6 @@ function start(strPrompt, callback) {
           processcmd(cmd).then((result) => {
             if (Array.isArray(result)) {
               response.conlog('prompt', result[0], 'response');
-              response.conlog('prompt', result[1], 'data');
               voice.synthesize(result[1]);
               
             } else {
