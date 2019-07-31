@@ -29,6 +29,7 @@
   9.4 [Weather](https://github.com/ZTiKnl/sara#weather)  
   9.5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)  
   9.6 [Timedate](https://github.com/ZTiKnl/sara#timedate)  
+  9.7 [Wikipedia](https://github.com/ZTiKnl/sara#wikipedia)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
@@ -317,6 +318,11 @@ what month is it
 what day it is
 what is the week number
 ```
+#### Wikipedia  
+```
+what is <subject>
+more about <subject>
+```
 More coming...  
 (all these plugins are incomplete, and will be finished soon)  
 ### Audio in/out issues:
@@ -444,7 +450,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Add IMDB plugin
   - [ ] Add Wolfram Alpha plugin
   - [ ] Add Dictionary plugin
-  - [ ] Add Wikipedia plugin
+  - [x] ~~Add Wikipedia plugin~~  
   - [ ] Add Network Utilities plugin
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
