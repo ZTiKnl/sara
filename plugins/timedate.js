@@ -1,9 +1,3 @@
-// include prompt module
-const prompt = require('../prompt.js');
-
-// include colored responses module
-const response = require('../response.js');
-
 // include date-and-time module
 const date = require('date-and-time');
 

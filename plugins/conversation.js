@@ -4,9 +4,6 @@ const prompt = require('../prompt.js');
 // include os module
 const os = require('os');
 
-// include colors module
-const chalk = require('chalk');
-
 // include colored responses module
 const response = require('../response.js');
 

@@ -1,9 +1,3 @@
-// include prompt module
-const prompt = require('../prompt.js');
-
-// include colors module
-const chalk = require('chalk');
-
 // include colored responses module
 const response = require('../response.js');
 
