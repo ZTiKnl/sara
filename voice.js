@@ -59,6 +59,11 @@ module.exports = {
   vocalize: function(sentence) {
     // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
     sentence = sentence.replace(/\n/gi, "<break time=\'750ms\'/>\n");
+    sentence = sentence.replace(/,/gi, "<break time=\'500ms\'/>\n");
+    sentence = sentence.replace(/:/gi, "<break time=\'500ms\'/>\n");
+    sentence = sentence.replace(/;/gi, "<break time=\'500ms\'/>\n");
+    sentence = sentence.replace(/\(/gi, "<break time=\'500ms\'/>\n");
+    sentence = sentence.replace(/\)/gi, "<break time=\'500ms\'/>\n");
     sentence = sentence.replace(/ZTiK.nl/gi, "Stick N L");
     sentence = sentence.replace(/ZTiKnl/gi, "Stick N L");
     sentence = sentence.replace(/ZTiK/gi, "Stick");
