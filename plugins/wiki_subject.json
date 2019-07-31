@@ -1,0 +1,6 @@
+{
+  "name": "subject",
+  "module": "wiki",
+  "regex": "/^(?:more\\sabout)\\s(.+)$/i",
+  "description": "respond with wiki contents"
+}

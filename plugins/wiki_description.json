@@ -1,0 +1,6 @@
+{
+  "name": "description",
+  "module": "wiki",
+  "regex": "/^(?:what\\sis|what)\\s(.+?)(?:\\sis)?$/i",
+  "description": "respond with wiki subject description"
+}
