@@ -106,7 +106,7 @@ function start(strPrompt, callback) {
       rl.history.push(line);
 //      myEmitter.emit('line', line);
       
-      line = line.trim().toLowerCase();
+      line = line.trim();
 
       var regex = /^(?:sara|sarah|s.a.r.a.|s.a.r.a)?\s?,?\s?(?:please)?\s?(?:can\syou|could\syou)?\s?(?:tell\sme|let\sme\sknow)?\s?(?:please)?\s?/i
       line = line.replace(regex, '').trim();
@@ -161,13 +161,13 @@ function start(strPrompt, callback) {
             response.conlog('input', 'no command entered', 'error');
           } else {
             response.conlog('input', cmd, 'command');
-            if (cmd == 'help' || cmd.substr(0, 4) == 'help') {
-              help.get(cmd);
-            } else if (cmd.substr(0, 9) == 'edit help') {
-              if (cmd == 'edit help') {
+            if (cmd.toLowerCase() == 'help' || cmd.substr(0, 4).toLowerCase() == 'help') {
+              help.get(cmd.toLowerCase());
+            } else if (cmd.substr(0, 9).toLowerCase() == 'edit help') {
+              if (cmd.toLowerCase() == 'edit help') {
                 response.conlog('help', 'Please enter the topic to edit', 'error');
               } else {
-                cmd = cmd.substr(10, cmd.length).trim();
+                cmd = cmd.substr(10, cmd.length).trim().toLowerCase();
 
                 let path = './documentation/'+cmd+'.json';
                 fs.readFile(path, 'utf8', function (err, data) {
@@ -178,47 +178,47 @@ function start(strPrompt, callback) {
                   help.questions(obj.name, obj.description, obj.explanation, 'update')
                 });
               }
-            } else if (cmd == 'add help') {
+            } else if (cmd.toLowerCase() == 'add help') {
               help.questions(null, null, null, null, 'add');
-            } else if (cmd == 'list help') {
+            } else if (cmd.toLowerCase() == 'list help') {
               help.list();
-            } else if (cmd == 'start hearing' || cmd == 'start listening') {
+            } else if (cmd.toLowerCase() == 'start hearing' || cmd.toLowerCase() == 'start listening') {
               hearing.listen()
-            } else if (cmd == 'stop hearing' || cmd == 'stop listening') {
+            } else if (cmd.toLowerCase() == 'stop hearing' || cmd.toLowerCase() == 'stop listening') {
               hearing.stop()
-            } else if (cmd == 'start voice' || cmd == 'start talking') {
+            } else if (cmd.toLowerCase() == 'start voice' || cmd.toLowerCase() == 'start talking') {
               voice.start()
-            } else if (cmd == 'stop voice' || cmd == 'stop talking') {
+            } else if (cmd.toLowerCase() == 'stop voice' || cmd.toLowerCase() == 'stop talking') {
               voice.stop()
-            } else if (cmd == 'stop command execution' || cmd == 'start command parsing') {
+            } else if (cmd.toLowerCase() == 'stop command execution' || cmd.toLowerCase() == 'start command parsing') {
               voice.cmdtoprompt()
-            } else if (cmd == 'start command execution' || cmd == 'stop command parsing') {
+            } else if (cmd.toLowerCase() == 'start command execution' || cmd.toLowerCase() == 'stop command parsing') {
               voice.cmdexecute()
-            } else if (cmd == 'start vision' || cmd == 'start watching') {
+            } else if (cmd.toLowerCase() == 'start vision' || cmd.toLowerCase() == 'start watching') {
               vision.start()
-            } else if (cmd == 'stop vision' || cmd == 'stop watching') {
+            } else if (cmd.toLowerCase() == 'stop vision' || cmd.toLowerCase() == 'stop watching') {
               vision.stop()
-            } else if (cmd == 'silence') {
+            } else if (cmd.toLowerCase() == 'silence') {
               voice.silence()
-            } else if (cmd == 'start sound effects' || cmd == 'start sfx') {
+            } else if (cmd.toLowerCase() == 'start sound effects' || cmd.toLowerCase() == 'start sfx') {
               sfx.start()
-            } else if (cmd == 'stop sound effects' || cmd == 'stop sfx') {
+            } else if (cmd.toLowerCase() == 'stop sound effects' || cmd.toLowerCase() == 'stop sfx') {
               sfx.stop()
-            } else if (cmd == 'start colors') {
+            } else if (cmd.toLowerCase() == 'start colors') {
               if (!response.getcolors()) {
                 rl.setPrompt(chalk.bold.magentaBright('<input> '));
               }
               response.setcolors()
-            } else if (cmd == 'stop colors') {
+            } else if (cmd.toLowerCase() == 'stop colors') {
               if (response.getcolors()) {
                 rl.setPrompt('<input> ');
               }
               response.unsetcolors()
-            } else if (cmd == 'start verbose') {
+            } else if (cmd.toLowerCase() == 'start verbose') {
               response.setverbose()
-            } else if (cmd == 'stop verbose') {
+            } else if (cmd.toLowerCase() == 'stop verbose') {
               response.unsetverbose()
-            } else if (cmd == 'exit') {
+            } else if (cmd.toLowerCase() == 'exit') {
               rl.close();
             } else {
               runcmd(cmd).then((result) => {
