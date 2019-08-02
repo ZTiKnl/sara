@@ -146,11 +146,11 @@ function start(strPrompt, callback) {
           subcommands = true;
           processcmd(sub).then((result) => {
 
-            response.conlog('prompt', result, 'data');
+            response.conlog('prompt', result[0], 'data');
 
             stline = cmd.substr(0, start);
             enline = cmd.substr(end+1);
-            splitcommands(stline+result+enline);
+            splitcommands(stline+result[0]+enline);
           });
         }
       }
