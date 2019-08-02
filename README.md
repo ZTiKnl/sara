@@ -7,6 +7,8 @@
 <input> _
 ```
 
+![Experimental: yes](https://img.shields.io/badge/experimental-yes-blue "Experimental")  
+
 ### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
 2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
