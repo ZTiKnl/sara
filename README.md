@@ -7,7 +7,7 @@
 <input> _
 ```
 
-![Experimental: yes](https://img.shields.io/badge/experimental-yes-blue "Experimental")  
+![Type: Experimental](https://img.shields.io/badge/Type-Experimental-blue "Experimental") ![Status: Work in progress](https://img.shields.io/badge/Status-Work_in_progress-blue "Work in progress")  
 
 ### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
