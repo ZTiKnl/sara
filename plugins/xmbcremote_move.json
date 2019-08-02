@@ -1,6 +1,6 @@
 {
   "name": "move",
   "module": "xmbcremote",
-  "regex": "/^(?:menu)\\s?(?:move)\\s?(up|down|left|right)$/i",
+  "regex": "/^(?:media\\smenu)\\s?(?:move)\\s?(up|down|left|right)$/i",
   "description": "menu move"
 }

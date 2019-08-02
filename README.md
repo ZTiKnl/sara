@@ -290,7 +290,6 @@ what is the weather forecast
 what is the weather forecast for <place>  
 ```
 #### XMBC remote
-I am still thinking about a good keyword for menu move functions, media(?)
 ```
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
@@ -298,18 +297,18 @@ stop this video/movie/film/playback/episode
 pause/pause video/movie/film/playback/episode
 resume the video/movie/film/playback/episode
 continue this video/movie/film/playback/episode
-menu select
-menu back
-menu move up/down/left/right
-menu move up/down/left/right 5x
-menu move up/down/left/right 5*
-menu move up/down/left/right 5 times
-menu move up/down/left/right 5 entries
-menu move up/down/left/right 1 entry
-menu home
-menu info/information
-menu context
-menu submenu
+media menu select
+media menu back
+media menu move up/down/left/right
+media menu move up/down/left/right 5x
+media menu move up/down/left/right 5*
+media menu move up/down/left/right 5 times
+media menu move up/down/left/right 5 entries
+media menu move up/down/left/right 1 entry
+media menu home
+media menu info/information
+media menu context
+media menu submenu
 ```
 #### Timedate  
 ```
@@ -325,8 +324,8 @@ what is the week number
 what is <subject>
 more about <subject>
 ```
-More coming...  
-(all these plugins are incomplete, and will be finished soon)  
+All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
+More plugins are coming, see Todo list for what I'd like to add (if possible)...  
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  

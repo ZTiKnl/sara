@@ -1,6 +1,6 @@
 {
   "name": "home",
   "module": "xmbcremote",
-  "regex": "/^(?:menu)\\s?(?:home)$/i",
+  "regex": "/^(?:media\\smenu)\\s?(?:home)$/i",
   "description": "menu home"
 }
