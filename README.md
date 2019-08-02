@@ -454,6 +454,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Add Wolfram Alpha plugin
   - [ ] Add Dictionary plugin
   - [x] ~~Add Wikipedia plugin~~  
+    - [ ] Add topic overview/selection on multiple matches with request  
+    - [ ] Ask if user wants to know more after reading topic description  
   - [ ] Add Network Utilities plugin
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
