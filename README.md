@@ -412,6 +412,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] General
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
+    - [ ] Rewrite console.log() to response.conlog()  
   - [ ] Number string to integer function
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
@@ -443,7 +444,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] Plugins
   - [x] ~~Rename 'commands' folder to 'plugins'~~  
   - [ ] Check for plugins in an external folder
-  - [x] ~~Finish weather plugin~~
+  - [x] ~~Add weather plugin~~
+    - [ ] Add more commands: sun, sunrise, sunset, wind, rain  
   - [ ] Finish conversation plugin
   - [ ] Add CLI Games plugin
     - [ ] Highscore system implementation  
@@ -458,7 +460,6 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [x] ~~Add xmbc plugin~~
     - [x] ~~Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)~~
     - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
-    - [ ] Rewrite console.log() to response.conlog()
   - [ ] Add Image based Object Detection
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
