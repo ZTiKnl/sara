@@ -32,6 +32,7 @@
   9.5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)  
   9.6 [Timedate](https://github.com/ZTiKnl/sara#timedate)  
   9.7 [Wikipedia](https://github.com/ZTiKnl/sara#wikipedia)  
+  9.8 [News](https://github.com/ZTiKnl/sara#news)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
@@ -324,6 +325,14 @@ what is the week number
 what is <subject>
 more about <subject>
 ```
+#### News  
+```
+news headlines
+tech news headlines
+news headlines from bbc-news
+news headlines in US
+news headlines on bitcoin
+```
 All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
 More plugins are coming, see Todo list for what I'd like to add (if possible)...  
 ### Audio in/out issues:
@@ -446,7 +455,10 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Check for plugins in an external folder
   - [x] ~~Add weather plugin~~
     - [ ] Add more commands: sun, sunrise, sunset, wind, rain  
-  - [ ] Finish conversation plugin
+  - [x] ~~Add news plugin~~  
+    - [ ] Finish news plugin  
+  - [x] ~~Add conversation plugin~~  
+    - [ ] Finish conversation plugin  
   - [ ] Add CLI Games plugin
     - [ ] Highscore system implementation  
   - [x] ~~Add time/date plugin~~  
