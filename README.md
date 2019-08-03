@@ -466,6 +466,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Add Image based Face Recognition
     - [ ] Add events for Face Recognition
   - [ ] Add Cloud Storage plugin (connect with dropbox etc.)
+  - [ ] Add Discord connectivity  
 - [ ] ... suggestions?
 
 ### Long term goals:
