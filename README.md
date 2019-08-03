@@ -29,7 +29,7 @@
   9.2 [Conversation](https://github.com/ZTiKnl/sara#conversation)  
   9.3 [Location](https://github.com/ZTiKnl/sara#location)  
   9.4 [Weather](https://github.com/ZTiKnl/sara#weather)  
-  9.5 [XMBC remote](https://github.com/ZTiKnl/sara#xmbc-remote)  
+  9.5 [XBMC remote](https://github.com/ZTiKnl/sara#xbmc-remote)  
   9.6 [Timedate](https://github.com/ZTiKnl/sara#timedate)  
   9.7 [Wikipedia](https://github.com/ZTiKnl/sara#wikipedia)  
   9.8 [News](https://github.com/ZTiKnl/sara#news)  
@@ -290,7 +290,8 @@ weather forecast
 what is the weather forecast  
 what is the weather forecast for <place>  
 ```
-#### XMBC remote
+#### XBMC remote  
+Add connection details to file plugins/xbmc-remote/connection.json (see example file connection_example.json)  
 ```
 stop video/movie/film/playback/episode
 stop the video/movie/film/playback/episode
@@ -326,6 +327,7 @@ what is <subject>
 more about <subject>
 ```
 #### News  
+Add newsapi,org api key to file plugins/news/newsorg.json (see example file newsorg_example.json)  
 ```
 news headlines
 tech news headlines
@@ -428,6 +430,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Correct hardcoded file locations to cleaned up path
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
+  - [ ] Create help documentation for internal functions and plugins
   - [ ] Add .json file import to help function, so plugins can add topics to the function
   - [x] ~~Add `list help` command, and/or display all topics using `help`~~  
 - [ ] Speech recognition
@@ -471,7 +474,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Add Network Utilities plugin
   - [ ] Add CLI chart plugin
   - [ ] Add 9292OV plugin (Dutch public transport)
-  - [x] ~~Add xmbc plugin~~
+  - [x] ~~Add xbmc plugin~~
     - [x] ~~Add functions (stop, pause, select, back, up, down, left right, info, home, contextmenu)~~
     - [ ] Add more functions to remote control (next, previous, rewind, forward, sendtext)
   - [ ] Add Image based Object Detection
@@ -501,7 +504,7 @@ Thank you to those involved making:
 - npm module [decimal.js](https://www.npmjs.com/package/decimal.js)
 - npm module [Weather](https://www.npmjs.com/package/weather-js2)
 - npm module [play-sound](https://www.npmjs.com/package/play-sound)
-- xmbc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
+- xbmc plugin code [Marcus Linderoth](https://github.com/msloth/kodi.js)  
 
 Hope I didn't miss anyone here, if so, please let me know and I will update!
 
