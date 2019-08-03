@@ -1,6 +1,6 @@
 {
   "name": "multimove",
-  "module": "xmbcremote",
+  "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:move)\\s?(up|down|left|right)\\s?([0-9]+)\\s?(?:x|\\*|time|times|entries|entry)?$/i",
   "description": "menu multimove"
 }

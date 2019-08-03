@@ -1,6 +1,6 @@
 {
   "name": "info",
-  "module": "xmbcremote",
+  "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:info|information)$/i",
   "description": "menu info"
 }

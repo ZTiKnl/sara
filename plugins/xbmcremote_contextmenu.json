@@ -1,6 +1,6 @@
 {
   "name": "contextmenu",
-  "module": "xmbcremote",
+  "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:context)$/i",
   "description": "menu context"
 }

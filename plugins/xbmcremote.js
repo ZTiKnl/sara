@@ -5,12 +5,12 @@ const response = require('../response.js');
 var request = require('request');
 
 // starting vars
-var xmbc_config = require('./xmbc-remote/connection.json');
+var xbmc_config = require('./xbmc-remote/connection.json');
 
-var xbmc_host = xmbc_config.host;
-var xbmc_port = xmbc_config.port;
-var xbmc_username = xmbc_config.username;
-var xbmc_password = xmbc_config.password;
+var xbmc_host = xbmc_config.host;
+var xbmc_port = xbmc_config.port;
+var xbmc_username = xbmc_config.username;
+var xbmc_password = xbmc_config.password;
 
 if (xbmc_username != '' && xbmc_password != '') {
   var xbmc_json_rpc_url = "http://" + xbmc_username + ":" + xbmc_password + "@" + xbmc_host + ":" + xbmc_port + "/jsonrpc";
@@ -18,7 +18,7 @@ if (xbmc_username != '' && xbmc_password != '') {
   var xbmc_json_rpc_url = "http://" + xbmc_host + ":" + xbmc_port + "/jsonrpc";
 }
 var headers = {
-    'User-Agent': 'xmbcremote.js'
+    'User-Agent': 'xbmcremote.js'
 };
 
 var xbmc_options = {
@@ -127,9 +127,9 @@ function up() {
   return new Promise(resolve => {
     send_input(remote_inputs["Up"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Up'];
       } else {
@@ -145,9 +145,9 @@ function down() {
   return new Promise(resolve => {
     send_input(remote_inputs["Down"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Down'];
       } else {
@@ -163,9 +163,9 @@ function left() {
   return new Promise(resolve => {
     send_input(remote_inputs["Left"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Left'];
       } else {
@@ -181,9 +181,9 @@ function right() {
   return new Promise(resolve => {
     send_input(remote_inputs["Right"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Right'];
       } else {
@@ -199,9 +199,9 @@ function back() {
   return new Promise(resolve => {
     send_input(remote_inputs["Back"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Back'];
       } else {
@@ -217,9 +217,9 @@ function select() {
   return new Promise(resolve => {
     send_input(remote_inputs["Select"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['OK/Select'];
       } else {
@@ -235,9 +235,9 @@ function stop() {
   return new Promise(resolve => {
     send_input_action("stop", function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Stop'];
       } else {
@@ -253,9 +253,9 @@ function pause() {
   return new Promise(resolve => {
     send_input_action("pause", function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Pause/resume'];
       } else {
@@ -271,9 +271,9 @@ function home() {
   return new Promise(resolve => {
     send_input(remote_inputs["Home"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Home'];
       } else {
@@ -289,9 +289,9 @@ function info() {
   return new Promise(resolve => {
     send_input(remote_inputs["Info"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['Info'];
       } else {
@@ -307,9 +307,9 @@ function contextmenu() {
   return new Promise(resolve => {
     send_input(remote_inputs["ContextMenu"], function(err, resp) {
       if (err) {
-        response.conlog('xmbcremote plugin', 'Error: '+err.message, 'error');
+        response.conlog('xbmcremote plugin', 'Error: '+err.message, 'error');
       }
-      response.conlog('xmbcremote plugin', 'Response: '+resp, 'data');
+      response.conlog('xbmcremote plugin', 'Response: '+resp, 'data');
       if (resp.result == 'OK') {
         result = ['ContextMenu'];
       } else {
@@ -326,7 +326,7 @@ function contextmenu() {
 // use to communicate with Kodi.
 function do_request(reqpayload, fn) {
   xbmc_options.body = reqpayload;
-  response.conlog('xmbcremote plugin', 'Performing request: '+JSON.stringify(xbmc_options.body), 'data');
+  response.conlog('xbmcremote plugin', 'Performing request: '+JSON.stringify(xbmc_options.body), 'data');
     if (typeof fn === 'function') {
     return request(xbmc_options, function (error, resp, body) {
       fn(error, body);
@@ -347,7 +347,7 @@ function send_input(input, fn) {
                  "id": 1};
   do_request(payload, function(error, resp) {
     if (!error) {
-      response.conlog('xmbcremote plugin', 'Send input callback got ok, response: '+JSON.stringify(resp), 'data');
+      response.conlog('xbmcremote plugin', 'Send input callback got ok, response: '+JSON.stringify(resp), 'data');
     }
     fn(error, resp);
   });
@@ -363,7 +363,7 @@ function send_input_action(inputaction, fn) {
                  "id": 1};
   do_request(payload, function(error, resp) {
       if (!error) {
-        response.conlog('xmbcremote plugin', 'Send input action callback got ok, response: '+JSON.stringify(resp), 'data');
+        response.conlog('xbmcremote plugin', 'Send input action callback got ok, response: '+JSON.stringify(resp), 'data');
       }
       fn(error, resp);
     });
@@ -376,9 +376,9 @@ function get_player(fn) {
   var payload = {"jsonrpc": "2.0", "method": "Player.GetActivePlayers", "id": 1};
   do_request(payload, function(error, resp) {
     if (error) {
-        response.conlog('xmbcremote plugin', 'error getting player: '+JSON.stringify(resp), 'error');
+        response.conlog('xbmcremote plugin', 'error getting player: '+JSON.stringify(resp), 'error');
     } else {
-        response.conlog('xmbcremote plugin', 'got player: '+JSON.stringify(resp), 'data');
+        response.conlog('xbmcremote plugin', 'got player: '+JSON.stringify(resp), 'data');
     }
     fn(error, resp);
   });

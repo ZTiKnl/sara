@@ -1,6 +1,6 @@
 {
   "name": "select",
-  "module": "xmbcremote",
+  "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:select)$/i",
   "description": "menu select"
 }

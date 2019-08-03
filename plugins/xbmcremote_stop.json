@@ -1,6 +1,6 @@
 {
   "name": "stop",
-  "module": "xmbcremote",
+  "module": "xbmcremote",
   "regex": "/^(?:stop)\\s?(?:this|the)?\\s?(?:video|movie|film|playback|episode)$/i",
   "description": "stop playing media on xbmc device"
 }
