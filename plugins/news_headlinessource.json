@@ -1,0 +1,6 @@
+{
+  "name": "headlinessource",
+  "module": "news",
+  "regex": "/^(?:the|some)?\\s?(?:news\\s?headlines)\\s?(?:from)\\s?(.+)$/i",
+  "description": "respond with news headlines from source"
+}

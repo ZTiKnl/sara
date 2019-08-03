@@ -1,0 +1,6 @@
+{
+  "name": "headlinestopic",
+  "module": "news",
+  "regex": "/^(?:the|some)?\\s?(?:news\\s?headlines)\\s?(?:about|on)\\s?(.+)$/i",
+  "description": "respond with news headlines about subject"
+}

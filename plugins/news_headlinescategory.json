@@ -1,0 +1,6 @@
+{
+  "name": "headlinescategory",
+  "module": "news",
+  "regex": "/^(?:the|some)?\\s?(.+?)(?:news)\\s?(?:headlines)$/i",
+  "description": "respond with category news headlines"
+}

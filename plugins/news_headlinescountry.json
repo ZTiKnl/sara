@@ -1,0 +1,6 @@
+{
+  "name": "headlinescountry",
+  "module": "news",
+  "regex": "/^(?:the|some)?\\s?(?:news\\s?headlines)\\s?(?:in|at|near|around)\\s?(.+)$/i",
+  "description": "respond with news headlines for country"
+}
