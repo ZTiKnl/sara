@@ -99,14 +99,16 @@ Hardware:
   - Audio output device *(tv/hdmi or speakers on line-out)*  
   - Webcam for future object/face recognition modules (I use a HP Webcam HD-4110)
   - SD Card containing Raspbian *(latest version is always advisable)*  
-    - Self-powered USBhub is advisable when using USB microphone/webcam
+    - Self-powered USBhub is advisable when using USB microphone/webcam  
+
 Software:
 - Node.js LTS or newest *(I am currently running 12.5.0)*
 - NPM *(I am currently running 6.9.0)*
 - aplay and arecord *([config audio in/out as default audio devices first](https://github.com/ZTiKnl/sara#audio-inout-issues))*  
   `sudo apt-get install alsa-utils`  
-- fswebcam (i installed it, didnt touch a single config file)  
+- fswebcam (I installed it, didnt touch a single config file)  
   `apt-get install fswebcam`  
+
 Other:  
 - Google Cloud API key *(one key to rule them all!)*  
   This is free for a certain amount of requests, see [Sonus/Google Cloud Speech/Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details  
@@ -245,7 +247,9 @@ Regular Expressions in these .json files need special characters to be escaped t
 `"regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",`
 
 Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
-### Provided plugins:
+### Provided plugins:  
+All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
+More plugins are coming, see Todo list for what I'd like to add (if possible)...  
 #### Math:
 ```
 what is 7 + 9
@@ -335,8 +339,6 @@ news headlines from bbc-news
 news headlines in US
 news headlines on bitcoin
 ```
-All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
-More plugins are coming, see Todo list for what I'd like to add (if possible)...  
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
