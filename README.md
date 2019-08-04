@@ -467,7 +467,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] General
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
-    - [ ] Rewrite console.log() to response.conlog()  
+  - [ ] Rewrite console.log() to response.conlog()  
   - [ ] Number string to integer function
   - [ ] Integer to number string function
   - [ ] Change eval() functions, find better approach for plugin loading
