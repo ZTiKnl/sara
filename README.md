@@ -462,7 +462,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
     - [ ] Finish news plugin  
   - [x] ~~Add conversation plugin~~  
     - [ ] Finish conversation plugin  
-  - [ ] Add gmail plugin  
+  - [ ] Add Gmail plugin  
+  - [ ] Add Google Translate plugin (*translate to french (news headlines from bbc-news)*)  
   - [ ] Add CLI Games plugin  
     - [ ] Highscore system implementation  
   - [x] ~~Add time/date plugin~~  
