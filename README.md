@@ -456,7 +456,7 @@ Simple mixer control 'Mic',0
   Capabilities: cvolume cvolume-joined cswitch cswitch-joined
   Capture channels: Mono
   Limits: Capture 0 - 62
-  Mono: Capture 53 [85%] [18.07dB] [on]
+  Mono: Capture 50 [81%] [16.59dB] [on]
 ```
 There is probably a better command for turning the mic on, but this also sets the recording volume at 80%, which is my personal preference  
 
