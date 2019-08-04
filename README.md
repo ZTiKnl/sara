@@ -36,7 +36,8 @@
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
-  11.2 [Known](https://github.com/ZTiKnl/sara#known)  
+  11.2 [Haobosou USB microphone](https://github.com/ZTiKnl/sara#haobosou-usb-microphone)  
+  11.3 [Known](https://github.com/ZTiKnl/sara#known)  
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
 13. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
 14. [Credits](https://github.com/ZTiKnl/sara#credits)
@@ -114,27 +115,38 @@ Other:
   This is free for a certain amount of requests, see [Sonus/Google Cloud Speech/Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details  
   *The same key is used for speech recognition, generating voices and face/object detection*  
     *Face recognition will be calculated in-app, so it will not make requests to the Google Cloud Vision API*  
+- [newsapi.org](https://newsapi.org/) API key (optional)  
+  Free for personal use, used for the news plugin  
 
 ### NPM modules:
 ```
 "@google-cloud/text-to-speech": "^1.1.2",
+"@google-cloud/vision": "^1.1.3",
+"@tensorflow/tfjs-node": "^1.2.5",
+"canvas": "^2.5.0",
 "chalk": "^2.4.2",
 "country-list": "^2.1.1",
+"date-and-time": "^0.8.1",
 "decimal.js": "^10.2.0",
+"face-api.js": "^0.20.1",
 "geoip-lite": "^1.3.7",
+"he": "^1.2.0",
 "node-webcam": "^0.5.0",
 "play-sound": "^1.1.3",
 "public-ip": "^3.1.0",
+"rollup": "^1.17.0",
 "sonus": "^1.0.3",
-"weather-js2": "^2.0.2"
+"weather-js2": "^2.0.2",
+"weeknumber": "^1.1.1",
+"wiki-entity": "^0.4.3"
 ```
 ### How to use:
-1. clone or download [this repo](https://github.com/ZTiKnl/sara.git)  
-2. inside main folder containing bin.js & package.json, run command: `npm install`
-3. in folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
-- start program with command: `node bin.js`
-- to see the (optional) command line arguments, start program with command: `node bin.js --help`
-- it is also possible to use a config.json file to force default behaviour  
+1. Clone or download [this repo](https://github.com/ZTiKnl/sara.git)  
+2. Inside main folder containing bin.js & package.json, run command: `npm install`
+3. In folder resources/apikeys/googlespeech.json, add your own Google Cloud Speech API key
+- Start program with command: `node bin.js`
+- To see the (optional) command line arguments, start program with command: `node bin.js --help`
+- It is also possible to use a config.json file to force default behaviour  
 
 For more information on the Google Cloud Speech API, see:  
 [NPMJS.com/sonus/usage](https://www.npmjs.com/package/sonus#usage) & [NPMJS.com/sonus/how-do-i-set-up-google-cloud-speech-api](https://www.npmjs.com/package/sonus#how-do-i-set-up-google-cloud-speech-api)  
@@ -167,7 +179,7 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `start/stop talking` same as above  
 `silence` stop speaking the current sentence/item  
 #### Vision:
-`start/stop vision` turns on/off timer (15sec) for webcam snapshot to ./resources/vision/frame.png  
+`start/stop vision` turns on/off timer (30 min) for webcam snapshot to ./resources/vision/frame.png  
 `start/stop watching` same as above  
   Nothing is done with this image at this time, but there are tests being done with detection and recognition...  
   - Face/object detection works, but is not connected yet, it will be soon after some more testing  
@@ -398,7 +410,8 @@ aplay test.wav
 Anything on support beyond this should be requested at alsa/linux forums I guess  
 Feel free to ask, but don't *expect* an answer...
 
-### Other issues:
+### Other issues:  
+
 #### Sonus/Google Cloud Speech API
 I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
 - Setting up Speech Recognition  
@@ -418,6 +431,35 @@ I understand people can have problems getting through this, so here is a small g
   When prompted to create a new service account select 'Owner' or 'Project Owner'  
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
+
+#### Haobosou USB microphone  
+The microphone I use is a 'C-Media Haobosou G11 Touch Induction' and for a couple of days I have been having problems with it  
+When connecting the microphone, the blue power indicator would light up, and after 2 seconds it would turn off again  
+Pressing the touch induction area has no effect, and thus I am left with a disabled mic  
+It IS recognized by lsusb/hwinfo/arecord -l/dmesg but it is *OFF*  
+
+After three days of wrestling, I found the solution somewhere online (lost the url, no credits, sry)
+```
+ztik@sara:~/nodejs/sara $ amixer
+Simple mixer control 'Mic',0
+  Capabilities: cvolume cvolume-joined cswitch cswitch-joined
+  Capture channels: Mono
+  Limits: Capture 0 - 62
+  Mono: Capture 53 [85%] [18.07dB] [off]
+```
+
+```
+ztik@sara:~/nodejs/sara $ amixer set Mic 80% cap
+
+ztik@sara:~/nodejs/sara $ amixer
+Simple mixer control 'Mic',0
+  Capabilities: cvolume cvolume-joined cswitch cswitch-joined
+  Capture channels: Mono
+  Limits: Capture 0 - 62
+  Mono: Capture 53 [85%] [18.07dB] [on]
+```
+There is probably a better command for turning the mic on, but this also sets the recording volume at 80%, which is my personal preference  
+
 #### Known:
 The vision module works, but all it does is take a picture every 30 min, no further processing connected at this moment
 
