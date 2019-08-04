@@ -486,7 +486,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] ... suggestions?
 
 ### Long term goals:
-- [ ] Language support... eventually (this is depending on my personal skills as well as Google Speech and Text-To-Speech language availability)
+- [ ] Language support... eventually (this is depending on my personal skills as well as Google Speech and Text-To-Speech language availability)  
+- [ ] Remote Control Windows PC within the network  (this would require a seperate app for Windows to receive commands and process them)  
 - [ ] Devise a way to incorporate a mood-function, simulate emotions
 - [ ] Connect a LCD/TFT screen, give Sara a face with expressions
 - [ ] Neural Net / Machine learning capabilities for influencing stock market
