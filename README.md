@@ -238,6 +238,13 @@ subcmd: root of 9 = 3
 subcmd: 7 + 3 = 10
 finalcmd: 11 + 10 = 21
 ```
+
+Some examples of what is possible:  
+```
+((10 + ((root of 9) * (5³))) / 77) * (√9)
+how is the weather in (where i am)
+translate to german (what is gold)
+```
 ### Plugins:
 These are created using (at least) 2 files:  
 ```
