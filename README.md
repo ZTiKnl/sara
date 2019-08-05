@@ -114,7 +114,7 @@ Software:
 Other:  
 - Google Cloud API key *(one key to rule them all!)*  
   This is free for a certain amount of requests, see [Sonus/Google Cloud Speech/Vision API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api) for more details  
-  *The same key is used for speech recognition, generating voices and face/object detection*  
+  *The same key is used for the translate plugin, speech recognition, generating voices and face/object detection*  
     *Face recognition will be calculated in-app, so it will not make requests to the Google Cloud Vision API*  
 - [newsapi.org](https://newsapi.org/) API key (optional)  
   Free for personal use, used for the news plugin  
