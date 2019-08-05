@@ -33,6 +33,7 @@
   9.6 [Timedate](https://github.com/ZTiKnl/sara#timedate)  
   9.7 [Wikipedia](https://github.com/ZTiKnl/sara#wikipedia)  
   9.8 [News](https://github.com/ZTiKnl/sara#news)  
+  9.8 [Translate](https://github.com/ZTiKnl/sara#translate)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
@@ -351,6 +352,14 @@ news headlines from bbc-news
 news headlines in US
 news headlines on bitcoin
 ```
+#### Translate  
+Add google cloud api key to file resources/apikeys/googlecloud.json (see example file googlecloud_example.json)  
+```
+translate to french <input>
+translate to english <input>
+translate to dutch <input>
+translate to german <input>
+```
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
@@ -507,7 +516,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [x] ~~Add conversation plugin~~  
     - [ ] Finish conversation plugin  
   - [ ] Add Gmail plugin  
-  - [ ] Add Google Translate plugin (*translate to french (news headlines from bbc-news)*)  
+  - [x] ~~Add Google Translate plugin~~  
+    - [ ] Add more languages, currently supported: french, english, dutch, german  
   - [ ] Add CLI Games plugin  
     - [ ] Highscore system implementation  
   - [x] ~~Add time/date plugin~~  
