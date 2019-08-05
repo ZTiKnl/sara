@@ -1,0 +1,6 @@
+{
+  "name": "lang",
+  "module": "translate",
+  "regex": "/^(?:translate\\sto)\\s?(english|french|dutch|german)\\s?(.+)/i",
+  "description": "translate string into another language"
+}
