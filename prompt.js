@@ -133,7 +133,11 @@ function start(strPrompt, callback) {
           processcmd(cmd).then((result) => {
             if (Array.isArray(result)) {
               response.conlog('prompt', result[0], 'response');
-              voice.synthesize(result[1]);
+              if (result[2] != undefined) {
+                voice.synthesize(result[1], result[2]);
+              } else {
+                voice.synthesize(result[1]);
+              }
             } else {
               response.conlog('prompt', result, 'response');
               voice.synthesize(result);
@@ -144,12 +148,16 @@ function start(strPrompt, callback) {
           response.conlog('prompt', 'processing subcommand', 'info');
           subcommands = true;
           processcmd(sub).then((result) => {
-
-            response.conlog('prompt', result[0], 'data');
+            if (Array.isArray(result)) {
+              var rslt = result[0];
+            } else {
+              var rslt = result;
+            }
+            response.conlog('prompt', rslt, 'data');
 
             stline = cmd.substr(0, start);
             enline = cmd.substr(end+1);
-            splitcommands(stline+result[0]+enline);
+            splitcommands(stline+rslt+enline);
           });
         }
       }

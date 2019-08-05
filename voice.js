@@ -29,35 +29,67 @@ module.exports = {
       response.conlog('voice', 'speech synthesis was already activated', 'status');
     }
   },
-  synthesize: async function(sentence) {
+  synthesize: async function(sentence, language) {
+    if (language) {
+      if (language == 'french') {
+        vo_language = 'fr-FR';
+        if (vo_gender == 'FEMALE') {
+          vo_voice = 'fr-FR-Wavenet-C';
+        } else {
+          vo_voice = 'fr-FR-Wavenet-D';
+        }
+      }
+      if (language == 'dutch') {
+        vo_language = 'nl-NL';
+        if (vo_gender == 'FEMALE') {
+          vo_voice = 'nl-NL-Wavenet-D';
+        } else {
+          vo_voice = 'nl-NL-Wavenet-C';
+        }
+      }
+      if (language == 'german') {
+        vo_language = 'de-DE';
+        if (vo_gender == 'FEMALE') {
+          vo_voice = 'de-DE-Wavenet-C';
+        } else {
+          vo_voice = 'de-DE-Wavenet-B';
+        }
+      }
+      if (language == 'english') {
+        vo_language = 'en-GB';
+        if (vo_gender == 'FEMALE') {
+          vo_voice = 'en-GB-Wavenet-C';
+        } else {
+          vo_voice = 'en-GB-Wavenet-B';
+        }
+      }
+    }
+
     if (voiceactive == true) {
-      sentence = '<speak><break time=\'250ms\'/>'+sentence+'</speak>'
-      sentence = module.exports.vocalize(sentence);
+      sentence = module.exports.vocalize(String(sentence));
       const client = new textToSpeech.TextToSpeechClient({
-        projectId: api_id, //'sara-245106',
-        keyFilename: api_file //'resources/apikeys/googlecloud.json'
+        projectId: api_id,
+        keyFilename: api_file
       })
      
-      // Construct the request
       const request = {
         input: {ssml: sentence},
-        // Select the language and SSML Voice Gender (optional)
         voice: {languageCode: vo_language, name: vo_voice, ssmlGender: vo_gender},
-        // Select the type of audio encoding
         audioConfig: {audioEncoding: 'LINEAR16'},
       };
      
-      // Performs the Text-to-Speech request
       const [result] = await client.synthesizeSpeech(request);
-      // Write the binary audio content to a local file
       const writeFile = util.promisify(fs.writeFile);
       await writeFile('resources/voice/output.wav', result.audioContent, 'binary');
       sfx.output('voice');
+      
+      if (language) {
+        loadconfig();
+      }
       return;
     }
   },
   vocalize: function(sentence) {
-    // todo: replace input with vocal corrections (ztik -> stick, S.A.R.A. -> sarah)
     sentence = sentence.replace(/\n/gi, "<break time=\'750ms\'/>\n");
     sentence = sentence.replace(/,/gi, "<break time=\'500ms\'/>\n");
     sentence = sentence.replace(/:/gi, "<break time=\'500ms\'/>\n");
@@ -70,6 +102,7 @@ module.exports = {
     sentence = sentence.replace(/SARA/gi, "Sarah");
     sentence = sentence.replace(/S.A.R.A./gi, "Sarah");
     sentence = sentence.replace(/S.A.R.A/gi, "Sarah");
+    sentence = '<speak><break time=\'250ms\'/>'+sentence+'</speak>';
     return sentence;
   },
   silence: function() {
