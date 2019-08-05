@@ -29,7 +29,7 @@ module.exports = {
   },
   output: async function(effect) {
 //    hearing.pause();
-    if (sfxactive == true) {
+    if (sfxactive == true || effect == 'voice') {
       var file;
       if (effect == 'startup') {
         file = sfx_startup;
