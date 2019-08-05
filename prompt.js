@@ -134,7 +134,6 @@ function start(strPrompt, callback) {
             if (Array.isArray(result)) {
               response.conlog('prompt', result[0], 'response');
               voice.synthesize(result[1]);
-              
             } else {
               response.conlog('prompt', result, 'response');
               voice.synthesize(result);

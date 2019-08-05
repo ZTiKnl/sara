@@ -29,7 +29,7 @@ module.exports = {
       response.conlog('voice', 'speech synthesis was already activated', 'status');
     }
   },
-  synthesize: async function(sentence, type) {
+  synthesize: async function(sentence) {
     if (voiceactive == true) {
       sentence = '<speak><break time=\'250ms\'/>'+sentence+'</speak>'
       sentence = module.exports.vocalize(sentence);
