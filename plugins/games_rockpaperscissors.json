@@ -1,0 +1,6 @@
+{
+  "name": "rockpaperscissors",
+  "module": "games",
+  "regex": "/^(rock|paper|scissors)$/i",
+  "description": "Play a game of Rock, Paper, Scissors"
+}
