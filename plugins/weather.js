@@ -72,7 +72,7 @@ module.exports = {
 function weatherlocation(loc) {
   return new Promise(resolve => {
     weather.find({search: loc, degreeType: 'C', resCount: 1}, function(err, result) {
-      if(err) response.conlog('weather plugin', ''+err.message, 'error');
+      if(err) response.conlog('plugin/weather', ''+err.message, 'error');
       resolve(result);
     });
   })

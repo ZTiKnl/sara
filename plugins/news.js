@@ -47,10 +47,9 @@ function newsquery(text) {
     }
     return request(apilink, { json: true }, (err, res, body) => {
       if (err) {
-        return console.log(err);
+        return response.conlog('plugin/news', err.message, 'error');
       }
       if (body['status'] == 'ok') {
-        console.log('succes');
         if (body['totalResults'] > 0) {
           var i = 0;
           var result;

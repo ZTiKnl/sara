@@ -49,7 +49,7 @@ function wikiquery2(text) {
     var apilink = 'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exlimit=1&exsentences=10&explaintext&exintro&titles='+text+'&format=json';
     return request(apilink, { json: true }, (err, res, body) => {
       if (err) {
-        return console.log(err);
+        return response.conlog('plugin/wiki', err.message, 'error');
       }
       var keys = Object.keys(body['query']['pages']);
       if (keys.length === 1) {
