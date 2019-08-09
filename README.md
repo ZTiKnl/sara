@@ -172,7 +172,6 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `list help` displays a list of all help topics  
 `help <topic>` displays help on the topic requested (still needs to be populated)  
 `help <plugin.function>` displays help on the requested plugin function (currently placeholders)  
-help topic conversation.greeting
 `add help` fill in the form and a new help topic is born!  
 `edit help <topic>` find an error in a certain help topic, you can fix it.  
 #### Hearing:
