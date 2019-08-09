@@ -375,6 +375,7 @@ translate to german <input>
 rock
 paper
 scissors
+tictactoe
 ```
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
