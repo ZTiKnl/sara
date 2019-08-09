@@ -1,0 +1,7 @@
+{
+  "name": "tictactoe",
+  "module": "games",
+  "regex": "/^(tictactoe|tic\\stac\\stoe|tic-tac-toe)$/i",
+  "description": "Play a game of TicTacToe",
+  "explanation": "This plugin teaches SARA how to play a game of TicTacToe.\nType 'tictactoe' or one of the alternatives and SARA should respond."
+}
