@@ -193,9 +193,9 @@ function start(strPrompt, callback) {
               hearing.listen()
             } else if (cmd.toLowerCase() == 'stop hearing' || cmd.toLowerCase() == 'stop listening') {
               hearing.stop()
-            } else if (cmd.toLowerCase() == 'start voice' || cmd.toLowerCase() == 'start talking') {
+            } else if (cmd.toLowerCase() == 'start voice' || cmd.toLowerCase() == 'start talking' || cmd.toLowerCase() == 'start speaking') {
               voice.start()
-            } else if (cmd.toLowerCase() == 'stop voice' || cmd.toLowerCase() == 'stop talking') {
+            } else if (cmd.toLowerCase() == 'stop voice' || cmd.toLowerCase() == 'stop talking' || cmd.toLowerCase() == 'stop speaking') {
               voice.stop()
             } else if (cmd.toLowerCase() == 'stop command execution' || cmd.toLowerCase() == 'start command parsing') {
               voice.cmdtoprompt()
