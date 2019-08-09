@@ -171,6 +171,8 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `help` displays the main 'help' section  
 `list help` displays a list of all help topics  
 `help <topic>` displays help on the topic requested (still needs to be populated)  
+`help <plugin.function>` displays help on the requested plugin function (currently placeholders)  
+help topic conversation.greeting
 `add help` fill in the form and a new help topic is born!  
 `edit help <topic>` find an error in a certain help topic, you can fix it.  
 #### Hearing:
@@ -179,6 +181,7 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 #### Voice:
 `start/stop voice` turns on/off text-to-speech  
 `start/stop talking` same as above  
+`start/stop speaking` same as above  
 `silence` stop speaking the current sentence/item  
 #### Vision:
 `start/stop vision` turns on/off timer (30 min) for webcam snapshot to ./resources/vision/frame.png  
@@ -490,15 +493,13 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 - [ ] General
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
-  - [ ] Rewrite console.log() to response.conlog()  
-  - [ ] Number string to integer function
-  - [ ] Integer to number string function
-  - [ ] Change eval() functions, find better approach for plugin loading
+  - [ ] Rewrite console.log() to response.conlog() 
+  - [x] ~~Change eval() functions, find better approach for plugin loading~~ 
   - [ ] Correct hardcoded file locations to cleaned up path
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
 - [ ] Help function
-  - [ ] Create help documentation for internal functions and plugins
-  - [ ] Add .json file import to help function, so plugins can add topics to the function
+  - [ ] Create help documentation for internal functions and plugins(currently populated with placeholders)  
+  - [x] ~~Add .json file import to help function, so plugins can add topics to the function~~  
   - [x] ~~Add `list help` command, and/or display all topics using `help`~~  
 - [ ] Speech recognition
   - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
