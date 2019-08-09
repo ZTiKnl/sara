@@ -11,7 +11,7 @@
 
   "speech synthesis": true,
 
-  "vision": true,
+  "vision": false,
 
   "google cloud": {
     "projectid": "sara-245106",
@@ -19,7 +19,7 @@
   },
 
   "voiceoptions": {
-    "language": "en-US",
+    "language": "en-GB",
     "voice": "en-GB-Wavenet-C",
     "gender": "FEMALE"
   },
