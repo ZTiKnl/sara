@@ -9,3 +9,7 @@ googlecloud.json
 # xmbc connection details #
 ###########################
 connection.json
+
+# news connection details #
+###########################
+newsorg.json
