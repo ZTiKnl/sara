@@ -2,5 +2,6 @@
   "name": "description",
   "module": "wiki",
   "regex": "/^(?:what\\sis|what)\\s(.+?)(?:\\sis)?$/i",
-  "description": "respond with wiki subject description"
+  "description": "Fetch Wikipedia subject description",
+  "explanation": "This plugin teaches SARA how to fetch information from wikipedia and respond with a short description and aliases.\nType 'what is gold' or one of the alternatives and SARA should respond."
 }

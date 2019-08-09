@@ -2,5 +2,6 @@
   "name": "thinking",
   "module": "conversation",
   "regex": "/^(?:what)\\s?(?:are|do)\\s?(?:you)\\s?(think|thinking)\\s?(?:about)?$/i",
-  "description": "share inner thoughts"
+  "description": "Share inner thoughts",
+  "explanation": "This plugin teaches SARA how to recognize a 'list objectives' type question and respond accordingly.\nAsk 'What do you think' or one of the alternatives and SARA should respond."
 }

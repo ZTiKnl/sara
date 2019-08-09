@@ -2,5 +2,6 @@
   "name": "city",
   "module": "location",
   "regex": "/^(?:in)?\\s?(?:what|which)\\s?\\s?(?:place|city)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|i\\sam)\\s?(?:in)?$/i",
-  "description": "Get current city based on GeoIP database"
+  "description": "Get current city based on GeoIP database",
+  "explanation": "This plugin teaches SARA how to determine the current location (city).\nType 'what city is this' or one of the alternatives and SARA should respond."
 }

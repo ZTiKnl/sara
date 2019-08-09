@@ -2,5 +2,6 @@
   "name": "greeting",
   "module": "conversation",
   "regex": "/^(?:hey|hello|hi|yo|heya|hiya|good\\smorning|good\\safternoon|good\\sevening)$/i",
-  "description": "respond to greetings"
+  "description": "Say hello",
+  "explanation": "This plugin teaches SARA how to recognize a greeting and respond accordingly.\nSay 'Hello' or one of the alternatives and SARA should respond."
 }

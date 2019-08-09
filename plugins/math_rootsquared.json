@@ -2,5 +2,6 @@
   "name": "rootsquared",
   "module": "math",
   "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(?:the)?\\s?(?:square)?\\s?(?:root\\sof|√)\\s?([0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
-  "description": "Square root of x"
+  "description": "Square root of x",
+  "explanation": "This plugin teaches SARA how calculate the square root of a number.\nType 'square root of 4' or one of the alternatives and SARA should respond."
 }

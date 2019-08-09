@@ -2,5 +2,6 @@
   "name": "stop",
   "module": "xbmcremote",
   "regex": "/^(?:stop)\\s?(?:this|the)?\\s?(?:video|movie|film|playback|episode)$/i",
-  "description": "stop playing media on xbmc device"
+  "description": "Stop playing media on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a stop command to a configured xbmc device.\nType 'stop movie' or one of the alternatives and SARA should respond."
 }

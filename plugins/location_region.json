@@ -2,5 +2,6 @@
   "name": "region",
   "module": "location",
   "regex": "/^(?:in)?\\s?(?:what|which)\\s?\\s?(?:region|province)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|i\\sam)\\s?(?:in)?$/i",
-  "description": "Get current region based on GeoIP database"
+  "description": "Get current region based on GeoIP database",
+  "explanation": "This plugin teaches SARA how to determine the current location (region).\nType 'what region is this' or one of the alternatives and SARA should respond."
 }

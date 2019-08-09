@@ -2,5 +2,6 @@
   "name": "squared",
   "module": "math",
   "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?([0-9]+\\.?(?:[0-9]+)?)\\s?(?:squared|²)\\s?(?:is)?$/i",
-  "description": "Squared of x"
+  "description": "Squared of x",
+  "explanation": "This plugin teaches SARA how calculate a number multiplied by itself.\nType '4²' or one of the alternatives and SARA should respond."
 }

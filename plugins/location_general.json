@@ -1,6 +1,7 @@
 {
   "name": "general",
   "module": "location",
-  "regex": "/^(?:where)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|i\\sam|)$/i",
-  "description": "Get current location based on GeoIP database"
+  "regex": "/^(?:where)\\s?(?:is\\sthis|this\\sis|are\\swe|we\\sare|am\\si|you\\sare|are\\syou|i\\sam|)$/i",
+  "description": "Get current location based on GeoIP database",
+  "explanation": "This plugin teaches SARA how to determine the current location.\nType 'where are you' or one of the alternatives and SARA should respond."
 }

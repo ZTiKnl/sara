@@ -2,5 +2,6 @@
   "name": "headlinessource",
   "module": "news",
   "regex": "/^(?:the|some)?\\s?(?:news\\s?headlines)\\s?(?:from)\\s?(.+)$/i",
-  "description": "respond with news headlines from source"
+  "description": "respond with news headlines from source",
+  "explanation": "This plugin teaches SARA how connect with the newsapi.org API, and fetch news headlines from a specific source.\nType 'news headlines from bbc-news' or one of the alternatives and SARA should respond."
 }

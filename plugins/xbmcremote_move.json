@@ -2,5 +2,6 @@
   "name": "move",
   "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:move)\\s?(up|down|left|right)$/i",
-  "description": "menu move"
+  "description": "Menu move on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a move up/down/left/right command to a configured xbmc device.\nType 'media menu move up' and SARA should respond."
 }

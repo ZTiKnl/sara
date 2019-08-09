@@ -2,5 +2,6 @@
   "name": "headlinescountry",
   "module": "news",
   "regex": "/^(?:the|some)?\\s?(?:news\\s?headlines)\\s?(?:in|at|near|around)\\s?(.+)$/i",
-  "description": "respond with news headlines for country"
+  "description": "Fetch news headlines for specific country",
+  "explanation": "This plugin teaches SARA how connect with the newsapi.org API, and fetch a specific country headlines.\nType 'news headlines in NL' or one of the alternatives and SARA should respond."
 }

@@ -2,5 +2,6 @@
   "name": "pause",
   "module": "xbmcremote",
   "regex": "/^(?:play|pause|pauze|resume|continue)\\s?(?:this|the)?\\s?(?:video|movie|playback|episode|playback)$/i",
-  "description": "play/pause/resume media"
+  "description": "Play/pause/resume media on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a pause/resume command to a configured xbmc device.\nType 'pause movie' or one of the alternatives and SARA should respond."
 }

@@ -2,5 +2,6 @@
   "name": "info",
   "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:info|information)$/i",
-  "description": "menu info"
+  "description": "Info menu on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a Info menu command to a configured xbmc device.\nType 'media menu info' and SARA should respond."
 }

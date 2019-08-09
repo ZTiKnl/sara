@@ -2,5 +2,6 @@
   "name": "status",
   "module": "conversation",
   "regex": "/^(?:how\\sare\\syou)\\s?(?:doing|feeling)?\\s?(?:today|now|at\\sthe\\smoment)?$/i",
-  "description": "give status of self"
+  "description": "Give self assessment.",
+  "explanation": "This plugin teaches SARA how to recognize a 'status' type question and respond accordingly.\nAsk 'How are you' or one of the alternatives and SARA should respond."
 }

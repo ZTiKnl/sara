@@ -2,5 +2,6 @@
   "name": "multimove",
   "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:move)\\s?(up|down|left|right)\\s?([0-9]+)\\s?(?:x|\\*|time|times|entries|entry)?$/i",
-  "description": "menu multimove"
+  "description": "Menu multimove on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a multiple move up/down/left/right commands to a configured xbmc device.\nType 'media menu move up 5 times' or one of the alternatives and SARA should respond."
 }

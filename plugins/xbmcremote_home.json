@@ -2,5 +2,6 @@
   "name": "home",
   "module": "xbmcremote",
   "regex": "/^(?:media\\smenu)\\s?(?:home)$/i",
-  "description": "menu home"
+  "description": "Home menu on xbmc device",
+  "explanation": "This plugin teaches SARA how to transmit a Home menu command to a configured xbmc device.\nType 'media menu home' and SARA should respond."
 }

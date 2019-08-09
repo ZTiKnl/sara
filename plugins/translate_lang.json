@@ -1,6 +1,7 @@
 {
   "name": "lang",
   "module": "translate",
-  "regex": "/^(?:translate\\sto)\\s?(english|french|dutch|german)\\s?(.+)/i",
-  "description": "translate string into another language"
+  "regex": "/^(?:translate\\sto)\\s?(english|french|dutch|german)\\s?(?::)?\\s?(.+)/i",
+  "description": "translate string into another language",
+  "explanation": "This plugin teaches SARA how translate input into the requested output language.\nType 'translate to french: key' or one of the alternatives and SARA should respond."
 }

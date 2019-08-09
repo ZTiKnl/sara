@@ -2,5 +2,6 @@
   "name": "headlines",
   "module": "news",
   "regex": "/^(?:the|some)?\\s?(?:news)\\s?(?:headlines)$/i",
-  "description": "respond with news headlines"
+  "description": "Fetch the latest news headlines",
+  "explanation": "This plugin teaches SARA how connect with the newsapi.org API, and fetch certain headlines.\nType 'news headlines' or one of the alternatives and SARA should respond."
 }
