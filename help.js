@@ -65,11 +65,31 @@ function add(varname, vardescription, varexplanation, helpupdated) {
   })
 }
 
-function help(topic, field) {
+function help(topic) {
+  topic = topic.replace(".", "_");
   fs.readFile('./documentation/'+topic+'.json', 'utf8', (err, jsonString) => {
     if (err) {
       if (err.code == 'ENOENT') {
-        response.conlog('help', 'There is no documentation for topic: '+topic, 'response');
+        fs.readFile('./plugins/'+topic+'.json', 'utf8', (err, jsonString) => {
+          if (err) {
+            if (err.code == 'ENOENT') {
+              response.conlog('help', 'There is no documentation for topic: '+topic, 'response');
+              //check plugins
+            } else {
+              response.conlog('help', 'Failed to fetch help topic contents: '+err.message, 'error');
+            }
+            return;
+          }
+          response.conlog('help', 'Help on plugin: '+ topic, 'response');
+          try {
+            const helptopic = JSON.parse(jsonString);
+              response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
+            return;
+          } catch(err) {
+            response.conlog('help', 'Error parsing JSON string: '+err.message, 'error');
+          }
+        })
+
       } else {
         response.conlog('help', 'Failed to fetch help topic contents: '+err.message, 'error');
       }
@@ -78,13 +98,7 @@ function help(topic, field) {
     response.conlog('help', 'Help on topic: '+ topic, 'response');
     try {
       const helptopic = JSON.parse(jsonString);
-      if (field == 'description') {
-        response.conlog('help', helptopic.description, 'help');
-      } else if (field == 'explanation') {
-        response.conlog('help', helptopic.explanation, 'help');
-      } else {
         response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
-      }
       return;
     } catch(err) {
       response.conlog('help', 'Error parsing JSON string: '+err.message, 'error');
