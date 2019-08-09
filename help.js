@@ -80,10 +80,10 @@ function help(topic) {
             }
             return;
           }
-          response.conlog('help', 'Help on plugin: '+ topic, 'response');
           try {
+            response.conlog('help', 'Help on plugin: '+ topic, 'response');
             const helptopic = JSON.parse(jsonString);
-              response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
+            response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation+'\n\nRegEx: '+helptopic.regex, 'help');
             return;
           } catch(err) {
             response.conlog('help', 'Error parsing JSON string: '+err.message, 'error');
@@ -95,10 +95,10 @@ function help(topic) {
       }
       return;
     }
-    response.conlog('help', 'Help on topic: '+ topic, 'response');
     try {
+      response.conlog('help', 'Help on topic: '+ topic, 'response');
       const helptopic = JSON.parse(jsonString);
-        response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
+      response.conlog('help', helptopic.description+'\n\n'+helptopic.explanation, 'help');
       return;
     } catch(err) {
       response.conlog('help', 'Error parsing JSON string: '+err.message, 'error');
