@@ -49,6 +49,7 @@ module.exports = {
     sonus.on('final-result', result => {
       if (result) {
         response.conlog('hearing', 'recognized: '+result, 'info');
+        result = speechparse(result);
         sfx.output('command');
         const prompt = require('./prompt.js');
         if (hearingprocess) {
@@ -108,12 +109,11 @@ module.exports = {
   }
 }
 
-/*
-function myFunc() {
-  prompt.write('This is a test');
+function speechparse(text) {
+  text = text.replace(/sub\s?command\(?:open|start)/gi, '(');
+  text = text.replace(/sub\s?command\(?:close|end)/gi, ')');
+  return text;
 }
-setTimeout(myFunc, 5000); 
-*/
 function loadconfig() {
   const fs = require('fs')
   const path = './config.json'
@@ -140,5 +140,4 @@ function loadconfig() {
     }
   } catch(err) {
   }
-
 }
