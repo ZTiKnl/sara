@@ -9,6 +9,18 @@
 
 ![Type: Experimental](https://img.shields.io/badge/Type-Experimental-blue "Experimental") ![Status: Work in progress](https://img.shields.io/badge/Status-Work_in_progress-blue "Work in progress") ![Version](https://img.shields.io/github/package-json/v/ztiknl/sara?color=%23018675)  
 
+####Attention  
+This package is currently a work in progress  
+**Do not install via** `npm install @ztik.nl/sara`  
+Clone or download from [Sara @ Github](https://github.com/ZTiKnl/sara.git)  
+
+Github documentation will be the Current/Latest testing build  
+NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
+Many changes are to be expected, do not expect backwards compatibility  
+
+Current version: `0.3.0`  
+When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
+
 ### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
 2. [Requirements](https://github.com/ZTiKnl/sara#requirements)
@@ -44,17 +56,6 @@
 13. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
 14. [Credits](https://github.com/ZTiKnl/sara#credits)
 15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
-
-Attention: this package is currently a work in progress  
-**Do not install via** `npm install @ztik.nl/sara`  
-Clone or download from [Sara @ Github](https://github.com/ZTiKnl/sara.git)  
-
-Github documentation will be the Current/Latest testing build  
-NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
-Many changes are to be expected, do not expect backwards compatibility  
-
-Current version: `0.3.0`  
-When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### What is Sara:
 Sara is a command prompt, that listens for keyboard input or voice commands  
