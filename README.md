@@ -9,7 +9,7 @@
 
 ![Type: Experimental](https://img.shields.io/badge/Type-Experimental-blue "Experimental") ![Status: Work in progress](https://img.shields.io/badge/Status-Work_in_progress-blue "Work in progress") ![Version](https://img.shields.io/github/package-json/v/ztiknl/sara?color=%23018675)  
 
-####Attention  
+#### Attention:  
 This package is currently a work in progress  
 **Do not install via** `npm install @ztik.nl/sara`  
 Clone or download from [Sara @ Github](https://github.com/ZTiKnl/sara.git)  
@@ -318,7 +318,7 @@ weather forecast
 what is the weather forecast  
 what is the weather forecast for <place>  
 ```
-#### XBMC remote  
+#### XBMC remote:  
 Add connection details to file plugins/xbmc-remote/connection.json (see example file connection_example.json)  
 ```
 stop video/movie/film/playback/episode
@@ -340,7 +340,7 @@ media menu info/information
 media menu context
 media menu submenu
 ```
-#### Timedate  
+#### Timedate:  
 ```
 what time is it
 what is the date
@@ -349,12 +349,12 @@ what month is it
 what day it is
 what is the week number
 ```
-#### Wikipedia  
+#### Wikipedia:  
 ```
 what is <subject>
 more about <subject>
 ```
-#### News  
+#### News:  
 Add newsapi,org api key to file plugins/news/newsorg.json (see example file newsorg_example.json)  
 ```
 news headlines
@@ -363,7 +363,7 @@ news headlines from bbc-news
 news headlines in US
 news headlines on bitcoin
 ```
-#### Translate  
+#### Translate:  
 Add google cloud api key to file resources/apikeys/googlecloud.json (see example file googlecloud_example.json)  
 ```
 translate to french <input>
@@ -371,7 +371,7 @@ translate to english <input>
 translate to dutch <input>
 translate to german <input>
 ```
-#### Games  
+#### Games:  
 ```
 rock
 paper
@@ -439,7 +439,7 @@ Feel free to ask, but don't *expect* an answer...
 
 ### Other issues:  
 
-#### Sonus/Google Cloud Speech API
+#### Sonus/Google Cloud Speech API:
 I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
 - Setting up Speech Recognition  
   Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition.  
@@ -459,7 +459,7 @@ I understand people can have problems getting through this, so here is a small g
 
 As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
 
-#### Haobosou USB microphone  
+#### Haobosou USB microphone:  
 The microphone I use is a 'C-Media Haobosou G11 Touch Induction' and for a couple of days I have been having problems with it  
 When connecting the microphone, the blue power indicator would light up, and after 2 seconds it would turn off again  
 Pressing the touch induction area has no effect, and thus I am left with a disabled mic  
