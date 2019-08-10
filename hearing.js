@@ -101,8 +101,11 @@ module.exports = {
       response.conlog('hearing', 'voice recognition was already deactivated', 'status');
     }
   },
-  speechparse: function(sentence) {
-    // todo: replace vocal input with known strings (stick -> ZTiK, nine hundred fifteen -> 915)
+  speechparse: function(text) {
+    text = text.replace(/stick.nl/gi, 'ZTiK.nl');
+    text = text.replace(/sticknl/gi, 'ZTiKnl');
+    text = text.replace(/stick/gi, 'ZTiK');
+    return text;
   },
   status: function () {
     return hearingactive;
