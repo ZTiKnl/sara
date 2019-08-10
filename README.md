@@ -7,7 +7,7 @@
 <input> _
 ```
 
-![Type: Experimental](https://img.shields.io/badge/Type-Experimental-blue "Experimental") ![Status: Work in progress](https://img.shields.io/badge/Status-Work_in_progress-blue "Work in progress")  
+![Type: Experimental](https://img.shields.io/badge/Type-Experimental-blue "Experimental") ![Status: Work in progress](https://img.shields.io/badge/Status-Work_in_progress-blue "Work in progress") ![Version](https://img.shields.io/github/package-json/version/ztiknl/sara)  
 
 ### ToC:
 1. [What is Sara](https://github.com/ZTiKnl/sara#what-is-sara)
