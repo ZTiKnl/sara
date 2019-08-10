@@ -18,7 +18,7 @@ Github documentation will be the Current/Latest testing build
 NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
 Many changes are to be expected, do not expect backwards compatibility  
 
-Current version: `0.3.0`  
+Current version: `0.3.1`  
 When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### ToC:
@@ -498,13 +498,15 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [x] ~~Change eval() functions, find better approach for plugin loading~~ 
   - [ ] Correct hardcoded file locations to cleaned up path
   - [ ] Blacklist certain plugin names, to avoid overwriting internal functions
+- [x] Prompt function  
+  - [x] ~~Write 'vocal_stringify()' function, to replace strings with proper written words ('ztik' becomes 'ZTiK')~~  
 - [ ] Help function
-  - [ ] Create help documentation for internal functions and plugins(currently populated with placeholders)  
+  - [ ] Create help documentation for internal functions and plugins (currently populated with placeholders)  
   - [x] ~~Add .json file import to help function, so plugins can add topics to the function~~  
   - [x] ~~Add `list help` command, and/or display all topics using `help`~~  
 - [ ] Speech recognition
   - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
-  - [ ] Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'
+  - [x] ~~Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'~~  
 - [ ] Voice synthesis
   - [x] ~~Hook command results to voice synthesis~~  
   - [ ] Add voices list display/selection
