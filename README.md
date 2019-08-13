@@ -485,16 +485,16 @@ I understand people can have problems getting through this, so here is a small g
 
 Some details on pricing:  
 
-  [Translate API pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
+- [Translate API pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
   At the time of writing, **no** free requests, $20 per 1 million characters (individual letters)  
 
-  [Speech API pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing)  
+- [Speech API pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing)  
   At the time of writing, 60 minutes free requests  
 
-  [Text-to-Speech API pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)  
+- [Text-to-Speech API pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)  
   At the time of writing, 1 million characters (individual letters) free requests  
 
-  [Vision API pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
+- [Vision API pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
   At the time of writing, 1000 free requests per month  
 
 Apart from the Translation API, everything should be testable for free
