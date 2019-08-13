@@ -14,6 +14,23 @@ const voice = require('../voice.js');
 const hearing = require('../hearing.js');
 
 module.exports = {
+  creator: function () {
+    let result = 'I was designed and tested by ZTiK.nl, many of my core modules are public available packages. For a complete list of credits visit the Github page of this project.';
+    return result;
+  },
+  madehow: function () {
+    let result = 'My designer has a good imagination';
+    return result;
+  },
+  madewhy: function () {
+    let result = 'My designer has a good but weird imagination, he probably has control and/or commitment issues... He definately smokes too much of that green stuff...';
+    return result;
+  },
+  madewhen: function () {
+    var lastupdate = 'unknown';
+    let result = 'The earliest build was dated 18/07/2019 03:45 CEST, but additional functionality has been added over time. The last update was: '+lastupdate;
+    return result;
+  },
   greeting: function (input) {
     let result = ['Hi '+os.userInfo().username];
     result[1] = result[0];
