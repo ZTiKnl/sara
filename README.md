@@ -484,17 +484,17 @@ I understand people can have problems getting through this, so here is a small g
   4.7 Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
 
 Some details on pricing:  
-  [Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
-  At the time of writing, **no** free requests, $20 per 1 million characters (individual letters)
+    [Translate API pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
+    At the time of writing, **no** free requests, $20 per 1 million characters (individual letters)  
 
-  [Speech API Pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing)
-  At the time of writing, 60 minutes free requests  
+    [Speech API pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing)  
+    At the time of writing, 60 minutes free requests  
 
-  [Text-to-Speech API Pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)
-  At the time of writing, 1 million characters (individual letters) free requests  
+    [Text-to-Speech API pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)  
+    At the time of writing, 1 million characters (individual letters) free requests  
 
-  [Vision API Pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
-  At the time of writing, 1000 free requests per month  
+    [Vision API pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
+    At the time of writing, 1000 free requests per month  
 
 Apart from the Translation API, everything should be testable for free
 But don't take my word for it, check the [Billing page](https://console.cloud.google.com/billing/) occasionally!
