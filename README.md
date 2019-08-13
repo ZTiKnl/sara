@@ -473,7 +473,7 @@ I understand people can have problems getting through this, so here is a small g
 
 4. Create project key file  
   4.1 Open the topleft menu again and go to APIs & Services and click on Credentials  
-  [(should lead you here)](https://console.cloud.google.com/apis/credentials)
+  [(should lead you here)](https://console.cloud.google.com/apis/credentials)  
   4.2 Click on 'Create credentials' then on 'Service account key'  
   4.3 When prompted to create a new service account select 'Project' -> 'Owner'  
   4.4 As the service account, select your project and use JSON key type  
@@ -497,7 +497,7 @@ Some details on pricing:
 - [Vision API pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
   At the time of writing, 1000 free requests per month  
 
-Apart from the Translation API, everything should be testable for free
+Apart from the Translation API, everything should be testable for free  
 But don't take my word for it, check the [Billing page](https://console.cloud.google.com/billing/) occasionally!
 
 #### Haobosou USB microphone:  
