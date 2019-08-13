@@ -466,10 +466,10 @@ I understand people can have problems getting through this, so here is a small g
 3. Enable APIs you want to connect with  
   You don't have to use them all, if you don't want/need a certain module (voice/speech recognition/vision/translation), don't activate it  
   (All these modules can be deactivated, except translate which is a plugin)  
-    - [Google cloud Speech](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/speech#before-you-begin)  
-    - [Google cloud Text-To-Speech](https://console.cloud.google.com/flows/enableapi?apiid=texttospeech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/text-to-speech#before-you-begin)  
-    - [Google cloud Vision](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/vision#before-you-begin)  
-    - [Google cloud Translate](https://console.cloud.google.com/flows/enableapi?apiid=translate.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/translate#before-you-begin)  
+    - [Speech](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/speech#before-you-begin)  
+    - [Text-To-Speech](https://console.cloud.google.com/flows/enableapi?apiid=texttospeech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/text-to-speech#before-you-begin)  
+    - [Vision](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/vision#before-you-begin)  
+    - [Translate](https://console.cloud.google.com/flows/enableapi?apiid=translate.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/translate#before-you-begin)  
 
 4. Create project key file  
   4.1 Open the topleft menu again and go to APIs & Services and click on Credentials  
@@ -478,16 +478,16 @@ I understand people can have problems getting through this, so here is a small g
   4.3 When prompted to create a new service account select 'Project' -> 'Owner'  
   4.4 As the service account, select your project and use JSON key type  
   4.5 Close the confirmation and a .json file should be downloaded  
-  - Copy this file, or its contents to `./resources/apikeys/googlecloud.json`
+  - Copy this file, or its contents to `./resources/apikeys/googlecloud.json`  
   or
   - Add a checkmark in front of the new Service account key, and click on 'Manage service accounts'  
   - Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
 
 Some details on pricing:  
   [Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
-  At the time of writing, no free requests, $20 per 1 million characters (individual letters)
+  At the time of writing, **no** free requests, $20 per 1 million characters (individual letters)
 
-  [Speech-to-Text API Pricing](https://cloud.google.com/speech-to-text/#cloud-speechtotext-api-pricing)
+  [Speech API Pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing)
   At the time of writing, 60 minutes free requests  
 
   [Text-to-Speech API Pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)
