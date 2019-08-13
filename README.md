@@ -454,22 +454,22 @@ I understand people can have problems getting through this, so here is a small g
 
 1. Set up a Cloud Project  
   To set that up, you'll need to create a new project in the [Cloud Platform Console](https://console.cloud.google.com/project)  
-  1.1 Click on 'Create project' at the top menubar  
-  1.2 Enter a name and organisation (optional)  
+  1.1 Click on 'Create project' at the top menu  
+  1.2 Enter a name and (optional) organisation  
   1.3 Click 'Create'  
 
 2. Enable billing for your project  
   Google FAQ on [Billing](https://support.google.com/cloud/answer/6293499#enable-billing)  
-  2.1 Click on the top left menu (three white dashes), and click  the 'Billing' entry  
+  2.1 Click on the top left menu (three white dashes), and click the 'Billing' entry  
   2.2 Click on 'Create account' if you don't have any  
 
 3. Enable APIs you want to connect with  
   You don't have to use them all, if you don't want/need a certain module (voice/speech recognition/vision/translation), don't activate it  
   (All these modules can be deactivated, except translate which is a plugin)  
-  - [Google cloud Speech](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/speech#before-you-begin)  
-  - [Google cloud Text-To-Speech](https://console.cloud.google.com/flows/enableapi?apiid=texttospeech.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/text-to-speech#before-you-begin)  
-  - [Google cloud Vision](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/vision#before-you-begin)  
-  - [Google cloud Translate](https://console.cloud.google.com/flows/enableapi?apiid=translate.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/translate#before-you-begin)  
+    - [Google cloud Speech](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/speech#before-you-begin)  
+    - [Google cloud Text-To-Speech](https://console.cloud.google.com/flows/enableapi?apiid=texttospeech.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/text-to-speech#before-you-begin)  
+    - [Google cloud Vision](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/vision#before-you-begin)  
+    - [Google cloud Translate](https://console.cloud.google.com/flows/enableapi?apiid=translate.googleapis.com) / [more info](https://www.npmjs.com/package/@google-cloud/translate#before-you-begin)  
 
 4. Create project key file  
   4.1 Open the topleft menu again and go to APIs & Services and click on Credentials  
@@ -483,20 +483,20 @@ I understand people can have problems getting through this, so here is a small g
   - Add a checkmark in front of the new Service account key, and click on 'Manage service accounts'  
   - Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
 
-
-[Google Cloud Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
+Some details on pricing:  
+  [Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
   At the time of writing, no free requests, $20 per 1 million characters (individual letters)
 
-[Speech-to-Text API Pricing](https://cloud.google.com/speech-to-text/#cloud-speechtotext-api-pricing)
+  [Speech-to-Text API Pricing](https://cloud.google.com/speech-to-text/#cloud-speechtotext-api-pricing)
   At the time of writing, 60 minutes free requests  
 
-[Text-to-Speech API Pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)
+  [Text-to-Speech API Pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)
   At the time of writing, 1 million characters (individual letters) free requests  
 
-[Vision API Pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
+  [Vision API Pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
   At the time of writing, 1000 free requests per month  
 
-Apart from the Translation API, everything is testable for free
+Apart from the Translation API, everything should be testable for free
 But don't take my word for it, check the [Billing page](https://console.cloud.google.com/billing/) occasionally!
 
 #### Haobosou USB microphone:  
