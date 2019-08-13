@@ -275,7 +275,7 @@ The .js file contains all the javascript to deal with request X and push back a 
   ```
   More information on SSML markup can be found [here](https://cloud.google.com/text-to-speech/docs/ssml)  
 
-The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description  
+The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, a small description and explanation (used in help documentation)  
 
   One .js file can contain multiple module.exports functions, each function requires its own .json file  
   Example:  
