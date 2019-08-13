@@ -271,7 +271,7 @@ The .js file contains all the javascript to deal with request X and push back a 
   Or an array containing the text string, and the same string with SSML markup:  
   ```
   result = ['1999'];
-  result[1] = ['<say-as interpret-as="cardinal">1999</say-as>'];
+  result[1] = '<say-as interpret-as="cardinal">1999</say-as>';
   ```
   More information on SSML markup can be found [here](https://cloud.google.com/text-to-speech/docs/ssml)  
 
