@@ -323,12 +323,15 @@ hello
 hey
 yo
 good morning/afternoon/evening/night
-
 how are you
 how are you doing
 how are you feeling
 how are you doing today
 how are you feeling at the moment
+when were you made
+who made you
+how were you made
+why were you made
 ```
 #### Location:
 ```
