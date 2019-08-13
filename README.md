@@ -478,10 +478,10 @@ I understand people can have problems getting through this, so here is a small g
   4.3 When prompted to create a new service account select 'Project' -> 'Owner'  
   4.4 As the service account, select your project and use JSON key type  
   4.5 Close the confirmation and a .json file should be downloaded  
-  - Copy this file, or its contents to `./resources/apikeys/googlecloud.json`  
+  4.6 Copy this file, or its contents to `./resources/apikeys/googlecloud.json`  
   or
-  - Add a checkmark in front of the new Service account key, and click on 'Manage service accounts'  
-  - Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
+  4.6 Add a checkmark in front of the new Service account key, and click on 'Manage service accounts'  
+  4.7 Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
 
 Some details on pricing:  
   [Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
