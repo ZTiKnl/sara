@@ -590,7 +590,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Object/face recognition    
 - [ ] Plugins
   - [x] ~~Rename 'commands' folder to 'plugins'~~  
-  - [ ] Check for plugins in an external folder
+  - [x] ~~Check for plugins in an external folder~~  
   - [x] ~~Add weather plugin~~
     - [ ] Add more commands: sun, sunrise, sunset, wind, rain  
   - [x] ~~Add news plugin~~  
