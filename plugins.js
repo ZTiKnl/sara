@@ -28,7 +28,8 @@ function plugincheck (line) {
       var i = 0;
       var amount = plugins.length;
       while (i < amount) {
-        var result = eval(plugins[i]['regex']).exec(line);
+        var re = new RegExp(plugins[i]['regex'], 'i');
+        var result = re.exec(line);
         if (result) {
           pluginfound = true;
           response.conlog('plugincheck', 'found match: '+plugins[i]['module']+'.'+plugins[i]['name'], 'data');
