@@ -183,6 +183,10 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `start/stop talking` same as above  
 `start/stop speaking` same as above  
 `silence` stop speaking the current sentence/item  
+`voice list` display a list of all voices for the current language (config.json)  
+`list voice` same as above  
+`voices list` same as above  
+`list voices` same as above  
 #### Vision:
 `start/stop vision` turns on/off timer (30 min) for webcam snapshot to ./resources/vision/frame.png  
 `start/stop watching` same as above  
@@ -504,12 +508,13 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Create help documentation for internal functions and plugins (currently populated with placeholders)  
   - [x] ~~Add .json file import to help function, so plugins can add topics to the function~~  
   - [x] ~~Add `list help` command, and/or display all topics using `help`~~  
-- [ ] Speech recognition
+- [x] ~~Speech recognition~~  
   - [x] ~~Add option to select if speech commands are pushed to command line or processed immediately~~  
   - [x] ~~Write speechparse() function, to replace strings such as 'subcommand start' with '(' and 'subcommand end' with ')'~~  
 - [ ] Voice synthesis
   - [x] ~~Hook command results to voice synthesis~~  
-  - [ ] Add voices list display/selection
+  - [x] ~~Add voices list display~~  
+    - [ ] Add voice selection  
   - [x] ~~Add voice settings to config.json~~  
   - [ ] Create option for voice to be heard on all output, instead of on response only (`--speak-all`, `--speak-response-only`)
   - [ ] Create 'speak' command, which will force the following command output to be spoken completely  
