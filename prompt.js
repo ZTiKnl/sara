@@ -116,20 +116,31 @@ function start(strPrompt, callback) {
 
     line = line.replace(/(?:\s)+/g, ' ').trim();
 
-
-    var subcommands = false;
+    var finalcmd = false;
     splitcommands(line);
 
     function splitcommands(cmd) {
-      if (subcommands) {
-        response.conlog('prompt', 'processing final command', 'info');
-      }
       var end = cmd.indexOf(")");
-      var sub = cmd.substr(0, end);
-      var start = sub.lastIndexOf("(");
-      var sub = sub.substr(start+1);
-    
-      if (start == -1 || end == -1) {
+      if (end != -1) {
+        var sub = cmd.substr(0, end);
+        var start = sub.lastIndexOf("(");
+        if (start != -1) {
+          sub = sub.substr(start+1);
+          var subcommands = true;
+          finalcmd = true;
+        } else {
+          var subcommands = false;
+        }
+      } else {
+        var subcommands = false;
+      }
+
+      if (!subcommands) {
+        if (finalcmd) {
+          response.conlog('prompt', 'processing final command', 'info');
+        } else {
+          response.conlog('prompt', 'processing command', 'info');
+        }
         processcmd(cmd).then((result) => {
           if (Array.isArray(result)) {
             response.conlog('prompt', result[0], 'response');
