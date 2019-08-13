@@ -1,6 +1,6 @@
 {
   "name": "@ztiknl/sara",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Sentient Artificial Responsive Agent",
   "keywords": "prompt, cli, speech recognition, stt, text-to-speech, tts, voice-command, alexa, ok google, siri, bixby, jarvis, voice response system",
   "main": "bin.js",
