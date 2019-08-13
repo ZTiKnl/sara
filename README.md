@@ -188,6 +188,7 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `start/stop talking` same as above  
 `start/stop speaking` same as above  
 `silence` stop speaking the current sentence/item  
+`quiet` stsame as above  
 `voice list` display a list of all voices for the current language (config.json)  
 `list voice` same as above  
 `voices list` same as above  
