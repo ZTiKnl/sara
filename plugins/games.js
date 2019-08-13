@@ -15,22 +15,21 @@ function ttt() {
     var gameopen = true;
     var draw = false;
     var winner;
-    var activeplayer = 'player';
     var winrow;
+    var activeplayer;
+    Math.random() < 0.5 ? activeplayer = 'player' : activeplayer = 'ai';
 
     game(board);
 
     async function game() {
-      printboard();
-//      console.log(board)
       if (activeplayer == 'player') {
+        printboard();
         board = await usermove();
         activeplayer = 'ai';
       } else {
         board = aimove();
         activeplayer = 'player';
       }
-//      console.log(board)
       checkboardstatus(board);
     }
 
