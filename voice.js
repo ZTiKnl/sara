@@ -21,13 +21,53 @@ const sfx = require('./sfx.js')
 const response = require('./response.js');
 
 module.exports = {
-  start: function() {
+  start: async function() {
     if (voiceactive == false) {
-      response.conlog('voice', 'speech synthesis activated', 'status');
+      response.conlog('voice', 'speech synthesis activated', 'info');
       voiceactive = true;
+      var result = 'I am able to speak now';
+      return result;
     } else {
-      response.conlog('voice', 'speech synthesis was already activated', 'status');
+      response.conlog('voice', 'speech synthesis was already activated', 'info');
+      var result = 'I am already able to speak';
+      return result;
     }
+  },
+  list: async function(language) {
+    if(language) {
+      if (language == 'french') {
+        language = 'fr';
+      }
+      if (language == 'dutch') {
+        language = 'nl';
+      }
+      if (language == 'german') {
+        language = 'de';
+      }
+      if (language == 'english') {
+        language = 'en';
+      }
+    } else {
+      var language = vo_language;
+    }
+    const client = new textToSpeech.TextToSpeechClient({
+      projectId: api_id,
+      keyFilename: api_file
+    })
+    const result = await client.listVoices({'languageCode': language});
+    console.log(result[0]['voices']);
+    console.log(result[0]['voices'].length)
+    if (result[0]['voices'].length < 1) {
+      var rslt = 'There are no voices available';
+    } else {
+      var rslt = 'There are '+result[0]['voices'].length+' voices available';
+      var i = 0;
+      while (i < result[0]['voices'].length) {
+        response.conlog('voice', result[0]['voices'][i]['languageCodes']+':\n\t'+result[0]['voices'][i]['ssmlGender']+'\n\tName: '+result[0]['voices'][i]['name']+'\n\tSample rate: '+result[0]['voices'][i]['naturalSampleRateHertz']+'\n', 'output');
+        i++;
+      }      
+    }
+    return rslt;
   },
   synthesize: async function(sentence, language) {
     if (language) {
@@ -105,15 +145,21 @@ module.exports = {
     sentence = '<speak><break time=\'250ms\'/>'+sentence+'</speak>';
     return sentence;
   },
-  silence: function() {
-    sfx.quiet();
+  silence: async function() {
+    await sfx.quiet();
+    var result = '...';
+    return result;
   },
-  stop: function() {
+  stop: async function() {
     if (voiceactive == true) {
-      response.conlog('voice', 'speech synthesis deactivated', 'status');
+      response.conlog('voice', 'speech synthesis deactivated', 'info');
       voiceactive = false;
+      var result = 'I am no longer able to speak';
+      return result;
     } else {
-      response.conlog('voice', 'speech synthesis was already deactivated', 'status');
+      response.conlog('voice', 'speech synthesis was already deactivated', 'info');
+      var result = 'I am already unable to speak';
+      return result;
     }
   },
   status: function() {
