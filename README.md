@@ -205,7 +205,7 @@ Sara needs to 'understand' commands, and does this by comparing input to a regul
 
 Example: 
 ```
-/^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$/i
+^(?:what|how\smuch)?\s?(?:is)?\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:\+|plus|\&|and)\s?(-?[0-9]+\.?(?:[0-9]+)?)\s?(?:is)?$
 ```
 This regular expression matches the following sentences:
 ```
@@ -266,21 +266,30 @@ pluginname_function.json
 pluginname.js
 ```
 The .js file contains all the javascript to deal with request X and push back a result  
-The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description
 
-One .js file can contain multiple module.exports functions, each function requires its own .json file  
-Example:  
-```
-math.js  
-math_add.json  
-math_subtract.json  
-math_root.json
-```
+  The result pushed back can be either a string such as '1999' (example question: 2000-1)  
+  Or an array containing the text string, and the same string with SSML markup:  
+  ```
+  result = ['1999'];
+  result[1] = ['<say-as interpret-as="cardinal">1999</say-as>'];
+  ```
+  More information on SSML markup can be found [here](https://cloud.google.com/text-to-speech/docs/ssml)  
 
-Regular Expressions in these .json files need special characters to be escaped twice:  
-`"regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",`
+The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, and a small description  
 
-Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
+  One .js file can contain multiple module.exports functions, each function requires its own .json file  
+  Example:  
+  ```
+  math.js  
+  math_add.json  
+  math_subtract.json  
+  math_root.json
+  ```
+
+  [Regular Expressions](https://github.com/ZTiKnl/sara#regular-expression-matches) in these .json files need special characters to be escaped twice:  
+  `"regex": "^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$",`
+
+  Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
 ### Provided plugins:  
 All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
 More plugins are coming, see Todo list for what I'd like to add (if possible)...  
