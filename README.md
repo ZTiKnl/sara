@@ -302,7 +302,7 @@ pluginname.js
 
   Since Sara removes certain words from the start of the sentence, all that the regex requires is the intent and if variables need to be passed to the function, one or more working capture groups
   
-  The description and explanation are used in the `help about topic` function  
+  The description and explanation are used in the `help <plugin.function>` function  
 ### Provided plugins:  
 All commands listed are functional, although some plugins will require adding more commands (math.power, etc)  
 More plugins are coming, see Todo list for what I'd like to add (if possible)...  
