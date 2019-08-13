@@ -1,7 +1,7 @@
 {
   "name": "select",
   "module": "xbmcremote",
-  "regex": "/^(?:media\\smenu)\\s?(?:select)$/i",
+  "regex": "^(?:media\\smenu)\\s?(?:select)$",
   "description": "Menu select on xbmc device",
   "explanation": "This plugin teaches SARA how to transmit a menu select command to a configured xbmc device.\nType 'media menu select' and SARA should respond."
 }

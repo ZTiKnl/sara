@@ -1,7 +1,7 @@
 {
   "name": "latlong",
   "module": "location",
-  "regex": "/^(?:what|which)?\\s?(?:is|are)?\\s?(?:my|our|your)?\\s?(?:current|actual)?\\s?(?:coordinates)\\s?(?:am\\si|are\\swe|are\\syou)?\\s?(?:at)?$/i",
+  "regex": "^(?:what|which)?\\s?(?:is|are)?\\s?(?:my|our|your)?\\s?(?:current|actual)?\\s?(?:coordinates)\\s?(?:am\\si|are\\swe|are\\syou)?\\s?(?:at)?$",
   "description": "Get current latitude/longitude based on GeoIP database",
   "explanation": "This plugin teaches SARA how to determine the current location (latitude/longitude).\nType 'what are your current coordinates' or one of the alternatives and SARA should respond."
 }

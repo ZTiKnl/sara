@@ -1,7 +1,7 @@
 {
   "name": "rockpaperscissors",
   "module": "games",
-  "regex": "/^(rock|paper|scissors)$/i",
+  "regex": "^(rock|paper|scissors)$",
   "description": "Play a game of Rock Paper Scissors",
   "explanation": "This plugin teaches SARA how to play a game of Rock Paper Scissors.\nType 'rock' or one of the alternatives and SARA should respond."
 }

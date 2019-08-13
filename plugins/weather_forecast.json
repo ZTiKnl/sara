@@ -1,6 +1,6 @@
 {
   "name": "forecast",
   "module": "weather",
-  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather\\sforecast)\\s?(?:in|at|near|around|for)\\s([a-z,\\s\\-]+)$/i",
+  "regex": "^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather\\sforecast)\\s?(?:in|at|near|around|for)\\s([a-z,\\s\\-]+)$",
   "description": "Get weather forecast based on city, or country"
 }

@@ -1,7 +1,7 @@
 {
   "name": "place",
   "module": "weather",
-  "regex": "/^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?\\s?(?:in|at|near|around)\\s([a-z,\\s\\-]+)$/i",
+  "regex": "^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?\\s?(?:in|at|near|around)\\s([a-z,\\s\\-]+)$",
   "description": "Get weather info based on city, or country",
   "explanation": "This plugin teaches SARA how to fetch the weather details for a specific country.\nAsk 'how is the weather around Amsterdam' or one of the alternatives and SARA should respond."
 }

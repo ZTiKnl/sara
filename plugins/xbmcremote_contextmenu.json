@@ -1,7 +1,7 @@
 {
   "name": "contextmenu",
   "module": "xbmcremote",
-  "regex": "/^(?:media\\smenu)\\s?(?:context)$/i",
+  "regex": "^(?:media\\smenu)\\s?(?:context)$",
   "description": "Context menu on xbmc device",
   "explanation": "This plugin teaches SARA how to transmit a Context menu command to a configured xbmc device.\nType 'media menu context' and SARA should respond."
 }

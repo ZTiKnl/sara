@@ -1,7 +1,7 @@
 {
   "name": "headlinescategory",
   "module": "news",
-  "regex": "/^(?:the|some)?\\s?(.+?)(?:news)\\s?(?:headlines)$/i",
+  "regex": "^(?:the|some)?\\s?(.+?)(?:news)\\s?(?:headlines)$",
   "description": "Fetch specific category news headlines",
   "explanation": "This plugin teaches SARA how connect with the newsapi.org API, and fetch specific category headlines.\nType 'business news headlines' or one of the alternatives and SARA should respond."
 }

@@ -1,7 +1,7 @@
 {
   "name": "multiply",
   "module": "math",
-  "regex": "/^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\*|multiplied\\sby|multiplied\\swith|times|x)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$/i",
+  "regex": "^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\*|multiplied\\sby|multiplied\\swith|times|x)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$",
   "description": "Multiply x by y",
   "explanation": "This plugin teaches SARA how calculate the multiplication of two number numbers.\nType '4 * 2' or one of the alternatives and SARA should respond."
 }

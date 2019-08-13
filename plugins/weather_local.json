@@ -1,7 +1,7 @@
 {
   "name": "local",
   "module": "weather",
-  "regex": "/^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?$/i",
+  "regex": "^(?:what|how)?\\s?(?:is)?\\s?(?:the)?\\s?(?:weather)\\s?(?:like)?$",
   "description": "Get weather info based on current city",
   "explanation": "This plugin teaches SARA how to fetch the weather details for current location.\nAsk 'what is the weather like' or one of the alternatives and SARA should respond."
 }

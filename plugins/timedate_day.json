@@ -1,7 +1,7 @@
 {
   "name": "day",
   "module": "timedate",
-  "regex": "/^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:day)\\s?(?:is|is\\sit|it\\sis)?\\s?(?:today)?$/i",
+  "regex": "^(?:what)?\\s?(?:is)?\\s?(?:the)?\\s?(?:day)\\s?(?:is|is\\sit|it\\sis)?\\s?(?:today)?$",
   "description": "respond with current day",
   "explanation": "This plugin teaches SARA how calculate the current day.\nType 'what day is it' or one of the alternatives and SARA should respond."
 }
