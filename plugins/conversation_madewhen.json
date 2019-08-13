@@ -1,0 +1,7 @@
+{
+  "name": "madewhen",
+  "module": "conversation",
+  "regex": "^(?:when)\\s?(?:were\\syou|you\\swere)?\\s(?:made|created|designed)$",
+  "description": "Say when SARA was made",
+  "explanation": "This plugin teaches SARA how to recognize a question about her origin and respond accordingly.\nSay 'Hello' or one of the alternatives and SARA should respond."
+}

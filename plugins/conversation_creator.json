@@ -1,0 +1,7 @@
+{
+  "name": "creator",
+  "module": "conversation",
+  "regex": "^(?:who)\\s?(?:is\\syour)?\\s(?:made|created|designed|manufacturer|creator|designer)\\s?(?:you)?$",
+  "description": "Say who made SARA",
+  "explanation": "This plugin teaches SARA how to recognize a question about her origin and respond accordingly.\nSay 'Hello' or one of the alternatives and SARA should respond."
+}

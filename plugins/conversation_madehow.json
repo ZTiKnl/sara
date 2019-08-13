@@ -1,0 +1,7 @@
+{
+  "name": "madehow",
+  "module": "conversation",
+  "regex": "^(?:how)\\s?(?:were\\syou|are\\syou|you\\swere|were\\syou)?\\s(?:made|created|designed)$",
+  "description": "Say how SARA was made",
+  "explanation": "This plugin teaches SARA how to recognize a question about her origin and respond accordingly.\nSay 'Hello' or one of the alternatives and SARA should respond."
+}
