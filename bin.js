@@ -20,10 +20,10 @@ screenhist.wipe();
 // include colored responses module
 const response = require('./response.js');
 if (!colorstart) {
-  response.unsetcolors();
+  response.unsetcolors('silent');
 }
 if (verbose) {
-  response.setverbose();
+  response.setverbose('silent');
 }
 // include help function module
 const help = require('./help.js');
@@ -47,12 +47,12 @@ const vision = require('./vision.js');
 prompt.start();
 prompt.setCompletion(['help', 'add', 'edit', 'list', 'start', 'stop', 'listening', 'hearing', 'voice', 'talking', 'silence', 'vision', 'watching', 'verbose', 'colors', 'command', 'execution', 'parsing', 'sound', 'effects', 'sfx']);
 if (configfilefound) {
-  response.conlog('prompt', 'Loading settings from configuration file (./config.json)', 'status');
+  response.conlog('prompt', 'loading settings from configuration file (./config.json)', 'status');
 } else {
-  response.conlog('prompt', 'No configuration file found (./config.json)', 'status');
+  response.conlog('prompt', 'no configuration file found (./config.json)', 'status');
 }
 
-if (verbose) { 
+if (verbose) {
   response.conlog('prompt', 'verbose mode activated', 'status');
 }
 if (colorstart) { 
