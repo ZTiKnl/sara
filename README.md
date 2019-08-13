@@ -97,9 +97,9 @@ Sara listens to the keyword '*Sara*'
 
 ### Requirements:  
 The hardware stated below is what I am using to build/test/run this project on  
-It *should* run on any linux distro  
-It *might* run on Mac OS  
-It *doesn't* run on Windows  
+It *should* run on any linux distro, I didn't test but see no reason why it wouldn't  
+It *might* run on Mac OS,unable to verify, I do not have any Fruit branded devices  
+It *doesn't* run on Windows, Sonus (speech recognition via Google Cloud) doesn't run on Windows  
 
 Hardware:
 - A Raspberry Pi *(3B tested, older models should work)*
