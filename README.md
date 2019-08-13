@@ -95,7 +95,12 @@ After stripping these words, the command is compared to internal commands, and i
 
 Sara listens to the keyword '*Sara*'
 
-### Requirements:
+### Requirements:  
+The hardware stated below is what I am using to build/test/run this project on  
+It *should* run on any linux distro  
+It *might* run on Mac OS  
+It *doesn't* run on Windows  
+
 Hardware:
 - A Raspberry Pi *(3B tested, older models should work)*
   - Keyboard or ssh connection
