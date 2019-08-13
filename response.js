@@ -6,18 +6,30 @@ var verbose = false;
 const chalk = require('chalk');
 
 module.exports = {
-  setverbose: function() {
+  setverbose: function(arg) {
     if (verbose == false) {
       verbose = true;
+      if (arg != 'silent') {
+        module.exports.conlog('prompt', 'verbose mode activated', 'status');
+      }
+      var result = 'I will display \'data\' type responses';
+      return result;
     } else {
-      module.exports.conlog('prompt', 'verbose mode is already activated', 'status')
+      module.exports.conlog('prompt', 'verbose mode is already activated', 'status');
+      var result = 'I am already displaying \'data\' type responses';
+      return result;
     }
   },
   unsetverbose: function() {
     if (verbose == true) {
       verbose = false;
+      module.exports.conlog('prompt', 'verbose mode deactivated', 'status');
+      var result = 'I will stop displaying \'data\' type responses';
+      return result;
     } else {
-      module.exports.conlog('prompt', 'verbose mode is already deactivated', 'status')
+      module.exports.conlog('prompt', 'verbose mode is already deactivated', 'status');
+      var result = 'I have already stopped displaying \'data\' type responses';
+      return result;
     }
   },
   getcolors: function() {
@@ -26,15 +38,27 @@ module.exports = {
   setcolors: function() {
     if (colorsactive == false) {
       colorsactive = true;
+      module.exports.conlog('prompt', 'colored responses activated', 'status');
+      var result = 'I will display colored responses';
+      return result;
     } else {
-      module.exports.conlog('prompt', 'colored responses is already activated', 'status')
+      module.exports.conlog('prompt', 'colored responses is already activated', 'status');
+      var result = 'I am already displaying colored responses';
+      return result;
     }
   },
-  unsetcolors: function() {
+  unsetcolors: function(arg) {
     if (colorsactive == true) {
       colorsactive = false;
+      if (arg != 'silent') {
+        module.exports.conlog('prompt', 'colored responses deactivated', 'status');
+      }
+      var result = 'I will no longer display colored responses';
+      return result;
     } else {
-      module.exports.conlog('prompt', 'colored responses is already deactivated', 'status')
+      module.exports.conlog('prompt', 'colored responses is already deactivated', 'status');
+      var result = 'I have already stopped displaying colored responses';
+      return result;
     }
   },
   conlog: function(module, text, type) {
@@ -65,7 +89,7 @@ module.exports = {
       if (type == 'info') {
         console.log(chalk.yellow.bgBlack.bold('('+module+' / '+type+') '+text));
       }
-      if (type == 'help') {
+      if (type == 'help' || type == 'output') {
         console.log(chalk.yellow.bgBlack.bold(text));
       }
       if (type == 'error') {
@@ -84,6 +108,7 @@ module.exports = {
 }
 
 function vocal_stringify(text) {
+  text = String(text);
   text = text.replace(/ztik.nl/gi, 'ZTiK.nl');
   text = text.replace(/ztiknl/gi, 'ZTiKnl');
   text = text.replace(/ztik/gi, 'ZTiK');

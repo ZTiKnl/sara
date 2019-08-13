@@ -19,12 +19,16 @@ const response = require('./response.js');
 const hearing = require('./hearing.js')
 
 module.exports = {
-  start: function() {
+  start: async function() {
     if (sfxactive == false) {
       response.conlog('sfx', 'sound effects activated', 'status');
       sfxactive = true;
+      result = 'I am now able to emulate sound effects';
+      return result;
     } else {
       response.conlog('sfx', 'sound effects are already activated', 'status');
+      result = 'I am already able to emulate sound effects';
+      return result;
     }
   },
   output: async function(effect) {
@@ -70,20 +74,25 @@ module.exports = {
       })
     }
   },
-  quiet: function() {
+  quiet: async function() {
     if (sfxoutput != null) { 
-      sfxoutput.kill();
+      await sfxoutput.kill();
     } else {
       response.conlog('voice', 'I wasn\'t talking (anymore)', 'info');
     }
-    return;
+    result = '...';
+    return result;
   },
-  stop: function() {
+  stop: async function() {
     if (sfxactive == true) {
       response.conlog('sfx', 'sound effects deactivated', 'status');
       sfxactive = false;
+      result = 'I am no longer able to emulate sound effects';
+      return result;
     } else {
       response.conlog('sfx', 'sound effects are already deactivated', 'status');
+      result = 'I am already not able to emulate sound effects';
+      return result;
     }
   },
   status: function() {

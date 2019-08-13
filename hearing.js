@@ -63,42 +63,58 @@ module.exports = {
   pause: function() {
     Sonus.pause(sonus);
   },
-  resume: function () {
+  resume: async function () {
     Sonus.resume(sonus);
   },
-  cmdexecute: function() {
+  cmdexecute: async function() {
     if (hearingprocess == false) {
-      response.conlog('hearing', 'voice command execution activated', 'status');
+      response.conlog('hearing', 'voice command execution activated', 'info');
       hearingprocess = true;
+      var result = 'I am now able to execute voice commands';
+      return result;
     } else {
-      response.conlog('hearing', 'voice command execution was already activated', 'status');
+      response.conlog('hearing', 'voice command execution was already activated', 'info');
+      var result = 'I am already able to execute voice commands';
+      return result;
     }
   },
-  cmdtoprompt: function() {
+  cmdtoprompt: async function() {
     if (hearingprocess == true) {
-      response.conlog('hearing', 'voice command execution deactivated', 'status');
+      response.conlog('hearing', 'voice command execution deactivated', 'info');
       hearingprocess = false;
+      var result = 'I am no longer able to execute voice commands';
+      return result;
     } else {
-      response.conlog('hearing', 'voice command execution was already deactivated', 'status');
+      response.conlog('hearing', 'voice command execution was already deactivated', 'info');
+      var result = 'I am already unable to execute voice commands';
+      return result;
     }
   },
-  listen: function() {
+  listen: async function() {
     if (hearingactive == false) {
-      response.conlog('hearing', 'voice recognition activated', 'status');
+      response.conlog('hearing', 'voice recognition activated', 'info');
       hearingactive = true;
-      Sonus.start(sonus)
+      await Sonus.start(sonus)
       module.exports.recognize();
+      var result = 'I am now able to hear you';
+      return result;
     } else {
-      response.conlog('hearing', 'voice recognition was already activated', 'status');
+      response.conlog('hearing', 'voice recognition was already activated', 'info');
+      var result = 'I am already able to hear you';
+      return result;
     }
   },
-  stop: function () {
+  stop: async function () {
     if (hearingactive == true) {
       hearingactive = false;
-      response.conlog('hearing', 'voice recognition deactivated', 'status');
-      Sonus.stop();
+      response.conlog('hearing', 'voice recognition deactivated', 'info');
+      await Sonus.stop();
+      var result = 'I am no longer able to hear you';
+      return result;
     } else {
-      response.conlog('hearing', 'voice recognition was already deactivated', 'status');
+      response.conlog('hearing', 'voice recognition was already deactivated', 'info');
+      var result = 'I am already unable to hear you';
+      return result;
     }
   },
   speechparse: function(text) {
