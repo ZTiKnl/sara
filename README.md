@@ -265,7 +265,8 @@ These are created using (at least) 2 files:
 pluginname_function.json  
 pluginname.js
 ```
-The .js file contains all the javascript to deal with request X and push back a result  
+
+- The .js file contains all the javascript to deal with request X and push back a result  
 
   The result pushed back can be either a string such as '1999' (example question: 2000-1)  
   Or an array containing the text string, and the same string with SSML markup:  
@@ -275,7 +276,17 @@ The .js file contains all the javascript to deal with request X and push back a 
   ```
   More information on SSML markup can be found [here](https://cloud.google.com/text-to-speech/docs/ssml)  
 
-The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, a small description and explanation (used in help documentation)  
+- The .json file contains the name of the plugin, the name of the module (the .js file name), a Regular Expression string, a small description and explanation (used in help documentation)  
+  *math_add.json:*  
+  ```
+  {
+    "name": "add",
+    "module": "math",
+    "regex": "^(?:what|how\\smuch)?\\s?(?:is)?\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:\\+|plus|\\&|and)\\s?(-?[0-9]+\\.?(?:[0-9]+)?)\\s?(?:is)?$",
+    "description": "Add x to y",
+    "explanation": "This plugin teaches SARA how to calculate the sum of two numbers.\nType '-4 + 4.4' or one of the alternatives and SARA should respond."
+  }
+  ```
 
   One .js file can contain multiple module.exports functions, each function requires its own .json file  
   Example:  
