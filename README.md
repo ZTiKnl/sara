@@ -49,7 +49,7 @@ When the core program is more complete I will start [semantic version](https://d
   9.8 [Games](https://github.com/ZTiKnl/sara#games)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
-  11.1 [Sonus/Google Cloud Speech API](https://github.com/ZTiKnl/sara#sonusgoogle-cloud-speech-api)  
+  11.1 [Google Cloud APIs](https://github.com/ZTiKnl/sara#google-cloud-apis)  
   11.2 [Haobosou USB microphone](https://github.com/ZTiKnl/sara#haobosou-usb-microphone)  
   11.3 [Known](https://github.com/ZTiKnl/sara#known)  
 12. [Todo](https://github.com/ZTiKnl/sara#todo)
@@ -449,25 +449,55 @@ Feel free to ask, but don't *expect* an answer...
 
 ### Other issues:  
 
-#### Sonus/Google Cloud Speech API:
-I understand people can have problems getting through this, so here is a small guide (thanks to [smart-mirror.io](https://docs.smart-mirror.io/docs/configuring_voice.html#setting-up-speech-recognition))
-- Setting up Speech Recognition  
-  Sara uses Sonus with Google Cloud Speech for keyword spotting and recognition.  
-  To set that up, you'll need to create a new project in the Cloud Platform Console:  
+#### Google Cloud APIs:
+I understand people can have problems getting through this, so here is a small guide
 
-- In the Cloud Platform Console, go to the Projects page and select or create a new project  
-  [GO TO THE PROJECTS PAGE](https://console.cloud.google.com/project)  
+1. Set up a Cloud Project  
+  To set that up, you'll need to create a new project in the [Cloud Platform Console](https://console.cloud.google.com/project)  
+  1.1 Click on 'Create project' at the top menubar  
+  1.2 Enter a name and organisation (optional)  
+  1.3 Click 'Create'  
 
-- Enable billing for your project.  
-  [ENABLE BILLING](https://support.google.com/cloud/answer/6293499#enable-billing)
+2. Enable billing for your project  
+  Google FAQ on [Billing](https://support.google.com/cloud/answer/6293499#enable-billing)  
+  2.1 Click on the top left menu (three white dashes), and click  the 'Billing' entry  
+  2.2 Click on 'Create account' if you don't have any  
 
-- Enable the Cloud Speech API.  
-  [ENABLE THE API](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) - For more info see [Cloud Speech API Pricing](https://cloud.google.com/speech/#cloud-speech-api-pricing) (for simple use it should be free)  
+3. Enable APIs you want to connect with  
+  You don't have to use them all, if you don't want/need a certain module (voice/speech recognition/vision/translation), don't activate it  
+  (All these modules can be deactivated, except translate which is a plugin)  
+  - [Google cloud Speech](https://console.cloud.google.com/flows/enableapi?apiid=speech.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/speech#before-you-begin)  
+  - [Google cloud Text-To-Speech](https://console.cloud.google.com/flows/enableapi?apiid=texttospeech.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/text-to-speech#before-you-begin)  
+  - [Google cloud Vision](https://console.cloud.google.com/flows/enableapi?apiid=vision.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/vision#before-you-begin)  
+  - [Google cloud Translate](https://console.cloud.google.com/flows/enableapi?apiid=translate.googleapis.com) [more info](https://www.npmjs.com/package/@google-cloud/translate#before-you-begin)  
 
-- Create a new *JSON service account key*, edit it with a text editor and copy the contents to *./resources/apikeys/googlespeech.json*  
-  When prompted to create a new service account select 'Owner' or 'Project Owner'  
+4. Create project key file  
+  4.1 Open the topleft menu again and go to APIs & Services and click on Credentials  
+  [(should lead you here)](https://console.cloud.google.com/apis/credentials)
+  4.2 Click on 'Create credentials' then on 'Service account key'  
+  4.3 When prompted to create a new service account select 'Project' -> 'Owner'  
+  4.4 As the service account, select your project and use JSON key type  
+  4.5 Close the confirmation and a .json file should be downloaded  
+  - Copy this file, or its contents to `./resources/apikeys/googlecloud.json`
+  or
+  - Add a checkmark in front of the new Service account key, and click on 'Manage service accounts'  
+  - Click on your service account, and copy all the information to `./resources/apikeys/googlecloud.json` (or use googlecloud_example.json and rename file)  
 
-As I understand, 90% of problems with Sonus are related to billing issues in Google Cloud  
+
+[Google Cloud Translate API Pricing](https://cloud.google.com/translate/#cloud-translate-api-pricing)  
+  At the time of writing, no free requests, $20 per 1 million characters (individual letters)
+
+[Speech-to-Text API Pricing](https://cloud.google.com/speech-to-text/#cloud-speechtotext-api-pricing)
+  At the time of writing, 60 minutes free requests  
+
+[Text-to-Speech API Pricing](https://cloud.google.com/text-to-speech/#cloud-texttospeech-api-pricing)
+  At the time of writing, 1 million characters (individual letters) free requests  
+
+[Vision API Pricing](https://cloud.google.com/vision/#cloud-vision-api-pricing)  
+  At the time of writing, 1000 free requests per month  
+
+Apart from the Translation API, everything is testable for free
+But don't take my word for it, check the [Billing page](https://console.cloud.google.com/billing/) occasionally!
 
 #### Haobosou USB microphone:  
 The microphone I use is a 'C-Media Haobosou G11 Touch Induction' and for a couple of days I have been having problems with it  
