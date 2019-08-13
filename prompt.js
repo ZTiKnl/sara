@@ -222,7 +222,7 @@ function start(strPrompt, callback) {
             vision.start();
           } else if (cmd.toLowerCase() == 'stop vision' || cmd.toLowerCase() == 'stop watching') {
             vision.stop();
-          } else if (cmd.toLowerCase() == 'silence') {
+          } else if (cmd.toLowerCase() == 'silence' || cmd.toLowerCase() == 'quiet') {
             voice.silence().then((result) => {
               resolve(result);
             });
