@@ -558,6 +558,8 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 
 ### Todo:
 - [ ] General
+  - [ ] Create startup_plugins folder and functionality (these plugins are loaded and executed on boot)  
+    - [ ] Create background operations overview module(?)  
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
   - [ ] Rewrite console.log() to response.conlog() 
@@ -591,13 +593,26 @@ The vision module works, but all it does is take a picture every 30 min, no furt
   - [ ] Image manipulation through imagemagick  
   - [x] ~~Object/face detection~~  
   - [ ] Object/face recognition    
-- [ ] Plugins
+- [ ] Plugins  
   - [x] ~~Rename 'commands' folder to 'plugins'~~  
   - [x] ~~Check for plugins in an external folder~~  
   - [x] ~~Add weather plugin~~
     - [ ] Add more commands: sun, sunrise, sunset, wind, rain  
   - [x] ~~Add news plugin~~  
     - [ ] Finish news plugin  
+  - [x] ~~Add CalDAV plugin~~  
+    - [ ] Add calendar  
+    - [ ] Add event  
+    - [ ] Query events  
+    - [ ] Update events  
+    - [ ] Remove event  
+    - [ ] Remove calendar  
+    - [ ] Alert plugin (make use of upcoming startup_plugins)  
+  - [x] ~~Add CardDAV plugin~~  
+    - [ ] Add contact  
+    - [ ] Query contacts  
+    - [ ] Update contact  
+    - [ ] Remove contact  
   - [x] ~~Add conversation plugin~~  
     - [ ] Finish conversation plugin  
   - [ ] Add Gmail plugin  
