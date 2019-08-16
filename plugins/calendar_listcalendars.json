@@ -1,7 +1,7 @@
 {
   "name": "listcalendars",
   "module": "calendar",
-  "regex": "^(?:list\\scalendars|calendars\\slist|list\\scalendar|calendar\\slist)?$",
+  "regex": "^(?:list\\scalendars?|calendars?\\slist)?$",
   "description": "Fetch a list of available calendars",
   "explanation": "This plugin teaches SARA how to connect to CalDAV and fetch a list of calendars.\nSay 'list calendars' or one of the alternatives and SARA should respond."
 }
