@@ -7,7 +7,7 @@ const he = require('he');
 var apikey = 'daebb2de3f3943169ff9106707c33b10';
 
 // starting vars
-var news_config = require('./news/newsorg.json');
+var news_config = require('./news/connection.json');
 
 module.exports = {
   headlines: async function () {
