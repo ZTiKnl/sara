@@ -1,0 +1,7 @@
+{
+  "name": "listaddressbooks",
+  "module": "addressbook",
+  "regex": "^(?:list\\saddress\\s?book|address\\s?book\\slist|list\\saddress\\s?book|address\\s?book\\slist)?$",
+  "description": "Fetch a list of available address books",
+  "explanation": "This plugin teaches SARA how to connect to CardDAV and fetch a list of address books.\nSay 'list addressbook' or one of the alternatives and SARA should respond."
+}
