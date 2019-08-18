@@ -25,6 +25,9 @@ const vision = require('./vision.js');
 // include plugins module
 const plugins = require('./plugins.js');
 
+// include bootstrap module
+const bootstrap = require('./bootstrap.js');
+
 // set start vars
 var commands = [];
 const readline = require('readline'),
@@ -255,6 +258,10 @@ function start(strPrompt, callback) {
               rl.setPrompt('<input> ');
             }
             response.unsetcolors();
+          } else if (cmd.toLowerCase() == 'start bootstrap') {
+            bootstrap.start();
+          } else if (cmd.toLowerCase() == 'stop bootstrap') {
+            bootstrap.stop();
           } else if (cmd.toLowerCase() == 'start verbose') {
             response.setverbose();
           } else if (cmd.toLowerCase() == 'stop verbose') {
