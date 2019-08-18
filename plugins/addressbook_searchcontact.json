@@ -1,0 +1,7 @@
+{
+  "name": "searchcontact",
+  "module": "addressbook",
+  "regex": "^(?:search\\scontact)\\s?(.+)$",
+  "description": "Search contact",
+  "explanation": "This plugin teaches SARA how to connect to CardDAV and search for a contact.\nSay 'search contact <name>' or one of the alternatives and SARA should respond."
+}
