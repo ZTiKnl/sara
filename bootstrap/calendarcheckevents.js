@@ -6,7 +6,6 @@ module.exports = {
     response.conlog('bootstrap', 'calendar event checker activated', 'status');
     daemon = setInterval(calsync,10000);
   },
-  sync: calsync,
   stop: function() {
     response.conlog('bootstrap', 'calendar event checker deactivated', 'status');
     clearInterval(daemon);
