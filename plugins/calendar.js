@@ -16,16 +16,29 @@ module.exports = {
   listcalendars: listcals
 }
 
+
+
+
 async function listcals() {
   return new Promise(async (resolve) => {
     await dav.createAccount({ server: server, xhr: xhr, accountType: 'caldav' })
     .then(function(account) {
-      // account instanceof dav.Account
+      var result = [];
+      var i = 0;
       account.calendars.forEach(function(calendar) {
-        console.log('Found calendar named ' + calendar.displayName);
-        // etc.
+        result[i] = calendar.displayName;
+        i++;
       });
-      resolve(account.calendars.length);
+      if (result.length > 0) {
+        if (result.length < 2) {
+          result = 'I found '+result.length+' calendar: \n\t'+result.join('');
+        } else {
+          result = 'I found '+result.length+' calendars: \n\t'+result.join('\n\t');
+        }
+      } else {
+        result = 'I found no calendars in the supplied CalDAV server';
+      }
+      resolve(result);
     });
   })
 }
