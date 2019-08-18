@@ -56,7 +56,7 @@ async function searchcontact(searchstring) {
           var cats = [];
           var notes = [];
 
-          cardarray.push('Addressbook:\t'+addressbookname);
+          cardarray.push('\tAddressbook:\t'+addressbookname);
 
           if (vcardobj.categories && vcardobj.categories.length > 0) {
             var categoriescount = 0;
@@ -292,9 +292,9 @@ async function searchcontact(searchstring) {
 
       if (result.length > 0) {
         if (result.length < 2) {
-          result = 'I found '+result.length+' contact using the term \''+searchstring[1]+'\': \n\t'+result.join('');
+          result = 'I found '+result.length+' contact using the term \''+searchstring[1]+'\': \n'+result.join('');
         } else {
-          result = 'I found '+result.length+' contacts using the term \''+searchstring[1]+'\': \n\t'+result.join('\n\n');
+          result = 'I found '+result.length+' contacts using the term \''+searchstring[1]+'\': \n'+result.join('\n\n');
         }
       } else {
         result = 'I found no addressbooks in the supplied CardDAV server';
