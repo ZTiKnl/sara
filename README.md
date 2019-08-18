@@ -48,6 +48,7 @@ When the core program is more complete I will start [semantic version](https://d
   9.8 [Translate](https://github.com/ZTiKnl/sara#translate)  
   9.8 [Games](https://github.com/ZTiKnl/sara#games)  
   9.9 [Addressbook (CardDAV)](https://github.com/ZTiKnl/sara#addressbook-carddav)  
+  9.10 [Calendar (CalDAV)](https://github.com/ZTiKnl/sara#calendar-caldav)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Google Cloud APIs](https://github.com/ZTiKnl/sara#google-cloud-apis)  
