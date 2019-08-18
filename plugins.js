@@ -19,7 +19,6 @@ function plugincheck (line) {
   return new Promise(resolve => {
     (async function () {
       var pluginfound = false;
-      var argumentarray = [];
       const files = await readdir('plugins');
       const plugins = files
         .filter(file => file.endsWith('.json'))
