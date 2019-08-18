@@ -25,6 +25,7 @@
     "public-ip": "^3.1.0",
     "rollup": "^1.19.4",
     "sonus": "^1.0.3",
+    "vcard-parser": "^1.0.0",
     "weather-js2": "^2.0.2",
     "weeknumber": "^1.1.1",
     "wiki-entity": "^0.4.3"
