@@ -448,7 +448,6 @@ module.exports = {
     console.log('started calendar sync');
     var caldaemon = setInterval(calsync,600000);
   },
-  sync: calsync,
   stop: function() {
     console.log('stopped calendar sync');
     clearInterval(caldaemon);
