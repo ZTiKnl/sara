@@ -413,6 +413,15 @@ paper
 scissors
 tictactoe
 ```
+#### Addressbook (CardDAV):  
+Add connection details to file plugins/addressbook/connection.json (see example file connection_example.json)  
+```
+list address book
+list address books
+list addressbook
+addressbook list
+search contact <term>
+```
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
@@ -609,8 +618,9 @@ The vision module works, but all it does is take a picture every 30 min, no furt
     - [ ] Remove calendar  
     - [ ] Alert plugin (make use of upcoming startup_plugins)  
   - [x] ~~Add CardDAV plugin~~  
+    - [x] ~~List addressbooks~~  
+    - [x] ~~Query contacts~~  
     - [ ] Add contact  
-    - [ ] Query contacts  
     - [ ] Update contact  
     - [ ] Remove contact  
   - [x] ~~Add conversation plugin~~  
