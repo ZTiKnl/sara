@@ -18,7 +18,7 @@ Github documentation will be the Current/Latest testing build
 NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
 Many changes are to be expected, do not expect backwards compatibility  
 
-Current version: `0.3.4`  
+Current version: `0.4.0`  
 When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### ToC:
@@ -49,15 +49,16 @@ When the core program is more complete I will start [semantic version](https://d
   9.8 [Games](https://github.com/ZTiKnl/sara#games)  
   9.9 [Addressbook (CardDAV)](https://github.com/ZTiKnl/sara#addressbook-carddav)  
   9.10 [Calendar (CalDAV)](https://github.com/ZTiKnl/sara#calendar-caldav)  
-10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
-11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
-  11.1 [Google Cloud APIs](https://github.com/ZTiKnl/sara#google-cloud-apis)  
-  11.2 [Haobosou USB microphone](https://github.com/ZTiKnl/sara#haobosou-usb-microphone)  
-  11.3 [Known](https://github.com/ZTiKnl/sara#known)  
-12. [Todo](https://github.com/ZTiKnl/sara#todo)
-13. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
-14. [Credits](https://github.com/ZTiKnl/sara#credits)
-15. [Apologies](https://github.com/ZTiKnl/sara#apologies)
+10. [Bootstrap](https://github.com/ZTiKnl/sara#bootstrap)
+11. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
+12. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
+  12.1 [Google Cloud APIs](https://github.com/ZTiKnl/sara#google-cloud-apis)  
+  12.2 [Haobosou USB microphone](https://github.com/ZTiKnl/sara#haobosou-usb-microphone)  
+  12.3 [Known](https://github.com/ZTiKnl/sara#known)  
+13. [Todo](https://github.com/ZTiKnl/sara#todo)
+14. [Long term goals](https://github.com/ZTiKnl/sara#long-term-goals)
+15. [Credits](https://github.com/ZTiKnl/sara#credits)
+16. [Apologies](https://github.com/ZTiKnl/sara#apologies)
 
 ### What is Sara:
 Sara is a command prompt, that listens for keyboard input or voice commands  
@@ -434,6 +435,31 @@ Add connection details to file plugins/calendar/connection.json (see example fil
 list calendar
 list calendars
 ```
+
+### Bootstrap:
+By adding .js files to the ./bootstrap folder, you can add background tasks (interval stuff such as data syncs) to SARA  
+These .js files require 2 module.exports, start() and stop() so that these tasks can be started as well as be killed  
+Bootstrapping can be disabled by command line argument, voice/prompt command and config.json entry  
+
+Very basic example of a bootstrap file:
+```
+module.exports = {
+  start: function() {
+    console.log('started calendar sync');
+    var caldaemon = setInterval(calsync,600000);
+  },
+  sync: calsync,
+  stop: function() {
+    console.log('stopped calendar sync');
+    clearInterval(caldaemon);
+  }
+}
+
+function calsync() {
+  console.log('test');
+}
+```
+
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
 My Raspberry Pi config:  
@@ -579,7 +605,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 
 ### Todo:
 - [ ] General
-  - [ ] Create startup_plugins folder and functionality (these plugins are loaded and executed on boot)  
+  - [x] ~~Create bootstrap folder and functionality (these plugins are loaded and executed on boot)~~  
     - [ ] Create background operations overview module(?)  
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
