@@ -18,7 +18,7 @@ Github documentation will be the Current/Latest testing build
 NPM will be pushed occasionally when there shouldn't be any app-breaking bugs  
 Many changes are to be expected, do not expect backwards compatibility  
 
-Current version: `0.3.3`  
+Current version: `0.3.4`  
 When the core program is more complete I will start [semantic version](https://docs.npmjs.com/about-semantic-versioning) 1.0.0  
 
 ### ToC:
@@ -47,6 +47,7 @@ When the core program is more complete I will start [semantic version](https://d
   9.8 [News](https://github.com/ZTiKnl/sara#news)  
   9.8 [Translate](https://github.com/ZTiKnl/sara#translate)  
   9.8 [Games](https://github.com/ZTiKnl/sara#games)  
+  9.9 [Addressbook (CardDAV)](https://github.com/ZTiKnl/sara#addressbook-carddav)  
 10. [Audio in/out issues](https://github.com/ZTiKnl/sara#audio-inout-issues)
 11. [Other issues](https://github.com/ZTiKnl/sara#other-issues)  
   11.1 [Google Cloud APIs](https://github.com/ZTiKnl/sara#google-cloud-apis)  
@@ -421,6 +422,12 @@ list address books
 list addressbook
 addressbook list
 search contact <term>
+```
+#### Calendar (CalDAV):  
+Add connection details to file plugins/calendar/connection.json (see example file connection_example.json)  
+```
+list calendar
+list calendars
 ```
 ### Audio in/out issues:
 The only advise I can give is to make sure that alsa has the correct in/output device registered  
