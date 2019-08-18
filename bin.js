@@ -4,6 +4,7 @@ var speechrecognitionstart = true;
 var visionstart = true;
 var sfxstart = true;
 var colorstart = true;
+var bootstrapstart = true;
 var verbose = false;
 var configfilefound = false;
 
@@ -42,6 +43,9 @@ const hearing = require('./hearing.js');
 
 // include vision module
 const vision = require('./vision.js');
+
+// include bootstrap module
+const bootstrap = require('./bootstrap.js');
 
 // start prompt
 prompt.start();
@@ -92,6 +96,13 @@ if (visionstart) {
   response.conlog('vision', 'vision not activated: --no-vision flag', 'status');
 }
 
+// start bootstrap
+if (bootstrapstart) {
+  bootstrap.start();
+} else {
+  response.conlog('bootstrap', 'bootstrap not activated: --no-bootstrap flag', 'status');
+}
+
 sfx.output('startup');
 
 /*
@@ -134,6 +145,11 @@ function loadconfig() {
       } else {
         colorstart = false;
       }
+      if (configfile['bootstrap'] == true) {
+        bootstrapstart = true;
+      } else {
+        bootstrapstart = false;
+      }
       if (configfile['verbose'] == true) {
         verbose = true;
       } else {
@@ -151,6 +167,9 @@ function argumental() {
     val = val.trim();
     if (val.toLowerCase() == '--verbose' || val == '-v') {
       verbose = true;
+    }
+    if (val.toLowerCase() == '--no-bootstrap' || val == '-nb') {
+      bootstrapstart = false;
     }
     if (val.toLowerCase() == '--no-colors' || val == '-nc') {
       colorstart = false;
@@ -174,6 +193,7 @@ function argumental() {
       console.log('');
       console.log('arguments:');
       console.log('\t-h, --help\tDisplay this help and exits');
+      console.log('\t-nb, --no-bootstrap\tDo not activate bootstrap plugins on start');
       console.log('\t-nc, --no-colors\tDo not activate colored responses on start');
       console.log('\t-nse, --no-sound-effects\tDo not activate sound effects on start');
       console.log('\t-nsr, --no-speech-recognition\tDo not activate speech recognition on start');
