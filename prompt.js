@@ -262,6 +262,10 @@ function start(strPrompt, callback) {
             bootstrap.start();
           } else if (cmd.toLowerCase() == 'stop bootstrap') {
             bootstrap.stop();
+          } else if (cmd.toLowerCase() == 'list bootstrap' || cmd.toLowerCase() == 'bootstrap list') {
+            bootstrap.list().then((result) => {
+              resolve(result);
+            });
           } else if (cmd.toLowerCase() == 'start verbose') {
             response.setverbose();
           } else if (cmd.toLowerCase() == 'stop verbose') {
