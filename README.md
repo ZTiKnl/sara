@@ -180,6 +180,9 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 #### Verbose:
 `start/stop verbose` turns on/off verbose mode  
   Verbose mode will turn on display of output with a 'data' or 'warn' type  
+#### Bootstrap:
+`start/stop bootstrap` turns on/off bootstrap plugins  
+`bootstrap list` displays the currently active bootstrap plugins  
 #### Help:
 `help` displays the main 'help' section  
 `list help` displays a list of all help topics  
@@ -195,7 +198,7 @@ The vision command will be extended with object/face recognition, ~~if I can~~ *
 `start/stop talking` same as above  
 `start/stop speaking` same as above  
 `silence` stop speaking the current sentence/item  
-`quiet` stsame as above  
+`quiet` same as above  
 `voice list` display a list of all voices for the current language (config.json)  
 `list voice` same as above  
 `voices list` same as above  
@@ -438,19 +441,25 @@ list calendars
 
 ### Bootstrap:
 By adding .js files to the ./bootstrap folder, you can add background tasks (interval stuff such as data syncs) to SARA  
-These .js files require 2 module.exports, start() and stop() so that these tasks can be started as well as be killed  
+These .js files require 3 module.exports, start() and stop() so that these tasks can be started/stopped, and a status() function which returns a true/false  
 Bootstrapping can be disabled by command line argument, voice/prompt command and config.json entry  
 
 Very basic example of a bootstrap file:
 ```
+var calsyncactive = false;
 module.exports = {
   start: function() {
     console.log('started calendar sync');
     var caldaemon = setInterval(calsync,600000);
+    calsyncactive = true;
   },
   stop: function() {
     console.log('stopped calendar sync');
     clearInterval(caldaemon);
+    calsyncactive = false;
+  },
+  status: function() {
+    return calsyncactive;
   }
 }
 
@@ -605,7 +614,7 @@ The vision module works, but all it does is take a picture every 30 min, no furt
 ### Todo:
 - [ ] General
   - [x] ~~Create bootstrap folder and functionality (these plugins are loaded and executed on boot)~~  
-    - [ ] Create background operations overview module(?)  
+    - [x] ~~Create background operations overview module~~  
   - [x] ~~Scan for .config file, load settings from there~~  
     - [x] ~~Overwrite settings with arguments~~  
   - [ ] Rewrite console.log() to response.conlog() 
