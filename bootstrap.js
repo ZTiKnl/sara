@@ -1,5 +1,6 @@
 // set start vars
 var bootstrapactive = false;
+var bootstraparray = [];
 
 // include colored responses module
 const response = require('./response.js');
@@ -28,6 +29,7 @@ module.exports = {
       return result;
     }
   },
+  list: tasklist,
   bootstraprunner: bootstraprunner,
   bootstrapstopper: bootstrapstopper,
   stop: async function() {
@@ -48,6 +50,19 @@ module.exports = {
   }
 }
 
+async function tasklist () {
+  if (bootstraparray.length < 1) {
+    result = 'There are no active bootstraps';
+  } else {
+    if (bootstraparray.length === 1) {
+      result = 'There is '+bootstraparray.length+' active bootstrap:\n\t'+bootstraparray.join('\n\t');
+    } else {
+      result = 'There are '+bootstraparray.length+' active bootstraps:\n\t'+bootstraparray.join('\n\t');
+    }
+  }
+  return result;
+}
+
 function bootstraprunner() {
   return new Promise(resolve => {
     (async function () {
@@ -65,6 +80,9 @@ function bootstraprunner() {
       while (i < amount) {
         var bootstrapfile = require('./bootstrap/'+bootstraps[i])
         bootstrapfile.start();
+        if (bootstrapfile.status()) {
+          bootstraparray.push(bootstraps[i]);
+        }
         i++;
       }
 
@@ -94,6 +112,12 @@ function bootstrapstopper() {
       while (i < amount) {
         var bootstrapfile = require('./bootstrap/'+bootstraps[i])
         bootstrapfile.stop();
+        if (!bootstrapfile.status()) {
+          var index = bootstraparray.indexOf(bootstraps[i]);
+          if (index > -1) {
+            bootstraparray.splice(index, 1);
+          }
+        }
         i++;
       }
 
